@@ -1,0 +1,161 @@
+{
+  "nav": {
+    "docs": "文档",
+    "community": "社区",
+    "changelog": "更新日志"
+  },
+  "hero": {
+    "badge": "v0.1.0-alpha 已发布",
+    "title_part1": "Loong Claw",
+    "title_part2": "LoongClaw 是一个基于 Rust 构建的安全、可扩展且可演化的智能基座。",
+    "description": "从助手能力出发，但目标远不止于通用的助手。LoongClaw 旨在成长为面向团队的垂直智能体基础，让人类与 AI 在持续协作中共同进化。",
+    "btn_get_started": "快速开始",
+    "btn_view_source": "查看源码"
+  },
+  "features": {
+    "title": "核心特性",
+    "subtitle": "基于 Rust 构建的安全、可扩展、可演进的智能基座",
+    "secure_title": "安全内核",
+    "secure_desc": "Capability Token 机制，每次调用需授权，人类审批，审计跟踪",
+    "secure_details": [
+      "基于能力的策略引擎",
+      "人类审批网关",
+      "JSONL SIEM 导出",
+      "拒绝名单优先"
+    ],
+    "lightweight_title": "轻量且高效",
+    "lightweight_desc": "极致精简，< 5MB 内存占用，< 10MB 二进制体积",
+    "lightweight_details": [
+      "跨平台支持 (POSIX / Docker)",
+      "仅 5 MB 内存占用",
+      "< 10 ms 冷启动",
+      "< 10 MB 二进制体积"
+    ],
+    "extend_title": "易于扩展",
+    "extend_desc": "WASM 插件，多语言支持，7-crate DAG 架构，可插拔组件",
+    "extend_details": [
+      "WASM 运行时执行",
+      "多语言插件",
+      "7-crate 严格的 DAG 依赖",
+      "可插拔适配器"
+    ]
+  },
+  "community": {
+    "title": "社区与生态",
+    "subtitle": "加入我们的开源社区，帮助推动 Agentic OS 的发展",
+    "letter_title": "来自 Loong Team 的一封信",
+    "click_to_open": "点击打开",
+    "greeting": "亲爱的社区成员：",
+    "p1": "当我们开始构建 LoongClaw 时，我们的愿景很简单：创建一个让你能够轻松构建智能、自主应用的 Agentic OS。今天，我们很激动能与你分享这段旅程。",
+    "p2": "这个项目代表了无数个小时的开发、测试和打磨。但更重要地是，它代表了我们对开源的承诺，以及坚信最好的软件是作为社区共同构建出来的信念。",
+    "p3": "无论您是来贡献代码、报告错误，还是仅仅为了探索我们所构建的内容 —— 欢迎。您的反馈、想法和热情将使 LoongClaw 变得真正了不起。",
+    "p4": "让我们一起构建 Agentic OS 的未来。",
+    "signoff": "满怀感激：",
+    "team": "LoongClaw 团队"
+  },
+  "terminal": {
+    "line1": "# 克隆仓库",
+    "line2": "# 运行安装脚本",
+    "line3": "# 初始化并 onboard",
+    "line4": "core.register_capability(\"system.fs.read\");",
+    "line5": "// Ready to process streams",
+    "line6": "core.start().await?;"
+  },
+  "architecture": {
+    "title": "7-Crate 严格的 DAG 架构",
+    "subtitle": "清晰的依赖方向，稳定的内核契约",
+    "hl1": "零循环依赖 - 严格的 DAG 结构",
+    "hl2": "稳定的内核契约 - 零内部依赖的 contracts crate",
+    "hl3": "业务逻辑与核心分离 - 扩展平面架构",
+    "hl4": "默认通过 Capability 授权 - 每次操作都需要授权许可",
+    "crate_role_0": "Shared types, capability model. Zero deps",
+    "crate_role_1": "Policy engine, audit, capability tokens",
+    "crate_role_2": "Transport contracts, typed routing",
+    "crate_role_3": "Providers, tools, channels, memory",
+    "crate_role_4": "Execution spec runner",
+    "crate_role_5": "Benchmark harness",
+    "crate_role_6": "CLI binary (loongclaw)",
+    "binary": "BINARY"
+  },
+  "quickstart": {
+    "title": "5 分钟快速开始",
+    "subtitle": "三个简单步骤，开启您的 LoongClaw 之旅",
+    "step1_title": "安装",
+    "step1_desc": "克隆仓库并运行安装脚本",
+    "step2_title": "配置",
+    "step2_desc": "设置您的 API 密钥",
+    "step3_title": "聊天",
+    "step3_desc": "开始交互"
+  },
+  "stats": {
+    "min_hardware": "运行平台",
+    "ram_footprint": "内存占用",
+    "cold_boot": "冷启动时间",
+    "binary_size": "二进制体积"
+  },
+  "community_page": {
+    "title": "社区",
+    "subtitle": "与开发者、贡献者及不断进化的智能体建立联系。LoongClaw 是为团队打造的安全、可扩展且可演化的智能基座。",
+    "resources": {
+      "github": {
+        "title": "GitHub",
+        "description": "点个 Star，报告问题，并为代码库做出贡献。"
+      },
+      "x": {
+        "title": "X",
+        "description": "在 X 上关注我们，获取最新消息和动态。",
+        "url": "https://x.com/loongclawai"
+      },
+      "discord": {
+        "title": "Discord",
+        "description": "加入我们的社区，获取实时支持并参与讨论。"
+      },
+      "telegram": {
+        "title": "Telegram",
+        "description": "关注我们，获取最新动态、使用技巧和社区亮点。"
+      },
+      "reddit": {
+        "title": "Reddit",
+        "description": "加入 r/LoongClaw 参与深度讨论和社区分享。"
+      },
+      "xiaohongshu": {
+        "title": "小红书",
+        "description": "关注我们的开发日志和幕后故事。"
+      },
+      "wechat": {
+        "title": "微信",
+        "description": "扫描二维码加入我们的微信开发者群。"
+      },
+      "feishu": {
+        "title": "飞书",
+        "description": "加入飞书社区参与产品共建和反馈。"
+      }
+    }
+  },
+  "changelog_page": {
+    "title": "更新日志",
+    "loading": "加载中..."
+  },
+  "docs_menu": {
+    "index": "文档",
+    "foundations": "基础",
+    "connectivity": "连接性",
+    "runtime": "运行时引擎",
+    "orchestration": "高级编排",
+    "operations": "运维",
+    "getting-started": "快速入门",
+    "quick-start": "快速开始",
+    "configuration": "配置",
+    "commands": "CLI 命令",
+    "providers": "模型提供商",
+    "channels": "通信渠道",
+    "tools": "工具系统",
+    "memory": "会话与记忆",
+    "skills": "技能与 ACP",
+    "troubleshooting": "故障排除",
+    "loading": "加载中...",
+    "page_not_found": "页面未找到",
+    "failed_load": "加载内容失败。",
+    "not_found": "未找到内容。"
+  }
+}

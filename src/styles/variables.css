@@ -1,0 +1,195 @@
+/* Google Fonts Import */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;900&family=Syncopate:wght@400;700&display=swap");
+
+/* Dark Theme (Default) - Nocturnal Protocol */
+:root {
+    /* Core Colors - Based on RGB(13, 17, 22) = #0D1116 */
+    --color-bg-primary: rgb(13, 17, 22);
+    --color-bg-secondary: #161b22;
+    --color-bg-tertiary: #21262d;
+    --color-border: rgba(139, 148, 158, 0.2);
+    --color-border-light: rgba(139, 148, 158, 0.1);
+    --color-border-medium: rgba(139, 148, 158, 0.15);
+
+    /* Text Colors */
+    --color-text-primary: #c9d1d9;
+    --color-text-secondary: #8b949e;
+    --color-text-muted: #586069;
+    --color-text-accent: #ffffff;
+
+    /* Accent Colors */
+    --color-accent: #c9d1d9;
+    --color-accent-hover: #ffffff;
+
+    /* Background Gradient */
+    --bg-gradient: radial-gradient(
+        circle at 50% -20%,
+        #1c2128 0%,
+        rgb(13, 17, 22) 80%
+    );
+
+    /* Typography */
+    --font-chinese: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", sans-serif;
+    --font-mono: "JetBrains Mono", "Fira Code", "SF Mono", Consolas, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    --font-display: "Syncopate", "Orbitron", "Audiowide", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+
+    /* Spacing Scale */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+
+    /* Layout */
+    --docs-sidebar-width: 280px;
+    --docs-content-max-width: 800px;
+    --docs-toc-width: 200px;
+    --content-max-width: 1200px;
+
+    /* Code Colors */
+    --color-code-bg: #0d1117;
+    --color-code-header: #161b22;
+
+    /* Z-index Layers */
+    --z-background: 0;
+    --z-content: 1;
+    --z-sticky: 10;
+    --z-overlay: 100;
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 200ms ease;
+    --transition-slow: 300ms ease;
+    --transition-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Light Theme - Daylight Protocol */
+[data-theme="light"] {
+    /* Core Colors - Neutral Off-White */
+    --color-bg-primary: #fbfbfb;
+    --color-bg-secondary: #f5f5f5;
+    --color-bg-tertiary: #eeeeee;
+    --color-border: rgba(0, 0, 0, 0.1);
+    --color-border-light: rgba(0, 0, 0, 0.05);
+    --color-border-medium: rgba(0, 0, 0, 0.08);
+
+    /* Text Colors - Neutral dark tones */
+    --color-text-primary: #1a1a1a;
+    --color-text-secondary: #4a4a4a;
+    --color-text-muted: #7a7a7a;
+    --color-text-accent: #000000;
+
+    /* Accent Colors */
+    --color-accent: #1a1a1a;
+    --color-accent-hover: #000000;
+
+    /* Background Gradient - Neutral */
+    --bg-gradient: radial-gradient(
+        circle at 50% -20%,
+        #f5f5f5 0%,
+        #fbfbfb 80%
+    );
+}
+
+/* Base Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-mono);
+    background: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* In Chinese mode: switch inherited body text to Chinese sans-serif.
+   Elements with explicit inline font-family (code blocks, crate names,
+   LOONGCLAW logo, stats labels) have higher specificity and are unaffected. */
+html[lang="zh-CN"] body {
+    font-family: var(--font-chinese);
+}
+html[lang="zh-CN"] code,
+html[lang="zh-CN"] pre {
+    font-family: var(--font-mono);
+}
+
+/* Selection */
+::selection {
+    background: rgba(139, 148, 158, 0.3);
+    color: var(--color-text-primary);
+}
+
+[data-theme="light"] ::selection {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-text-muted);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-secondary);
+}
+
+/* Animations */
+@keyframes blink {
+    0%,
+    50% {
+        opacity: 1;
+    }
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-blink {
+    animation: blink 1s infinite;
+}
+
+.terminal-cursor {
+    animation: blink 1s infinite;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}

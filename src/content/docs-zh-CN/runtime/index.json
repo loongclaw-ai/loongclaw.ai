@@ -1,0 +1,9 @@
+{
+  "frontmatter": {
+    "title": "运行时引擎",
+    "description": "内部引擎：记忆、会话和工具",
+    "path": "/docs/runtime"
+  },
+  "html": "<h1>运行时引擎</h1>\n<p>运行时引擎是 LoongClaw 的核心，管理它如何处理信息、记住过去的交互以及使用工具。</p>\n<h2>在本节中：</h2>\n<ul>\n<li><strong><a href=\"/docs/runtime/memory\">记忆</a></strong>：了解 LoongClaw 如何持久化状态和召回信息。</li>\n<li><strong><a href=\"/docs/runtime/sessions\">会话</a></strong>：了解如何独立管理多个聊天上下文。</li>\n<li><strong><a href=\"/docs/runtime/tools\">工具</a></strong>：使用内置的 Shell、文件和 Web 工具扩展 LoongClaw 的功能。</li>\n</ul>\n",
+  "slug": "index"
+}

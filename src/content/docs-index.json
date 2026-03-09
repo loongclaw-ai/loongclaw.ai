@@ -1,0 +1,140 @@
+{
+  "title": "Documentation",
+  "description": "Complete user guide for LoongClaw - an AI assistant framework built in Rust",
+  "path": "/docs",
+  "contentPath": "/src/content/docs/index.json",
+  "sections": [
+    {
+      "id": "connectivity",
+      "title": "Connectivity",
+      "path": "/docs/connectivity",
+      "description": "Connect LoongClaw to LLM providers and communication channels",
+      "contentPath": "/src/content/docs/connectivity/index.json",
+      "order": 999,
+      "children": [
+        {
+          "id": "providers",
+          "title": "Providers",
+          "path": "/docs/connectivity/providers",
+          "description": "Guide to configuring and using LLM providers",
+          "contentPath": "/src/content/docs/connectivity/providers/index.json",
+          "order": 4
+        },
+        {
+          "id": "channels",
+          "title": "Channels",
+          "path": "/docs/connectivity/channels",
+          "description": "Configure CLI, Telegram, and Feishu communication channels",
+          "contentPath": "/src/content/docs/connectivity/channels/index.json",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "runtime",
+      "title": "Runtime Engine",
+      "path": "/docs/runtime",
+      "description": "Internal engine: Memory, Sessions, and Tools",
+      "contentPath": "/src/content/docs/runtime/index.json",
+      "order": 999,
+      "children": [
+        {
+          "id": "tools",
+          "title": "Tools",
+          "path": "/docs/runtime/tools",
+          "description": "Built-in tools for shell execution, file operations, and web access",
+          "contentPath": "/src/content/docs/runtime/tools/index.json",
+          "order": 6
+        },
+        {
+          "id": "memory",
+          "title": "Memory & Sessions",
+          "path": "/docs/runtime/memory",
+          "description": "Session management and conversation memory configuration",
+          "contentPath": "/src/content/docs/runtime/memory/index.json",
+          "order": 7
+        }
+      ]
+    },
+    {
+      "id": "operations",
+      "title": "Operations",
+      "path": "/docs/operations",
+      "description": "Troubleshooting, governance, and security",
+      "contentPath": "/src/content/docs/operations/index.json",
+      "order": 999,
+      "children": [
+        {
+          "id": "troubleshooting",
+          "title": "Troubleshooting",
+          "path": "/docs/operations/troubleshooting",
+          "description": "Common issues, diagnostic commands, and solutions",
+          "contentPath": "/src/content/docs/operations/troubleshooting/index.json",
+          "order": 9
+        }
+      ]
+    },
+    {
+      "id": "foundations",
+      "title": "Foundations",
+      "path": "/docs/foundations",
+      "description": "Core concepts, installation, and initial setup for LoongClaw",
+      "contentPath": "/src/content/docs/foundations/index.json",
+      "order": 999,
+      "children": [
+        {
+          "id": "getting-started",
+          "title": "Getting Started",
+          "path": "/docs/foundations/getting-started",
+          "description": "Install, configure, and run LoongClaw in minutes",
+          "contentPath": "/src/content/docs/foundations/getting-started/index.json",
+          "order": 1,
+          "children": [
+            {
+              "id": "quick-start",
+              "title": "Quick Start",
+              "path": "/docs/foundations/getting-started/quick-start",
+              "description": "Run your first LoongClaw tasks in minutes",
+              "contentPath": "/src/content/docs/foundations/getting-started/quick-start.json",
+              "order": 2
+            }
+          ]
+        },
+        {
+          "id": "configuration",
+          "title": "Configuration",
+          "path": "/docs/foundations/configuration",
+          "description": "Complete configuration reference for LoongClaw",
+          "contentPath": "/src/content/docs/foundations/configuration/index.json",
+          "order": 2
+        },
+        {
+          "id": "commands",
+          "title": "CLI Commands",
+          "path": "/docs/foundations/commands",
+          "description": "Complete reference for LoongClaw command-line interface",
+          "contentPath": "/src/content/docs/foundations/commands/index.json",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "orchestration",
+      "title": "Advanced Orchestration",
+      "path": "/docs/orchestration",
+      "description": "ACP, Skills, and Lifecycle Management",
+      "contentPath": "/src/content/docs/orchestration/index.json",
+      "order": 999,
+      "children": [
+        {
+          "id": "skills",
+          "title": "Skills & ACP",
+          "path": "/docs/orchestration/skills",
+          "description": "External skills system and Agent Control Plane",
+          "contentPath": "/src/content/docs/orchestration/skills/index.json",
+          "order": 8
+        }
+      ]
+    }
+  ]
+}

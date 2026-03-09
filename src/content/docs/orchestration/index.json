@@ -1,0 +1,9 @@
+{
+  "frontmatter": {
+    "title": "Advanced Orchestration",
+    "description": "ACP, Skills, and Lifecycle Management",
+    "path": "/docs/orchestration"
+  },
+  "html": "<h1>Advanced Orchestration</h1>\n<p>This section covers advanced features for orchestrating complex AI behaviors and extending LoongClaw through the skills system.</p>\n<h2>In this section:</h2>\n<ul>\n<li><strong><a href=\"/docs/orchestration/acp\">Agent Control Plane (ACP)</a></strong>: Deep dive into the orchestration layer of LoongClaw.</li>\n<li><strong><a href=\"/docs/orchestration/skills\">Skills</a></strong>: Build and deploy custom skills to extend your assistant's functionality.</li>\n<li><strong><a href=\"/docs/orchestration/lifecycle\">Lifecycle Management</a></strong>: Manage the full lifecycle of your agents and skills.</li>\n</ul>\n",
+  "slug": "index"
+}
