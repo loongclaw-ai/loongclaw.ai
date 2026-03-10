@@ -1,13 +1,11 @@
-import { Link, useLocation } from 'react-router-dom';
 import type { FC } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { getDocsIndex } from '../../../utils/content-loader';
 import type { DocSection } from '../../../types';
 
-interface DocsSidebarProps {
-  sections: DocSection[];
-}
-
-export const DocsSidebar: FC<DocsSidebarProps> = ({ sections }) => {
+const DocsSidebar: FC = () => {
   const location = useLocation();
+  const { sections } = getDocsIndex();
 
   const isActive = (path: string) => {
     return location.pathname === path || location.pathname.startsWith(`${path}/`);
@@ -27,7 +25,7 @@ export const DocsSidebar: FC<DocsSidebarProps> = ({ sections }) => {
         backgroundColor: 'rgba(13, 17, 23, 0.95)',
       }}
     >
-      {sections.map((section) => (
+      {sections.map((section: DocSection) => (
         <div key={section.id} style={{ marginBottom: '1.5rem' }}>
           <Link
             to={section.path}
@@ -46,7 +44,7 @@ export const DocsSidebar: FC<DocsSidebarProps> = ({ sections }) => {
           </Link>
           {section.children && (
             <div style={{ paddingLeft: '0.75rem' }}>
-              {section.children.map((child) => (
+              {section.children.map((child: DocSection) => (
                 <Link
                   key={child.id}
                   to={child.path}

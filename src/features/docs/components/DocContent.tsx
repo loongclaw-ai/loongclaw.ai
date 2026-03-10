@@ -1,84 +1,40 @@
-import type { FC, ReactNode } from 'react';
+import type { FC } from 'react';
 import { useLocation } from 'react-router-dom';
-import CodeBlock from './CodeBlock';
+import { findDocByPath } from '../../../utils/content-loader';
+import { useDocContent } from '../../../hooks/useContent';
 
-const contentMap: Record<string, { title: string; content: ReactNode }> = {
-  '/docs': {
-    title: 'Getting Started',
-    content: (
-      <>
-        <p style={{ marginBottom: '1rem', color: '#C9D1D9' }}>
-          OpenClaw is an open-source AI assistant runtime designed for severe constraints.
-          This guide will help you get up and running in minutes.
-        </p>
-
-        <h2 style={{ marginTop: '2rem', marginBottom: '1rem', fontFamily: "'Syncopate', sans-serif", fontSize: '1.2rem' }}>
-          Prerequisites
-        </h2>
-        <ul style={{ marginLeft: '1.5rem', color: '#C9D1D9' }}>
-          <li>Linux, macOS, or Windows with WSL2</li>
-          <li>Minimum 256MB RAM</li>
-          <li>curl installed</li>
-        </ul>
-
-        <h2 style={{ marginTop: '2rem', marginBottom: '1rem', fontFamily: "'Syncopate', sans-serif", fontSize: '1.2rem' }}>
-          Installation
-        </h2>
-        <p style={{ marginBottom: '1rem', color: '#C9D1D9' }}>
-          Install OpenClaw using the install script:
-        </p>
-        <CodeBlock
-          code="curl -sSfL https://openclaw.ai/install.sh | sh"
-          language="bash"
-        />
-
-        <h2 style={{ marginTop: '2rem', marginBottom: '1rem', fontFamily: "'Syncopate', sans-serif", fontSize: '1.2rem' }}>
-          Verify Installation
-        </h2>
-        <CodeBlock
-          code="claw --version"
-          language="bash"
-        />
-      </>
-    ),
-  },
-  '/docs/installation': {
-    title: 'Installation',
-    content: (
-      <>
-        <p style={{ marginBottom: '1rem', color: '#C9D1D9' }}>
-          OpenClaw supports multiple installation methods.
-        </p>
-        <CodeBlock
-          code="# macOS with Homebrew\nbrew install openclaw"
-          language="bash"
-        />
-        <CodeBlock
-          code="# Linux with apt\nsudo apt install openclaw"
-          language="bash"
-        />
-      </>
-    ),
-  },
-  '/docs/quickstart': {
-    title: 'Quick Start',
-    content: (
-      <>
-        <p style={{ marginBottom: '1rem', color: '#C9D1D9' }}>
-          Pull your first model and start chatting:
-        </p>
-        <CodeBlock
-          code="claw pull literati-7b\nclaw run"
-          language="bash"
-        />
-      </>
-    ),
-  },
-};
-
-export const DocContent: FC = () => {
+const DocContent: FC = () => {
   const location = useLocation();
-  const doc = contentMap[location.pathname] || contentMap['/docs'];
+  const doc = findDocByPath(location.pathname);
+  const { data, loading, error } = useDocContent(doc?.contentPath || null);
+
+  if (loading) {
+    return (
+      <article style={{ maxWidth: '800px' }}>
+        <p style={{ color: '#8B949E' }}>Loading...</p>
+      </article>
+    );
+  }
+
+  if (error || !data) {
+    return (
+      <article style={{ maxWidth: '800px' }}>
+        <h1
+          style={{
+            fontFamily: "'Syncopate', sans-serif",
+            fontSize: '2rem',
+            marginBottom: '1.5rem',
+            color: '#C9D1D9',
+          }}
+        >
+          {doc?.title || 'Page Not Found'}
+        </h1>
+        <p style={{ color: '#8B949E' }}>
+          {error ? 'Failed to load content.' : 'Content not found.'}
+        </p>
+      </article>
+    );
+  }
 
   return (
     <article style={{ maxWidth: '800px' }}>
@@ -90,9 +46,27 @@ export const DocContent: FC = () => {
           color: '#C9D1D9',
         }}
       >
-        {doc.title}
+        {data.title}
       </h1>
-      {doc.content}
+      {data.description && (
+        <p
+          style={{
+            color: '#8B949E',
+            marginBottom: '2rem',
+            fontSize: '1.1rem',
+          }}
+        >
+          {data.description}
+        </p>
+      )}
+      <div
+        className="doc-markdown-content"
+        dangerouslySetInnerHTML={{ __html: data.html }}
+        style={{
+          color: '#C9D1D9',
+          lineHeight: '1.7',
+        }}
+      />
     </article>
   );
 };

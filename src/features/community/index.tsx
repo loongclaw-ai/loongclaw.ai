@@ -1,28 +1,9 @@
 import type { FC } from 'react';
-import type { CommunityResource } from '../../types';
-
-const resources: CommunityResource[] = [
-  {
-    title: 'GitHub',
-    description: 'Star us, report issues, and contribute to the codebase.',
-    url: 'https://github.com/openclaw',
-    type: 'github',
-  },
-  {
-    title: 'Discord',
-    description: 'Join our community for real-time support and discussions.',
-    url: 'https://discord.gg/openclaw',
-    type: 'discord',
-  },
-  {
-    title: 'Twitter',
-    description: 'Follow us for updates, tips, and community highlights.',
-    url: 'https://twitter.com/openclaw',
-    type: 'twitter',
-  },
-];
+import { getCommunityIndex } from '../../utils/content-loader';
 
 const CommunityPage: FC = () => {
+  const { resources } = getCommunityIndex();
+
   return (
     <div
       style={{
