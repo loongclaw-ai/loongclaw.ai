@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "prebuild": "npm run build:content",
-    "build:content": "tsx scripts/build-content.ts",
-    "dev": "npm run build:content && vite",
+    "prebuild": "bun run build:content",
+    "build:content": "bun run scripts/build-content.ts",
+    "dev": "bun run build:content && vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
