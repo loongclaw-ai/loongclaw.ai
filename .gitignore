@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# agent
+.claude
+
+# Worktrees
+.worktrees
