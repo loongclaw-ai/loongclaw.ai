@@ -1,0 +1,76 @@
+{
+  "sections": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "path": "/docs",
+      "description": "Quick start guide for loongclaw",
+      "children": [
+        {
+          "id": "installation",
+          "title": "Installation",
+          "path": "/docs/installation",
+          "description": "Install loongclaw on your system",
+          "contentPath": "/src/content/docs/getting-started/installation.json",
+          "order": 1
+        },
+        {
+          "id": "quickstart",
+          "title": "Quick Start",
+          "path": "/docs/quickstart",
+          "description": "Run your first model in 5 minutes",
+          "contentPath": "/src/content/docs/getting-started/quickstart.json",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": "guides",
+      "title": "Guides",
+      "path": "/docs/guides",
+      "description": "Detailed usage guides",
+      "children": [
+        {
+          "id": "model-management",
+          "title": "Model Management",
+          "path": "/docs/guides/model-management",
+          "description": "Pull, list, and remove models",
+          "contentPath": "/src/content/docs/guides/model-management.json",
+          "order": 1
+        },
+        {
+          "id": "configuration",
+          "title": "Configuration",
+          "path": "/docs/guides/configuration",
+          "description": "Customize loongclaw settings",
+          "contentPath": "/src/content/docs/guides/configuration.json",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": "api",
+      "title": "API Reference",
+      "path": "/docs/api",
+      "description": "REST API documentation",
+      "children": [
+        {
+          "id": "generate",
+          "title": "Generate",
+          "path": "/docs/api/generate",
+          "description": "Generate completions",
+          "contentPath": "/src/content/docs/api/generate.json",
+          "order": 1
+        },
+        {
+          "id": "chat",
+          "title": "Chat",
+          "path": "/docs/api/chat",
+          "description": "Chat completions API",
+          "contentPath": "/src/content/docs/api/chat.json",
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

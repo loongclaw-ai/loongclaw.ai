@@ -1,10 +1,10 @@
 /* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;500;700;800&family=Noto+Serif+SC:wght@400;700;900&family=Syncopate:wght@400;700&display=swap');
 
-/* Nocturnal Protocol Theme */
+/* Dark Theme (Default) - Nocturnal Protocol */
 :root {
-  /* Core Colors */
-  --color-bg-primary: #0D1117;
+  /* Core Colors - Based on RGB(13, 17, 22) = #0D1116 */
+  --color-bg-primary: rgb(13, 17, 22);
   --color-bg-secondary: #161B22;
   --color-bg-tertiary: #21262D;
   --color-border: rgba(139, 148, 158, 0.2);
@@ -20,6 +20,9 @@
   /* Accent Colors */
   --color-accent: #C9D1D9;
   --color-accent-hover: #FFFFFF;
+
+  /* Background Gradient */
+  --bg-gradient: radial-gradient(circle at 50% -20%, #1c2128 0%, rgb(13, 17, 22) 80%);
 
   /* Typography */
   --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
@@ -38,6 +41,7 @@
   /* Layout */
   --docs-sidebar-width: 280px;
   --content-max-width: 1200px;
+  --sidebar-width: 0px;
 
   /* Z-index Layers */
   --z-background: 0;
@@ -49,6 +53,30 @@
   --transition-fast: 150ms ease;
   --transition-base: 200ms ease;
   --transition-slow: 300ms ease;
+}
+
+/* Light Theme - Daylight Protocol */
+[data-theme="light"] {
+  /* Core Colors - Based on RGB(135, 192, 202) = #87C0CA */
+  --color-bg-primary: #E8F4F6;
+  --color-bg-secondary: #D4E8EC;
+  --color-bg-tertiary: #B8D8DE;
+  --color-border: rgba(70, 100, 110, 0.2);
+  --color-border-light: rgba(70, 100, 110, 0.1);
+  --color-border-medium: rgba(70, 100, 110, 0.15);
+
+  /* Text Colors */
+  --color-text-primary: #1A2A30;
+  --color-text-secondary: #3D5A63;
+  --color-text-muted: #5E7A85;
+  --color-text-accent: #0D1A20;
+
+  /* Accent Colors */
+  --color-accent: #1A2A30;
+  --color-accent-hover: #0D1A20;
+
+  /* Background Gradient - Using the specified RGB(135, 192, 202) */
+  --bg-gradient: radial-gradient(circle at 50% -20%, #B8D8DE 0%, rgb(135, 192, 202) 80%);
 }
 
 /* Base Reset */
@@ -78,6 +106,10 @@ body {
 ::selection {
   background: rgba(139, 148, 158, 0.3);
   color: var(--color-text-primary);
+}
+
+[data-theme="light"] ::selection {
+  background: rgba(70, 100, 110, 0.2);
 }
 
 /* Scrollbar */

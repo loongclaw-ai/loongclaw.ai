@@ -18,7 +18,7 @@ export const CodeBlock: FC<CodeBlockProps> = ({ code, language = 'bash', filenam
   return (
     <div
       style={{
-        border: '1px solid rgba(139, 148, 158, 0.2)',
+        border: '1px solid var(--color-border)',
         borderRadius: '4px',
         overflow: 'hidden',
         margin: '1rem 0',
@@ -26,19 +26,19 @@ export const CodeBlock: FC<CodeBlockProps> = ({ code, language = 'bash', filenam
     >
       <div
         style={{
-          background: 'rgba(139, 148, 158, 0.05)',
+          background: 'var(--color-bg-secondary)',
           padding: '0.5rem 1rem',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          borderBottom: '1px solid rgba(139, 148, 158, 0.1)',
+          borderBottom: '1px solid var(--color-border-light)',
         }}
       >
         <span
           style={{
             fontSize: '0.7rem',
-            color: '#8B949E',
-            fontFamily: "'JetBrains Mono', monospace",
+            color: 'var(--color-text-secondary)',
+            fontFamily: 'var(--font-mono)',
             textTransform: 'uppercase',
           }}
         >
@@ -49,10 +49,10 @@ export const CodeBlock: FC<CodeBlockProps> = ({ code, language = 'bash', filenam
           style={{
             background: 'transparent',
             border: 'none',
-            color: copied ? '#3FB950' : '#8B949E',
+            color: copied ? '#3FB950' : 'var(--color-text-secondary)',
             fontSize: '0.7rem',
             cursor: 'pointer',
-            fontFamily: "'JetBrains Mono', monospace",
+            fontFamily: 'var(--font-mono)',
           }}
         >
           {copied ? 'Copied!' : 'Copy'}
@@ -60,14 +60,14 @@ export const CodeBlock: FC<CodeBlockProps> = ({ code, language = 'bash', filenam
       </div>
       <pre
         style={{
-          background: '#161B22',
+          background: 'var(--color-bg-secondary)',
           padding: '1rem',
           margin: 0,
           overflowX: 'auto',
           fontSize: '0.85rem',
           lineHeight: 1.6,
-          fontFamily: "'JetBrains Mono', monospace",
-          color: '#C9D1D9',
+          fontFamily: 'var(--font-mono)',
+          color: 'var(--color-text-primary)',
         }}
       >
         <code>{code}</code>

@@ -11,7 +11,7 @@ const DocContent: FC = () => {
   if (loading) {
     return (
       <article style={{ maxWidth: '800px' }}>
-        <p style={{ color: '#8B949E' }}>Loading...</p>
+        <p style={{ color: 'var(--color-text-secondary)' }}>Loading...</p>
       </article>
     );
   }
@@ -21,15 +21,15 @@ const DocContent: FC = () => {
       <article style={{ maxWidth: '800px' }}>
         <h1
           style={{
-            fontFamily: "'Syncopate', sans-serif",
+            fontFamily: 'var(--font-display)',
             fontSize: '2rem',
             marginBottom: '1.5rem',
-            color: '#C9D1D9',
+            color: 'var(--color-text-primary)',
           }}
         >
           {doc?.title || 'Page Not Found'}
         </h1>
-        <p style={{ color: '#8B949E' }}>
+        <p style={{ color: 'var(--color-text-secondary)' }}>
           {error ? 'Failed to load content.' : 'Content not found.'}
         </p>
       </article>
@@ -40,10 +40,10 @@ const DocContent: FC = () => {
     <article style={{ maxWidth: '800px' }}>
       <h1
         style={{
-          fontFamily: "'Syncopate', sans-serif",
+          fontFamily: 'var(--font-display)',
           fontSize: '2rem',
           marginBottom: '1.5rem',
-          color: '#C9D1D9',
+          color: 'var(--color-text-primary)',
         }}
       >
         {data.title}
@@ -51,7 +51,7 @@ const DocContent: FC = () => {
       {data.description && (
         <p
           style={{
-            color: '#8B949E',
+            color: 'var(--color-text-secondary)',
             marginBottom: '2rem',
             fontSize: '1.1rem',
           }}
@@ -63,7 +63,7 @@ const DocContent: FC = () => {
         className="doc-markdown-content"
         dangerouslySetInnerHTML={{ __html: data.html }}
         style={{
-          color: '#C9D1D9',
+          color: 'var(--color-text-primary)',
           lineHeight: '1.7',
         }}
       />

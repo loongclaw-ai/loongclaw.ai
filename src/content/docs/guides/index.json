@@ -1,0 +1,9 @@
+{
+  "frontmatter": {
+    "title": "Guides",
+    "description": "Detailed usage guides",
+    "path": "/docs/guides"
+  },
+  "html": "<h1>Guides</h1>\n<p>Detailed guides for common tasks.</p>\n<h2>Available Guides</h2>\n<ul>\n<li><a href=\"/docs/guides/model-management\">Model Management</a> - Pull, list, and remove models</li>\n<li><a href=\"/docs/guides/configuration\">Configuration</a> - Customize loongclaw settings</li>\n</ul>\n",
+  "slug": "index"
+}

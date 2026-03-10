@@ -1,0 +1,10 @@
+{
+  "frontmatter": {
+    "title": "Generate",
+    "description": "Generate completions",
+    "path": "/docs/api/generate",
+    "order": 1
+  },
+  "html": "<h1>Generate</h1>\n<p>Generate a completion.</p>\n<h2>Request</h2>\n<pre><code class=\"language-bash\">POST /api/generate\n</code></pre>\n<h2>Request Body</h2>\n<pre><code class=\"language-json\">{\n  \"model\": \"literati-7b\",\n  \"prompt\": \"Your prompt here\"\n}\n</code></pre>\n<h2>Response</h2>\n<pre><code class=\"language-json\">{\n  \"model\": \"literati-7b\",\n  \"response\": \"Generated text...\",\n  \"done\": true\n}\n</code></pre>\n",
+  "slug": "generate"
+}

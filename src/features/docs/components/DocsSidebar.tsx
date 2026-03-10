@@ -15,14 +15,14 @@ const DocsSidebar: FC = () => {
     <aside
       style={{
         width: '280px',
-        borderRight: '1px solid rgba(139, 148, 158, 0.1)',
+        borderRight: '1px solid var(--color-border-light)',
         padding: '2rem 1.5rem',
         position: 'fixed',
         left: 0,
         top: '73px',
         bottom: 0,
         overflowY: 'auto',
-        backgroundColor: 'rgba(13, 17, 23, 0.95)',
+        backgroundColor: 'var(--color-bg-secondary)',
       }}
     >
       {sections.map((section: DocSection) => (
@@ -31,13 +31,14 @@ const DocsSidebar: FC = () => {
             to={section.path}
             style={{
               display: 'block',
-              color: isActive(section.path) ? '#C9D1D9' : '#8B949E',
+              color: isActive(section.path) ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
               fontWeight: isActive(section.path) ? 700 : 600,
               fontSize: '0.85rem',
               textTransform: 'uppercase',
               letterSpacing: '0.05em',
               marginBottom: '0.5rem',
-              fontFamily: "'Syncopate', sans-serif",
+              fontFamily: 'var(--font-display)',
+              textDecoration: 'none',
             }}
           >
             {section.title}
@@ -50,13 +51,15 @@ const DocsSidebar: FC = () => {
                   to={child.path}
                   style={{
                     display: 'block',
-                    color: location.pathname === child.path ? '#C9D1D9' : '#586069',
+                    color: location.pathname === child.path ? 'var(--color-text-primary)' : 'var(--color-text-muted)',
                     fontSize: '0.8rem',
                     padding: '0.35rem 0',
-                    fontFamily: "'JetBrains Mono', monospace",
-                    borderLeft: location.pathname === child.path ? '2px solid #C9D1D9' : '2px solid transparent',
+                    fontFamily: 'var(--font-mono)',
+                    borderLeft: location.pathname === child.path ? '2px solid var(--color-text-primary)' : '2px solid transparent',
                     paddingLeft: '0.75rem',
                     marginLeft: '-0.75rem',
+                    textDecoration: 'none',
+                    transition: 'color var(--transition-base)',
                   }}
                 >
                   {child.title}

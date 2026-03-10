@@ -1,17 +1,15 @@
 // src/app/router.tsx
 import { createBrowserRouter, Outlet } from 'react-router-dom';
 import RootLayout from './layouts/RootLayout';
-import NavBar from '../components/layout/NavBar';
 import Footer from '../components/layout/Footer';
 import HomePage from '../features/home';
 import DocsPage from '../features/docs';
 import CommunityPage from '../features/community';
 import ChangelogPage from '../features/changelog';
 
-// Layout wrapper with NavBar and Footer
+// Layout wrapper with RootLayout and Footer
 const PageLayout = () => (
   <RootLayout>
-    <NavBar />
     <main style={{ flex: 1, position: 'relative', zIndex: 1 }}>
       <Outlet />
     </main>

@@ -1,0 +1,10 @@
+{
+  "frontmatter": {
+    "title": "Installation",
+    "description": "Install loongclaw on your system",
+    "path": "/docs/installation",
+    "order": 1
+  },
+  "html": "<h1>Installation</h1>\n<p>loongclaw supports multiple installation methods.</p>\n<h2>macOS with Homebrew</h2>\n<pre><code class=\"language-bash\">brew install loongclaw\n</code></pre>\n<h2>Linux with apt</h2>\n<pre><code class=\"language-bash\">sudo apt install loongclaw\n</code></pre>\n<h2>Linux with curl</h2>\n<pre><code class=\"language-bash\">curl -sSfL https://loongclaw.ai/install.sh | sh\n</code></pre>\n<h2>Windows</h2>\n<p>Download the installer from <a href=\"https://github.com/loongclaw/releases\">releases</a>.</p>\n<h2>Verify Installation</h2>\n<pre><code class=\"language-bash\">claw --version\n</code></pre>\n",
+  "slug": "installation"
+}

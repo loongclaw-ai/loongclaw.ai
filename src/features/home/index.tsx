@@ -10,25 +10,9 @@ const HomePage: FC = () => {
         maxWidth: '1600px',
         margin: '0 auto',
         position: 'relative',
+        minHeight: 'calc(100vh - 64px)',
       }}
     >
-      {/* Location Metadata */}
-      <div
-        style={{
-          position: 'absolute',
-          top: '2rem',
-          right: '4rem',
-          fontSize: '0.5rem',
-          color: '#586069',
-          letterSpacing: '0.2em',
-          opacity: 0.5,
-          fontFamily: "'JetBrains Mono', monospace",
-          textTransform: 'uppercase',
-        }}
-      >
-        LAT.35.6895_LONG.139.6917
-      </div>
-
       <HeroSection />
     </div>
   );

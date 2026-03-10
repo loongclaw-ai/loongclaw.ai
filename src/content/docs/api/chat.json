@@ -1,0 +1,10 @@
+{
+  "frontmatter": {
+    "title": "Chat",
+    "description": "Chat completions API",
+    "path": "/docs/api/chat",
+    "order": 2
+  },
+  "html": "<h1>Chat</h1>\n<p>Generate chat completions.</p>\n<h2>Request</h2>\n<pre><code class=\"language-bash\">POST /api/chat\n</code></pre>\n<h2>Request Body</h2>\n<pre><code class=\"language-json\">{\n  \"model\": \"literati-7b\",\n  \"messages\": [\n    {\"role\": \"user\", \"content\": \"Hello!\"}\n  ]\n}\n</code></pre>\n<h2>Response</h2>\n<pre><code class=\"language-json\">{\n  \"model\": \"literati-7b\",\n  \"message\": {\n    \"role\": \"assistant\",\n    \"content\": \"Hello! How can I help you today?\"\n  },\n  \"done\": true\n}\n</code></pre>\n",
+  "slug": "chat"
+}

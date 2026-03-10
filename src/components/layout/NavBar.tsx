@@ -1,9 +1,15 @@
 // src/components/layout/NavBar.tsx
 import { Link, useLocation } from 'react-router-dom';
 import type { FC } from 'react';
+import { useTheme } from '../../contexts/useTheme';
+
+// Import icon assets
+import darkIcon from '../../assets/loongclaw-icon-dark.ico';
+import lightIcon from '../../assets/loongclaw-icon-light.ico';
 
 const NavBar: FC = () => {
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   const isActive = (path: string): boolean => {
     return location.pathname === path;
@@ -28,7 +34,7 @@ const NavBar: FC = () => {
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: 'var(--space-md) var(--space-xl)',
-        backgroundColor: 'rgba(13, 17, 23, 0.8)',
+        backgroundColor: 'var(--color-bg-secondary)',
         backdropFilter: 'blur(12px)',
         borderBottom: '1px solid var(--color-border)',
       }}
@@ -48,6 +54,16 @@ const NavBar: FC = () => {
           letterSpacing: '0.1em',
         }}
       >
+        {/* Theme-based Icon */}
+        <img
+          src={theme === 'dark' ? darkIcon : lightIcon}
+          alt="OpenClaw"
+          style={{
+            width: '32px',
+            height: '32px',
+            objectFit: 'contain',
+          }}
+        />
         <span>OPENCLAW</span>
       </Link>
 
@@ -68,6 +84,72 @@ const NavBar: FC = () => {
         <Link to="/changelog" style={getLinkStyle('/changelog')}>
           Changelog
         </Link>
+
+        {/* Theme Toggle Button */}
+        <button
+          onClick={toggleTheme}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '36px',
+            height: '36px',
+            backgroundColor: 'var(--color-bg-tertiary)',
+            border: '1px solid var(--color-border)',
+            borderRadius: '6px',
+            color: 'var(--color-text-primary)',
+            cursor: 'pointer',
+            transition: 'all var(--transition-base)',
+            padding: 0,
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = 'var(--color-bg-secondary)';
+            e.currentTarget.style.borderColor = 'var(--color-border-medium)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = 'var(--color-bg-tertiary)';
+            e.currentTarget.style.borderColor = 'var(--color-border)';
+          }}
+          title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+        >
+          {theme === 'dark' ? (
+            // Sun icon for dark mode (switch to light)
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          ) : (
+            // Moon icon for light mode (switch to dark)
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          )}
+        </button>
 
         {/* GitHub Button */}
         <a

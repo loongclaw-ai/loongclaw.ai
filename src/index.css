@@ -2,7 +2,7 @@
 
 /* Background gradient */
 body {
-  background: radial-gradient(circle at 50% -20%, #1c2128 0%, var(--color-bg-primary) 80%);
+  background: var(--bg-gradient);
   background-attachment: fixed;
 }
 
@@ -37,7 +37,7 @@ code, pre {
 
 /* Doc markdown content styles */
 .doc-markdown-content h2 {
-  font-family: 'Syncopate', sans-serif;
+  font-family: var(--font-display);
   font-size: 1.2rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
@@ -45,7 +45,7 @@ code, pre {
 }
 
 .doc-markdown-content h3 {
-  font-family: 'Syncopate', sans-serif;
+  font-family: var(--font-display);
   font-size: 1rem;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
@@ -68,7 +68,7 @@ code, pre {
 }
 
 .doc-markdown-content code {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   background: var(--color-bg-tertiary);
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
@@ -99,7 +99,7 @@ code, pre {
 
 /* Changelog content styles */
 .changelog-content h2 {
-  font-family: 'Syncopate', sans-serif;
+  font-family: var(--font-display);
   font-size: 1rem;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;

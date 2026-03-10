@@ -1,0 +1,10 @@
+{
+  "frontmatter": {
+    "title": "Quick Start",
+    "description": "Run your first model in 5 minutes",
+    "path": "/docs/quickstart",
+    "order": 2
+  },
+  "html": "<h1>Quick Start</h1>\n<p>Pull your first model and start chatting.</p>\n<h2>Pull a Model</h2>\n<pre><code class=\"language-bash\">claw pull literati-7b\n</code></pre>\n<h2>Start Chatting</h2>\n<pre><code class=\"language-bash\">claw run\n</code></pre>\n<h2>Try the API</h2>\n<pre><code class=\"language-bash\">curl http://localhost:11434/api/generate -d '{\n  \"model\": \"literati-7b\",\n  \"prompt\": \"Hello, how are you?\"\n}'\n</code></pre>\n<h2>Next Steps</h2>\n<ul>\n<li>Learn about <a href=\"/docs/guides/model-management\">model management</a></li>\n<li>Explore the <a href=\"/docs/api\">API reference</a></li>\n</ul>\n",
+  "slug": "quickstart"
+}

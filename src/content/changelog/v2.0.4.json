@@ -1,0 +1,8 @@
+{
+  "frontmatter": {
+    "version": "v2.0.4",
+    "date": "2025-03-10"
+  },
+  "html": "<h1>v2.0.4</h1>\n<h2>Features</h2>\n<ul>\n<li><strong>feat:</strong> Added support for new quantization formats</li>\n</ul>\n<h2>Performance</h2>\n<ul>\n<li><strong>perf:</strong> Improved inference speed by 15%</li>\n</ul>\n<h2>Bug Fixes</h2>\n<ul>\n<li><strong>fix:</strong> Fixed memory leak in long-running sessions</li>\n</ul>\n",
+  "slug": "v2.0.4"
+}

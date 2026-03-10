@@ -36,10 +36,10 @@ const ChangelogPage: FC = () => {
   if (loading) {
     return (
       <div style={{ padding: '4rem', maxWidth: '1000px', margin: '0 auto' }}>
-        <h1 style={{ fontFamily: "'Syncopate', sans-serif", fontSize: '2.5rem', color: '#C9D1D9' }}>
+        <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '2.5rem', color: 'var(--color-text-primary)' }}>
           Changelog
         </h1>
-        <p style={{ color: '#8B949E' }}>Loading...</p>
+        <p style={{ color: 'var(--color-text-secondary)' }}>Loading...</p>
       </div>
     );
   }
@@ -54,10 +54,10 @@ const ChangelogPage: FC = () => {
     >
       <h1
         style={{
-          fontFamily: "'Syncopate', sans-serif",
+          fontFamily: 'var(--font-display)',
           fontSize: '2.5rem',
           marginBottom: '3rem',
-          color: '#C9D1D9',
+          color: 'var(--color-text-primary)',
         }}
       >
         Changelog
@@ -69,7 +69,7 @@ const ChangelogPage: FC = () => {
           style={{
             marginBottom: '3rem',
             paddingBottom: '3rem',
-            borderBottom: '1px solid rgba(139, 148, 158, 0.1)',
+            borderBottom: '1px solid var(--color-border-light)',
           }}
         >
           <div
@@ -82,9 +82,9 @@ const ChangelogPage: FC = () => {
           >
             <h2
               style={{
-                fontFamily: "'JetBrains Mono', monospace",
+                fontFamily: 'var(--font-mono)',
                 fontSize: '1.5rem',
-                color: '#C9D1D9',
+                color: 'var(--color-text-primary)',
               }}
             >
               {release.version}
@@ -92,8 +92,8 @@ const ChangelogPage: FC = () => {
             <span
               style={{
                 fontSize: '0.85rem',
-                color: '#8B949E',
-                fontFamily: "'JetBrains Mono', monospace",
+                color: 'var(--color-text-secondary)',
+                fontFamily: 'var(--font-mono)',
               }}
             >
               {release.date}
@@ -104,7 +104,7 @@ const ChangelogPage: FC = () => {
             className="changelog-content"
             dangerouslySetInnerHTML={{ __html: release.html }}
             style={{
-              color: '#C9D1D9',
+              color: 'var(--color-text-primary)',
               lineHeight: '1.7',
             }}
           />
