@@ -21,7 +21,7 @@ export interface DocNode extends DocSection {
 }
 
 // Changelog
-export type ChangeType = 'feat' | 'fix' | 'perf' | 'breaking' | 'docs';
+export type ChangeType = "feat" | "fix" | "perf" | "breaking" | "docs";
 
 export interface Change {
   type: ChangeType;
@@ -35,7 +35,7 @@ export interface Release {
 }
 
 // Community
-export type ResourceType = 'discord' | 'github' | 'forum' | 'blog' | 'twitter';
+export type ResourceType = "discord" | "github" | "forum" | "blog" | "twitter";
 
 export interface CommunityResource {
   title: string;

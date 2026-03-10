@@ -57,14 +57,13 @@ export interface CommunityResource {
   title: string;
   description: string;
   url: string;
-  type: 'discord' | 'github' | 'forum' | 'blog' | 'twitter';
+  type: "discord" | "github" | "forum" | "blog" | "twitter";
 }
 
 export interface CommunityIndex {
   resources: CommunityResource[];
 }
 
-// 通用内容类型
 export interface ContentFile {
   frontmatter: Record<string, unknown>;
   html: string;

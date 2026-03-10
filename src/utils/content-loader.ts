@@ -1,16 +1,18 @@
-import type { DocsIndex, DocSection, ChangelogIndex, CommunityIndex } from '../content/types';
+import type {
+  DocsIndex,
+  DocSection,
+  ChangelogIndex,
+  CommunityIndex,
+} from "../content/types";
 
-// 导入生成的索引文件
-import docsIndex from '../content/docs-index.json';
-import changelogIndex from '../content/changelog-index.json';
-import communityIndex from '../content/community-index.json';
+import docsIndex from "../content/docs-index.json";
+import changelogIndex from "../content/changelog-index.json";
+import communityIndex from "../content/community-index.json";
 
-// 获取 Docs 索引
 export function getDocsIndex(): DocsIndex {
   return docsIndex as DocsIndex;
 }
 
-// 根据路径查找文档
 export function findDocByPath(path: string): DocSection | null {
   const index = getDocsIndex();
 
@@ -41,9 +43,11 @@ export function getCommunityIndex(): CommunityIndex {
 }
 
 // 动态导入内容文件
-export async function loadDocContent(contentPath: string): Promise<{ html: string; title: string; description?: string }> {
+export async function loadDocContent(
+  contentPath: string,
+): Promise<{ html: string; title: string; description?: string }> {
   // 从路径中提取相对路径
-  const relativePath = contentPath.replace('/src/', '');
+  const relativePath = contentPath.replace("/src/", "");
   const module = await import(`../${relativePath}`);
   return {
     html: module.html,
@@ -52,8 +56,10 @@ export async function loadDocContent(contentPath: string): Promise<{ html: strin
   };
 }
 
-export async function loadChangelogContent(contentPath: string): Promise<{ html: string; version: string; date: string }> {
-  const relativePath = contentPath.replace('/src/', '');
+export async function loadChangelogContent(
+  contentPath: string,
+): Promise<{ html: string; version: string; date: string }> {
+  const relativePath = contentPath.replace("/src/", "");
   const module = await import(`../${relativePath}`);
   return {
     html: module.html,

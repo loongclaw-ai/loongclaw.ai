@@ -1,24 +1,25 @@
 // src/features/home/components/CyberWires.tsx
-import type { FC } from 'react';
-import { useTheme, THEMES } from '../../../contexts/useTheme';
+import type { FC } from "react";
+import { useTheme, THEMES } from "../../../contexts/useTheme";
 
 const CyberWires: FC = () => {
   const { theme } = useTheme();
 
   // Dynamic stroke color based on theme
-  const strokeColor = theme === THEMES.DARK
-    ? 'rgba(139, 148, 158, 0.15)'
-    : 'rgba(70, 100, 110, 0.15)';
+  const strokeColor =
+    theme === THEMES.DARK
+      ? "rgba(139, 148, 158, 0.15)"
+      : "rgba(70, 100, 110, 0.15)";
 
   return (
     <svg
       style={{
-        position: 'fixed',
+        position: "fixed",
         top: 0,
         left: 0,
-        width: '100vw',
-        height: '100vh',
-        pointerEvents: 'none',
+        width: "100vw",
+        height: "100vh",
+        pointerEvents: "none",
         zIndex: 0,
         opacity: 0.8,
       }}

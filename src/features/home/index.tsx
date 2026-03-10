@@ -1,15 +1,15 @@
 // src/features/home/index.tsx
-import type { FC } from 'react';
-import HeroSection from './components/HeroSection';
+import type { FC } from "react";
+import HeroSection from "./components/HeroSection";
 
 const HomePage: FC = () => {
   return (
     <div
       style={{
-        padding: '2rem 4rem',
-        maxWidth: '1600px',
-        margin: '0 auto',
-        position: 'relative',
+        padding: "2rem 4rem",
+        maxWidth: "1600px",
+        margin: "0 auto",
+        position: "relative",
       }}
     >
       <HeroSection />

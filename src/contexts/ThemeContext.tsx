@@ -1,14 +1,17 @@
 // src/contexts/ThemeContext.tsx
-import { useState, useEffect, useCallback, type ReactNode } from 'react';
-import { ThemeContext, THEMES, type Theme } from './ThemeContextValue';
+import { useState, useEffect, useCallback, type ReactNode } from "react";
+import { ThemeContext, THEMES, type Theme } from "./ThemeContextValue";
 
-const STORAGE_KEY = 'loongclaw-theme';
+const STORAGE_KEY = "loongclaw-theme";
 
 // Get initial theme from localStorage or system preference
 const getInitialTheme = (): Theme => {
   try {
     const savedTheme = localStorage.getItem(STORAGE_KEY) as Theme | null;
-    if (savedTheme && (savedTheme === THEMES.DARK || savedTheme === THEMES.LIGHT)) {
+    if (
+      savedTheme &&
+      (savedTheme === THEMES.DARK || savedTheme === THEMES.LIGHT)
+    ) {
       return savedTheme;
     }
   } catch {
@@ -16,8 +19,10 @@ const getInitialTheme = (): Theme => {
   }
 
   // Check system preference
-  if (typeof window !== 'undefined') {
-    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+  if (typeof window !== "undefined") {
+    const prefersLight = window.matchMedia(
+      "(prefers-color-scheme: light)",
+    ).matches;
     return prefersLight ? THEMES.LIGHT : THEMES.DARK;
   }
 
@@ -29,7 +34,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // Apply theme to document
-    document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.setAttribute("data-theme", theme);
     try {
       localStorage.setItem(STORAGE_KEY, theme);
     } catch {

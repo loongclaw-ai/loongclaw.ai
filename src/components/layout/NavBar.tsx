@@ -132,7 +132,7 @@ const NavBar: FC = () => {
 
         {/* GitHub Button */}
         <a
-          href="https://github.com/LoongClaw/LoongClaw"
+          href="https://github.com/loongclaw-ai/loongclaw"
           target="_blank"
           rel="noopener noreferrer"
           className="navbar-btn navbar-btn-github"

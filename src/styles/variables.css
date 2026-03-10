@@ -1,154 +1,176 @@
 /* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;500;700;800&family=Noto+Serif+SC:wght@400;700;900&family=Syncopate:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;500;700;800&family=Noto+Serif+SC:wght@400;700;900&family=Syncopate:wght@400;700&display=swap");
 
 /* Dark Theme (Default) - Nocturnal Protocol */
 :root {
-  /* Core Colors - Based on RGB(13, 17, 22) = #0D1116 */
-  --color-bg-primary: rgb(13, 17, 22);
-  --color-bg-secondary: #161B22;
-  --color-bg-tertiary: #21262D;
-  --color-border: rgba(139, 148, 158, 0.2);
-  --color-border-light: rgba(139, 148, 158, 0.1);
-  --color-border-medium: rgba(139, 148, 158, 0.15);
+    /* Core Colors - Based on RGB(13, 17, 22) = #0D1116 */
+    --color-bg-primary: rgb(13, 17, 22);
+    --color-bg-secondary: #161b22;
+    --color-bg-tertiary: #21262d;
+    --color-border: rgba(139, 148, 158, 0.2);
+    --color-border-light: rgba(139, 148, 158, 0.1);
+    --color-border-medium: rgba(139, 148, 158, 0.15);
 
-  /* Text Colors */
-  --color-text-primary: #C9D1D9;
-  --color-text-secondary: #8B949E;
-  --color-text-muted: #586069;
-  --color-text-accent: #FFFFFF;
+    /* Text Colors */
+    --color-text-primary: #c9d1d9;
+    --color-text-secondary: #8b949e;
+    --color-text-muted: #586069;
+    --color-text-accent: #ffffff;
 
-  /* Accent Colors */
-  --color-accent: #C9D1D9;
-  --color-accent-hover: #FFFFFF;
+    /* Accent Colors */
+    --color-accent: #c9d1d9;
+    --color-accent-hover: #ffffff;
 
-  /* Background Gradient */
-  --bg-gradient: radial-gradient(circle at 50% -20%, #1c2128 0%, rgb(13, 17, 22) 80%);
+    /* Background Gradient */
+    --bg-gradient: radial-gradient(
+        circle at 50% -20%,
+        #1c2128 0%,
+        rgb(13, 17, 22) 80%
+    );
 
-  /* Typography */
-  --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
-  --font-display: 'Syncopate', 'Orbitron', 'Audiowide', sans-serif;
-  --font-chinese: 'Noto Serif SC', 'Noto Sans SC', serif;
+    /* Typography */
+    --font-mono: "JetBrains Mono", "Fira Code", "SF Mono", Consolas, monospace;
+    --font-display: "Syncopate", "Orbitron", "Audiowide", sans-serif;
+    --font-chinese: "Noto Serif SC", "Noto Sans SC", serif;
 
-  /* Spacing Scale */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4rem;
+    /* Spacing Scale */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
 
-  /* Layout */
-  --docs-sidebar-width: 280px;
-  --content-max-width: 1200px;
+    /* Layout */
+    --docs-sidebar-width: 280px;
+    --content-max-width: 1200px;
 
-  /* Z-index Layers */
-  --z-background: 0;
-  --z-content: 1;
-  --z-sticky: 10;
-  --z-overlay: 100;
+    /* Z-index Layers */
+    --z-background: 0;
+    --z-content: 1;
+    --z-sticky: 10;
+    --z-overlay: 100;
 
-  /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-base: 200ms ease;
-  --transition-slow: 300ms ease;
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 200ms ease;
+    --transition-slow: 300ms ease;
 }
 
 /* Light Theme - Daylight Protocol */
 [data-theme="light"] {
-  /* Core Colors - Based on RGB(135, 192, 202) = #87C0CA */
-  --color-bg-primary: #E8F4F6;
-  --color-bg-secondary: #D4E8EC;
-  --color-bg-tertiary: #B8D8DE;
-  --color-border: rgba(70, 100, 110, 0.2);
-  --color-border-light: rgba(70, 100, 110, 0.1);
-  --color-border-medium: rgba(70, 100, 110, 0.15);
+    /* Core Colors - Based on RGB(135, 192, 202) = #87C0CA */
+    --color-bg-primary: #e8f4f6;
+    --color-bg-secondary: #d4e8ec;
+    --color-bg-tertiary: #b8d8de;
+    --color-border: rgba(70, 100, 110, 0.2);
+    --color-border-light: rgba(70, 100, 110, 0.1);
+    --color-border-medium: rgba(70, 100, 110, 0.15);
 
-  /* Text Colors */
-  --color-text-primary: #1A2A30;
-  --color-text-secondary: #3D5A63;
-  --color-text-muted: #5E7A85;
-  --color-text-accent: #0D1A20;
+    /* Text Colors */
+    --color-text-primary: #1a2a30;
+    --color-text-secondary: #3d5a63;
+    --color-text-muted: #5e7a85;
+    --color-text-accent: #0d1a20;
 
-  /* Accent Colors */
-  --color-accent: #1A2A30;
-  --color-accent-hover: #0D1A20;
+    /* Accent Colors */
+    --color-accent: #1a2a30;
+    --color-accent-hover: #0d1a20;
 
-  /* Background Gradient - Using the specified RGB(135, 192, 202) */
-  --bg-gradient: radial-gradient(circle at 50% -20%, #B8D8DE 0%, rgb(135, 192, 202) 80%);
+    /* Background Gradient - Using the specified RGB(135, 192, 202) */
+    --bg-gradient: radial-gradient(
+        circle at 50% -20%,
+        #b8d8de 0%,
+        rgb(135, 192, 202) 80%
+    );
 }
 
 /* Base Reset */
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 body {
-  font-family: var(--font-mono);
-  background: var(--color-bg-primary);
-  color: var(--color-text-primary);
-  min-height: 100vh;
-  overflow-x: hidden;
-  line-height: 1.6;
+    font-family: var(--font-mono);
+    background: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
 }
 
 /* Selection */
 ::selection {
-  background: rgba(139, 148, 158, 0.3);
-  color: var(--color-text-primary);
+    background: rgba(139, 148, 158, 0.3);
+    color: var(--color-text-primary);
 }
 
 [data-theme="light"] ::selection {
-  background: rgba(70, 100, 110, 0.2);
+    background: rgba(70, 100, 110, 0.2);
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+    width: 6px;
+    height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bg-secondary);
+    background: var(--color-bg-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-text-muted);
-  border-radius: 3px;
+    background: var(--color-text-muted);
+    border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-text-secondary);
+    background: var(--color-text-secondary);
 }
 
 /* Animations */
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+    0%,
+    50% {
+        opacity: 1;
+    }
+    51%,
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .animate-blink {
-  animation: blink 1s infinite;
+    animation: blink 1s infinite;
 }
 
 .terminal-cursor {
-  animation: blink 1s infinite;
+    animation: blink 1s infinite;
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
+    animation: fadeIn 0.6s ease-out forwards;
 }

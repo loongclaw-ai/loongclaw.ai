@@ -1,202 +1,203 @@
-@import './styles/variables.css';
+@import "./styles/variables.css";
 
 /* Background gradient */
 body {
-  background: var(--bg-gradient);
-  background-attachment: fixed;
+    background: var(--bg-gradient);
+    background-attachment: fixed;
 }
 
 /* Link Styles */
 a {
-  color: inherit;
-  text-decoration: none;
-  transition: opacity var(--transition-base);
+    color: inherit;
+    text-decoration: none;
+    transition: opacity var(--transition-base);
 }
 
 a:hover {
-  opacity: 0.8;
+    opacity: 0.8;
 }
 
 /* Button Base */
 button {
-  font-family: inherit;
-  border: none;
-  cursor: pointer;
-  transition: all var(--transition-base);
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-base);
 }
 
 button:focus-visible {
-  outline: 2px solid var(--color-text-secondary);
-  outline-offset: 2px;
+    outline: 2px solid var(--color-text-secondary);
+    outline-offset: 2px;
 }
 
 /* Footer Links */
 .footer-link {
-  color: inherit;
-  transition: color var(--transition-base);
+    color: inherit;
+    transition: color var(--transition-base);
 }
 
 .footer-link:hover {
-  color: var(--color-text-primary);
+    color: var(--color-text-primary);
 }
 
 /* Navbar Buttons */
 .navbar-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  background-color: var(--color-bg-tertiary);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  color: var(--color-text-primary);
-  cursor: pointer;
-  transition: all var(--transition-base);
-  padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    padding: 0;
 }
 
 .navbar-btn:hover {
-  background-color: var(--color-bg-secondary);
-  border-color: var(--color-border-medium);
+    background-color: var(--color-bg-secondary);
+    border-color: var(--color-border-medium);
 }
 
 .navbar-btn-github {
-  width: auto;
-  gap: var(--space-sm);
-  padding: var(--space-sm) var(--space-md);
-  text-decoration: none;
-  font-size: 0.875rem;
-  font-weight: 500;
+    width: auto;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
 }
 
 /* Hero Buttons */
 .hero-btn {
-  padding: 0.8rem 2rem;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  cursor: pointer;
-  transition: all var(--transition-base);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
+    padding: 0.8rem 2rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
 }
 
 .hero-btn-primary {
-  background: var(--color-accent);
-  color: var(--color-bg-primary);
-  border: none;
-  font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: 0.1em;
+    background: var(--color-accent);
+    color: var(--color-bg-primary);
+    border: none;
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.1em;
 }
 
 .hero-btn-primary:hover {
-  background: var(--color-accent-hover);
+    background: var(--color-accent-hover);
 }
 
 .hero-btn-secondary {
-  background: transparent;
-  color: var(--color-text-primary);
-  border: 1px solid var(--color-border);
-  font-family: var(--font-mono);
-  letter-spacing: 0.05em;
+    background: transparent;
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+    font-family: var(--font-mono);
+    letter-spacing: 0.05em;
 }
 
 .hero-btn-secondary:hover {
-  background: var(--color-bg-tertiary);
-  border-color: var(--color-text-primary);
+    background: var(--color-bg-tertiary);
+    border-color: var(--color-text-primary);
 }
 
 /* Code & Pre */
-code, pre {
-  font-family: var(--font-mono);
+code,
+pre {
+    font-family: var(--font-mono);
 }
 
 /* Doc markdown content styles */
 .doc-markdown-content h2 {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  color: var(--color-text-primary);
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-text-primary);
 }
 
 .doc-markdown-content h3 {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
-  color: var(--color-text-primary);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-text-primary);
 }
 
 .doc-markdown-content p {
-  margin-bottom: 1rem;
-  color: var(--color-text-primary);
+    margin-bottom: 1rem;
+    color: var(--color-text-primary);
 }
 
 .doc-markdown-content ul,
 .doc-markdown-content ol {
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .doc-markdown-content li {
-  margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .doc-markdown-content code {
-  font-family: var(--font-mono);
-  background: var(--color-bg-tertiary);
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  font-size: 0.9em;
+    font-family: var(--font-mono);
+    background: var(--color-bg-tertiary);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
 }
 
 .doc-markdown-content pre {
-  background: var(--color-bg-secondary);
-  padding: 1rem;
-  border-radius: 4px;
-  overflow-x: auto;
-  margin-bottom: 1rem;
+    background: var(--color-bg-secondary);
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin-bottom: 1rem;
 }
 
 .doc-markdown-content pre code {
-  background: none;
-  padding: 0;
+    background: none;
+    padding: 0;
 }
 
 .doc-markdown-content a {
-  color: var(--color-accent);
-  text-decoration: none;
+    color: var(--color-accent);
+    text-decoration: none;
 }
 
 .doc-markdown-content a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* Changelog content styles */
 .changelog-content h2 {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
-  color: var(--color-text-primary);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-text-primary);
 }
 
 .changelog-content ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .changelog-content li {
-  margin-bottom: 0.75rem;
-  font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
 }
 
 .changelog-content li::before {
-  content: '•';
-  margin-right: 0.5rem;
-  color: var(--color-accent);
+    content: "•";
+    margin-right: 0.5rem;
+    color: var(--color-accent);
 }
