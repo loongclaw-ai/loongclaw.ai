@@ -9,12 +9,12 @@ resources:
     description: "Join our community for real-time support and discussions."
     url: "https://discord.gg/loongclaw"
     type: "discord"
-  - title: "Twitter"
+  - title: "Telegram"
     description: "Follow us for updates, tips, and community highlights."
-    url: "https://twitter.com/loongclaw"
-    type: "twitter"
+    url: "https://t.me/loongclawai"
+    type: "telegram"
 ---
 
 # Community Resources
 
-Connect with developers, contributors, and users. loongclaw is built by the community, for the community.
+Connect with developers, contributors, and users. LoongClaw is built by the community, for the community.

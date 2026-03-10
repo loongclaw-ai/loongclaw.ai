@@ -5,6 +5,13 @@ import type {
   CommunityIndex,
 } from "../content/types";
 
+interface DocsIndexWithRoot extends DocsIndex {
+  title?: string;
+  description?: string;
+  path?: string;
+  contentPath?: string;
+}
+
 import docsIndex from "../content/docs-index.json";
 import changelogIndex from "../content/changelog-index.json";
 import communityIndex from "../content/community-index.json";
@@ -14,7 +21,18 @@ export function getDocsIndex(): DocsIndex {
 }
 
 export function findDocByPath(path: string): DocSection | null {
-  const index = getDocsIndex();
+  const index = getDocsIndex() as DocsIndexWithRoot;
+
+  // 检查根路径 /docs
+  if (path === "/docs" && index.contentPath) {
+    return {
+      id: "index",
+      title: index.title || "Documentation",
+      path: "/docs",
+      description: index.description,
+      contentPath: index.contentPath,
+    };
+  }
 
   for (const section of index.sections) {
     if (section.path === path) {

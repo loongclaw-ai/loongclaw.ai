@@ -1,0 +1,9 @@
+{
+  "frontmatter": {
+    "title": "Features",
+    "description": "Detailed introduction to LoongClaw core features",
+    "path": "/docs/features"
+  },
+  "html": "<h1>Features</h1>\n<p>LoongClaw provides rich features to help you build powerful AI applications.</p>\n<h2>Chat</h2>\n<p>Powerful interactive chat with multi-session management and persistent storage.</p>\n<ul>\n<li>Multi-session isolation</li>\n<li>SQLite persistence</li>\n<li>Sliding window memory</li>\n<li>History viewing</li>\n</ul>\n<p><a href=\"/docs/features/chat\">Learn more →</a></p>\n<h2>Tool System</h2>\n<p>Built-in powerful tool runtime supporting safe execution of system commands and file operations.</p>\n<ul>\n<li>Shell command execution</li>\n<li>File read/write operations</li>\n<li>Security whitelist mechanism</li>\n<li>Capability authorization</li>\n</ul>\n<p><a href=\"/docs/features/tools\">Learn more →</a></p>\n<h2>Channel Integration</h2>\n<p>Support for multiple communication channels to meet different scenario requirements.</p>\n<ul>\n<li>CLI command-line interface</li>\n<li>Telegram Bot</li>\n<li>Feishu application</li>\n</ul>\n<p><a href=\"/docs/features/channels\">Learn more →</a></p>\n<h2>Spec Workflow</h2>\n<p>Advanced workflow definition format using JSON to describe complex execution flows.</p>\n<ul>\n<li>Workflow orchestration</li>\n<li>Permission control</li>\n<li>Audit tracing</li>\n<li>Lifecycle management</li>\n</ul>\n<p><a href=\"/docs/features/spec\">Learn more →</a></p>\n",
+  "slug": "index"
+}

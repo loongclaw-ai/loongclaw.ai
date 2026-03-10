@@ -1,9 +1,0 @@
-{
-  "frontmatter": {
-    "title": "API Reference",
-    "description": "REST API documentation",
-    "path": "/docs/api"
-  },
-  "html": "<h1>API Reference</h1>\n<p>REST API documentation.</p>\n<h2>Endpoints</h2>\n<ul>\n<li><a href=\"/docs/api/generate\">Generate</a> - Generate completions</li>\n<li><a href=\"/docs/api/chat\">Chat</a> - Chat completions API</li>\n</ul>\n",
-  "slug": "index"
-}

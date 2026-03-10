@@ -1,74 +1,80 @@
 {
+  "title": "Documentation",
+  "description": "LoongClaw Documentation - Rust-first Agentic OS Foundation Framework",
+  "path": "/docs",
+  "contentPath": "/src/content/docs/index.json",
   "sections": [
     {
-      "id": "getting-started",
-      "title": "Getting Started",
-      "path": "/docs",
-      "description": "Quick start guide for loongclaw",
+      "id": "features",
+      "title": "Features",
+      "path": "/docs/features",
+      "description": "Detailed introduction to LoongClaw core features",
+      "contentPath": "/src/content/docs/features/index.json",
       "children": [
-        {
-          "id": "installation",
-          "title": "Installation",
-          "path": "/docs/installation",
-          "description": "Install loongclaw on your system",
-          "contentPath": "/src/content/docs/getting-started/installation.json",
-          "order": 1
-        },
-        {
-          "id": "quickstart",
-          "title": "Quick Start",
-          "path": "/docs/quickstart",
-          "description": "Run your first model in 5 minutes",
-          "contentPath": "/src/content/docs/getting-started/quickstart.json",
-          "order": 2
-        }
-      ]
-    },
-    {
-      "id": "guides",
-      "title": "Guides",
-      "path": "/docs/guides",
-      "description": "Detailed usage guides",
-      "children": [
-        {
-          "id": "model-management",
-          "title": "Model Management",
-          "path": "/docs/guides/model-management",
-          "description": "Pull, list, and remove models",
-          "contentPath": "/src/content/docs/guides/model-management.json",
-          "order": 1
-        },
-        {
-          "id": "configuration",
-          "title": "Configuration",
-          "path": "/docs/guides/configuration",
-          "description": "Customize loongclaw settings",
-          "contentPath": "/src/content/docs/guides/configuration.json",
-          "order": 2
-        }
-      ]
-    },
-    {
-      "id": "api",
-      "title": "API Reference",
-      "path": "/docs/api",
-      "description": "REST API documentation",
-      "children": [
-        {
-          "id": "generate",
-          "title": "Generate",
-          "path": "/docs/api/generate",
-          "description": "Generate completions",
-          "contentPath": "/src/content/docs/api/generate.json",
-          "order": 1
-        },
         {
           "id": "chat",
           "title": "Chat",
-          "path": "/docs/api/chat",
-          "description": "Chat completions API",
-          "contentPath": "/src/content/docs/api/chat.json",
+          "path": "/docs/features/chat",
+          "description": "LoongClaw interactive chat and session management",
+          "contentPath": "/src/content/docs/features/chat.json",
+          "order": 4
+        },
+        {
+          "id": "tools",
+          "title": "Tool System",
+          "path": "/docs/features/tools",
+          "description": "Guide to using LoongClaw built-in tools",
+          "contentPath": "/src/content/docs/features/tools.json",
+          "order": 5
+        },
+        {
+          "id": "channels",
+          "title": "Channel Integration",
+          "path": "/docs/features/channels",
+          "description": "Configuration and usage of CLI, Telegram, Feishu, and other channels",
+          "contentPath": "/src/content/docs/features/channels.json",
+          "order": 6
+        },
+        {
+          "id": "spec",
+          "title": "Spec Workflow",
+          "path": "/docs/features/spec",
+          "description": "LoongClaw Spec advanced workflow definition and execution",
+          "contentPath": "/src/content/docs/features/spec.json",
+          "order": 7
+        }
+      ]
+    },
+    {
+      "id": "troubleshooting",
+      "title": "Troubleshooting",
+      "path": "/docs/troubleshooting",
+      "description": "Common problem diagnosis and solutions for LoongClaw",
+      "contentPath": "/src/content/docs/troubleshooting/index.json",
+      "children": []
+    },
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "path": "/docs/getting-started",
+      "description": "Install, configure, and run LoongClaw",
+      "contentPath": "/src/content/docs/getting-started/index.json",
+      "children": [
+        {
+          "id": "configuration",
+          "title": "Configuration Guide",
+          "path": "/docs/getting-started/configuration",
+          "description": "Detailed explanation of LoongClaw configuration files",
+          "contentPath": "/src/content/docs/getting-started/configuration.json",
           "order": 2
+        },
+        {
+          "id": "commands",
+          "title": "Command Line Tools",
+          "path": "/docs/getting-started/commands",
+          "description": "Complete reference for LoongClaw CLI commands",
+          "contentPath": "/src/content/docs/getting-started/commands.json",
+          "order": 3
         }
       ]
     }

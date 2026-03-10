@@ -1,19 +1,9 @@
 {
   "releases": [
     {
-      "version": "v2.0.4",
-      "date": "2025-03-10",
-      "contentPath": "/src/content/changelog/v2.0.4.json"
-    },
-    {
-      "version": "v2.0.3",
-      "date": "2025-03-01",
-      "contentPath": "/src/content/changelog/v2.0.3.json"
-    },
-    {
-      "version": "v2.0.2",
-      "date": "2025-02-20",
-      "contentPath": "/src/content/changelog/v2.0.2.json"
+      "version": "v0.1.0",
+      "date": "2025-04-01",
+      "contentPath": "/src/content/changelog/v0.1.0.json"
     }
   ]
 }

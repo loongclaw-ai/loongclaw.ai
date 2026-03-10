@@ -13,10 +13,10 @@
       "type": "discord"
     },
     {
-      "title": "Twitter",
+      "title": "Telegram",
       "description": "Follow us for updates, tips, and community highlights.",
-      "url": "https://twitter.com/loongclaw",
-      "type": "twitter"
+      "url": "https://t.me/loongclawai",
+      "type": "telegram"
     }
   ]
 }
