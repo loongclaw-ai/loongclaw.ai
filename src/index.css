@@ -34,3 +34,90 @@ button:focus-visible {
 code, pre {
   font-family: var(--font-mono);
 }
+
+/* Doc markdown content styles */
+.doc-markdown-content h2 {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+}
+
+.doc-markdown-content h3 {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-primary);
+}
+
+.doc-markdown-content p {
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+}
+
+.doc-markdown-content ul,
+.doc-markdown-content ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.doc-markdown-content li {
+  margin-bottom: 0.5rem;
+}
+
+.doc-markdown-content code {
+  font-family: 'JetBrains Mono', monospace;
+  background: var(--color-bg-tertiary);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.doc-markdown-content pre {
+  background: var(--color-bg-secondary);
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.doc-markdown-content pre code {
+  background: none;
+  padding: 0;
+}
+
+.doc-markdown-content a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.doc-markdown-content a:hover {
+  text-decoration: underline;
+}
+
+/* Changelog content styles */
+.changelog-content h2 {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-primary);
+}
+
+.changelog-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.changelog-content li {
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.changelog-content li::before {
+  content: '•';
+  margin-right: 0.5rem;
+  color: var(--color-accent);
+}
