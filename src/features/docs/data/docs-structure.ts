@@ -5,13 +5,13 @@ export const docsStructure: DocSection[] = [
     id: 'getting-started',
     title: 'Getting Started',
     path: '/docs',
-    description: 'Quick start guide for OpenClaw',
+    description: 'Quick start guide for LoongClaw',
     children: [
       {
         id: 'installation',
         title: 'Installation',
         path: '/docs/installation',
-        description: 'Install OpenClaw on your system',
+        description: 'Install LoongClaw on your system',
       },
       {
         id: 'quickstart',
@@ -37,7 +37,7 @@ export const docsStructure: DocSection[] = [
         id: 'configuration',
         title: 'Configuration',
         path: '/docs/guides/configuration',
-        description: 'Customize OpenClaw settings',
+        description: 'Customize LoongClaw settings',
       },
     ],
   },

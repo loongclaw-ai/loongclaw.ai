@@ -33,7 +33,7 @@ const HeroSection: FC = () => {
             color: 'var(--color-text-primary)',
           }}
         >
-          Open
+          Loong
           <br />
           Claw
         </h1>
@@ -83,7 +83,7 @@ const HeroSection: FC = () => {
             Initialize System
           </button>
           <a
-            href="https://github.com/OpenClaw/OpenClaw"
+            href="https://github.com/LoongClaw/LoongClaw"
             target="_blank"
             rel="noopener noreferrer"
             style={{

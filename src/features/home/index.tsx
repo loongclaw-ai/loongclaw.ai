@@ -10,7 +10,6 @@ const HomePage: FC = () => {
         maxWidth: '1600px',
         margin: '0 auto',
         position: 'relative',
-        minHeight: 'calc(100vh - 64px)',
       }}
     >
       <HeroSection />

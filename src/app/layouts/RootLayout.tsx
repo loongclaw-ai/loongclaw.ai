@@ -2,6 +2,7 @@
 import type { FC, ReactNode } from 'react';
 import CyberWires from '../../features/home/components/CyberWires';
 import NavBar from '../../components/layout/NavBar';
+import Footer from '../../components/layout/Footer';
 
 interface RootLayoutProps {
   children: ReactNode;
@@ -15,8 +16,8 @@ export const RootLayout: FC<RootLayoutProps> = ({ children }) => {
         backgroundAttachment: 'fixed',
         color: 'var(--color-text-primary)',
         fontFamily: "'JetBrains Mono', monospace",
-        minHeight: '100vh',
-        overflowX: 'hidden',
+        height: '100vh',
+        overflow: 'hidden',
         display: 'flex',
         position: 'relative',
       }}
@@ -30,16 +31,19 @@ export const RootLayout: FC<RootLayoutProps> = ({ children }) => {
           display: 'flex',
           flexDirection: 'column',
           width: '100%',
-          minHeight: '100vh',
+          height: '100vh',
           position: 'relative',
           zIndex: 1,
         }}
       >
-        {/* Navigation */}
+        {/* Navigation - Fixed at top */}
         <NavBar />
 
-        {/* Page content */}
-        <main style={{ flex: 1 }}>{children}</main>
+        {/* Page content - Scrollable middle area */}
+        <main style={{ flex: 1, overflow: 'auto' }}>{children}</main>
+
+        {/* Footer - Fixed at bottom */}
+        <Footer />
       </div>
     </div>
   );

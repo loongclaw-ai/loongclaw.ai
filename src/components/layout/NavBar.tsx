@@ -57,14 +57,14 @@ const NavBar: FC = () => {
         {/* Theme-based Icon */}
         <img
           src={theme === 'dark' ? darkIcon : lightIcon}
-          alt="OpenClaw"
+          alt="LoongClaw"
           style={{
             width: '32px',
             height: '32px',
             objectFit: 'contain',
           }}
         />
-        <span>OPENCLAW</span>
+        <span>LOONGCLAW</span>
       </Link>
 
       {/* Navigation Items */}
@@ -153,7 +153,7 @@ const NavBar: FC = () => {
 
         {/* GitHub Button */}
         <a
-          href="https://github.com/OpenClaw/OpenClaw"
+          href="https://github.com/LoongClaw/LoongClaw"
           target="_blank"
           rel="noopener noreferrer"
           style={{

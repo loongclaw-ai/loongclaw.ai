@@ -30,7 +30,7 @@ const CommunityPage: FC = () => {
           fontSize: '1.1rem',
         }}
       >
-        Connect with developers, contributors, and users. OpenClaw is built by the community, for the community.
+        Connect with developers, contributors, and users. LoongClaw is built by the community, for the community.
       </p>
 
       <div

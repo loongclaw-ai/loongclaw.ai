@@ -15,14 +15,12 @@ const DocsSidebar: FC = () => {
     <aside
       style={{
         width: '280px',
+        minWidth: '280px',
         borderRight: '1px solid var(--color-border-light)',
         padding: '2rem 1.5rem',
-        position: 'fixed',
-        left: 0,
-        top: '73px',
-        bottom: 0,
-        overflowY: 'auto',
         backgroundColor: 'var(--color-bg-secondary)',
+        overflowY: 'auto',
+        height: '100%',
       }}
     >
       {sections.map((section: DocSection) => (

@@ -149,7 +149,7 @@ const TerminalWindow: FC = () => {
               ~ $
             </span>
             <span style={{ color: 'var(--color-text-primary)' }}>
-              curl -sSfL https://openclaw.ai/install.sh | sh
+              curl -sSfL https://loongclaw.ai/install.sh | sh
             </span>
           </div>
           <br />

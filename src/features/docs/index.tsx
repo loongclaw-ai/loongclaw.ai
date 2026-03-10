@@ -4,13 +4,13 @@ import DocContent from './components/DocContent';
 
 const DocsPage: FC = () => {
   return (
-    <div style={{ display: 'flex', minHeight: 'calc(100vh - 73px)' }}>
+    <div style={{ display: 'flex', height: '100%' }}>
       <DocsSidebar />
       <main
         style={{
-          marginLeft: '280px',
-          padding: '3rem 4rem',
           flex: 1,
+          padding: '3rem 4rem 6rem 4rem',
+          overflowY: 'auto',
         }}
       >
         <DocContent />
