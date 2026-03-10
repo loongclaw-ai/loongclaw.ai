@@ -6,6 +6,43 @@ body {
     background-attachment: fixed;
 }
 
+/* Animations */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(139, 148, 158, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(139, 148, 158, 0.4);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes scan {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
 /* Link Styles */
 a {
     color: inherit;
@@ -81,6 +118,7 @@ button:focus-visible {
     text-decoration: none;
     display: inline-flex;
     align-items: center;
+    border-radius: 4px;
 }
 
 .hero-btn-primary {
@@ -94,6 +132,7 @@ button:focus-visible {
 
 .hero-btn-primary:hover {
     background: var(--color-accent-hover);
+    box-shadow: 0 0 20px rgba(201, 209, 217, 0.3);
 }
 
 .hero-btn-secondary {
@@ -107,6 +146,36 @@ button:focus-visible {
 .hero-btn-secondary:hover {
     background: var(--color-bg-tertiary);
     border-color: var(--color-text-primary);
+}
+
+/* Stat Item Hover */
+.stat-item {
+    position: relative;
+}
+
+.stat-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(139, 148, 158, 0.1) 0%,
+        transparent 50%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.stat-item:hover::before {
+    opacity: 1;
+}
+
+.stat-item:hover {
+    transform: translateY(-2px);
 }
 
 /* Code & Pre */
