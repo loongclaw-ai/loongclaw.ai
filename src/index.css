@@ -30,6 +30,85 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
+/* Footer Links */
+.footer-link {
+  color: inherit;
+  transition: color var(--transition-base);
+}
+
+.footer-link:hover {
+  color: var(--color-text-primary);
+}
+
+/* Navbar Buttons */
+.navbar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  padding: 0;
+}
+
+.navbar-btn:hover {
+  background-color: var(--color-bg-secondary);
+  border-color: var(--color-border-medium);
+}
+
+.navbar-btn-github {
+  width: auto;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Hero Buttons */
+.hero-btn {
+  padding: 0.8rem 2rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.hero-btn-primary {
+  background: var(--color-accent);
+  color: var(--color-bg-primary);
+  border: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.hero-btn-primary:hover {
+  background: var(--color-accent-hover);
+}
+
+.hero-btn-secondary {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+}
+
+.hero-btn-secondary:hover {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-text-primary);
+}
+
 /* Code & Pre */
 code, pre {
   font-family: var(--font-mono);

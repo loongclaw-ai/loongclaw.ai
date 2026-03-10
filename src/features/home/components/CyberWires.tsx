@@ -1,12 +1,12 @@
 // src/features/home/components/CyberWires.tsx
 import type { FC } from 'react';
-import { useTheme } from '../../../contexts/useTheme';
+import { useTheme, THEMES } from '../../../contexts/useTheme';
 
 const CyberWires: FC = () => {
   const { theme } = useTheme();
 
   // Dynamic stroke color based on theme
-  const strokeColor = theme === 'dark'
+  const strokeColor = theme === THEMES.DARK
     ? 'rgba(139, 148, 158, 0.15)'
     : 'rgba(70, 100, 110, 0.15)';
 

@@ -1,27 +1,21 @@
 // src/features/home/components/TerminalWindow.tsx
-import { useState, useEffect } from 'react';
 import type { FC } from 'react';
-import { useTheme } from '../../../contexts/useTheme';
+import { useTheme, THEMES } from '../../../contexts/useTheme';
 
 const TerminalWindow: FC = () => {
-  const [cursorVisible, setCursorVisible] = useState(true);
   const { theme } = useTheme();
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCursorVisible((v) => !v);
-    }, 500);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Dynamic styles based on theme
-  const terminalBg = theme === 'dark'
+  // Dynamic styles based on theme - memoized
+  const isDark = theme === THEMES.DARK;
+  const terminalBg = isDark
     ? 'rgba(13, 17, 22, 0.95)'
     : 'rgba(232, 244, 246, 0.95)';
-
-  const headerBg = theme === 'dark'
+  const headerBg = isDark
     ? 'rgba(139, 148, 158, 0.05)'
     : 'rgba(70, 100, 110, 0.05)';
+  const boxShadow = isDark
+    ? '0 20px 60px rgba(0,0,0,0.8)'
+    : '0 20px 60px rgba(0,0,0,0.2)';
 
   return (
     <div
@@ -69,9 +63,7 @@ const TerminalWindow: FC = () => {
           border: '1px solid var(--color-border)',
           width: '100%',
           minWidth: '400px',
-          boxShadow: theme === 'dark'
-            ? '0 20px 60px rgba(0,0,0,0.8)'
-            : '0 20px 60px rgba(0,0,0,0.2)',
+          boxShadow: boxShadow,
           display: 'flex',
           flexDirection: 'column',
         }}
@@ -213,13 +205,13 @@ const TerminalWindow: FC = () => {
               &nbsp;&nbsp;&nbsp;&nbsp;pattern = re.compile(r&apos;^(?P&lt;time&gt;\S+\s+\d+\s+\d+:\d+:\d+)&apos;)
             </span>
             <span
+              className="terminal-cursor"
               style={{
                 display: 'inline-block',
                 width: '8px',
                 height: '15px',
                 background: 'var(--color-text-secondary)',
                 verticalAlign: 'middle',
-                opacity: cursorVisible ? 1 : 0,
               }}
             />
           </div>

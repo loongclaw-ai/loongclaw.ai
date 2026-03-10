@@ -2,7 +2,6 @@
 import type { FC, ReactNode } from 'react';
 import CyberWires from '../../features/home/components/CyberWires';
 import NavBar from '../../components/layout/NavBar';
-import Footer from '../../components/layout/Footer';
 
 interface RootLayoutProps {
   children: ReactNode;
@@ -41,9 +40,6 @@ export const RootLayout: FC<RootLayoutProps> = ({ children }) => {
 
         {/* Page content - Scrollable middle area */}
         <main style={{ flex: 1, overflow: 'auto' }}>{children}</main>
-
-        {/* Footer - Fixed at bottom */}
-        <Footer />
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 // src/components/layout/NavBar.tsx
 import { Link, useLocation } from 'react-router-dom';
 import type { FC } from 'react';
-import { useTheme } from '../../contexts/useTheme';
+import { useTheme, THEMES } from '../../contexts/useTheme';
 
 // Import icon assets
 import darkIcon from '../../assets/loongclaw-icon-dark.ico';
@@ -56,7 +56,7 @@ const NavBar: FC = () => {
       >
         {/* Theme-based Icon */}
         <img
-          src={theme === 'dark' ? darkIcon : lightIcon}
+          src={theme === THEMES.DARK ? darkIcon : lightIcon}
           alt="LoongClaw"
           style={{
             width: '32px',
@@ -88,31 +88,10 @@ const NavBar: FC = () => {
         {/* Theme Toggle Button */}
         <button
           onClick={toggleTheme}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '36px',
-            height: '36px',
-            backgroundColor: 'var(--color-bg-tertiary)',
-            border: '1px solid var(--color-border)',
-            borderRadius: '6px',
-            color: 'var(--color-text-primary)',
-            cursor: 'pointer',
-            transition: 'all var(--transition-base)',
-            padding: 0,
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = 'var(--color-bg-secondary)';
-            e.currentTarget.style.borderColor = 'var(--color-border-medium)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'var(--color-bg-tertiary)';
-            e.currentTarget.style.borderColor = 'var(--color-border)';
-          }}
-          title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+          className="navbar-btn"
+          title={theme === THEMES.DARK ? 'Switch to light theme' : 'Switch to dark theme'}
         >
-          {theme === 'dark' ? (
+          {theme === THEMES.DARK ? (
             // Sun icon for dark mode (switch to light)
             <svg
               width="18"
@@ -156,28 +135,7 @@ const NavBar: FC = () => {
           href="https://github.com/LoongClaw/LoongClaw"
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 'var(--space-sm)',
-            padding: 'var(--space-sm) var(--space-md)',
-            backgroundColor: 'var(--color-bg-tertiary)',
-            border: '1px solid var(--color-border)',
-            borderRadius: '6px',
-            color: 'var(--color-text-primary)',
-            textDecoration: 'none',
-            fontSize: '0.875rem',
-            fontWeight: 500,
-            transition: 'all var(--transition-base)',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = 'var(--color-bg-secondary)';
-            e.currentTarget.style.borderColor = 'var(--color-border-medium)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'var(--color-bg-tertiary)';
-            e.currentTarget.style.borderColor = 'var(--color-border)';
-          }}
+          className="navbar-btn navbar-btn-github"
         >
           <svg
             width="16"

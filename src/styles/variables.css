@@ -41,7 +41,6 @@
   /* Layout */
   --docs-sidebar-width: 280px;
   --content-max-width: 1200px;
-  --sidebar-width: 0px;
 
   /* Z-index Layers */
   --z-background: 0;
@@ -143,6 +142,10 @@ body {
 }
 
 .animate-blink {
+  animation: blink 1s infinite;
+}
+
+.terminal-cursor {
   animation: blink 1s infinite;
 }
 

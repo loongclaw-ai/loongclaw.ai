@@ -22,16 +22,7 @@ export const Footer: FC = () => {
           href="https://github.com/loongclaw"
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            color: "inherit",
-            transition: "color var(--transition-base)",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.color = "var(--color-text-primary)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.color = "inherit";
-          }}
+          className="footer-link"
         >
           GitHub
         </a>
@@ -39,16 +30,7 @@ export const Footer: FC = () => {
           href="https://twitter.com/loongclaw"
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            color: "inherit",
-            transition: "color var(--transition-base)",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.color = "var(--color-text-primary)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.color = "inherit";
-          }}
+          className="footer-link"
         >
           Twitter
         </a>
@@ -56,16 +38,7 @@ export const Footer: FC = () => {
           href="https://discord.gg/loongclaw"
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            color: "inherit",
-            transition: "color var(--transition-base)",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.color = "var(--color-text-primary)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.color = "inherit";
-          }}
+          className="footer-link"
         >
           Discord
         </a>
