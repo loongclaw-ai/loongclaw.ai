@@ -8,7 +8,6 @@ const Footer: FC = () => {
       style={{
         padding: '2rem 0',
         borderTop: '1px solid var(--color-border)',
-        background: 'var(--color-bg-secondary)',
       }}
     >
       <div
