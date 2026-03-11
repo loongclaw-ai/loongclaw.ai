@@ -60,29 +60,29 @@
 
 /* Light Theme - Daylight Protocol */
 [data-theme="light"] {
-    /* Core Colors - Based on RGB(135, 192, 202) = #87C0CA */
-    --color-bg-primary: #e8f4f6;
-    --color-bg-secondary: #d4e8ec;
-    --color-bg-tertiary: #b8d8de;
-    --color-border: rgba(70, 100, 110, 0.2);
-    --color-border-light: rgba(70, 100, 110, 0.1);
-    --color-border-medium: rgba(70, 100, 110, 0.15);
+    /* Core Colors - Warm Cream: RGB(252, 245, 226) = #FCF5E2 */
+    --color-bg-primary: rgb(252, 245, 226);
+    --color-bg-secondary: #f5ecd8;
+    --color-bg-tertiary: #ede4cf;
+    --color-border: rgba(120, 110, 90, 0.2);
+    --color-border-light: rgba(120, 110, 90, 0.1);
+    --color-border-medium: rgba(120, 110, 90, 0.15);
 
-    /* Text Colors */
-    --color-text-primary: #1a2a30;
-    --color-text-secondary: #3d5a63;
-    --color-text-muted: #5e7a85;
-    --color-text-accent: #0d1a20;
+    /* Text Colors - Warm dark tones */
+    --color-text-primary: #2d2920;
+    --color-text-secondary: #5a5340;
+    --color-text-muted: #8a8068;
+    --color-text-accent: #1a1710;
 
     /* Accent Colors */
-    --color-accent: #1a2a30;
-    --color-accent-hover: #0d1a20;
+    --color-accent: #2d2920;
+    --color-accent-hover: #1a1710;
 
-    /* Background Gradient - Using the specified RGB(135, 192, 202) */
+    /* Background Gradient - Warm Cream */
     --bg-gradient: radial-gradient(
         circle at 50% -20%,
-        #b8d8de 0%,
-        rgb(135, 192, 202) 80%
+        #f5ecd8 0%,
+        rgb(252, 245, 226) 80%
     );
 }
 
@@ -119,7 +119,7 @@ body {
 }
 
 [data-theme="light"] ::selection {
-    background: rgba(70, 100, 110, 0.2);
+    background: rgba(120, 110, 90, 0.2);
 }
 
 /* Scrollbar */

@@ -2,8 +2,15 @@
 import type { FC } from "react";
 import StatsMatrix from "./StatsMatrix";
 import TerminalWindow from "./TerminalWindow";
+import { useTheme, THEMES } from "../../../contexts/useTheme";
 
 const HeroSection: FC = () => {
+  const { theme } = useTheme();
+  const isDark = theme === THEMES.DARK;
+
+  const accentLineColor = isDark
+    ? "var(--color-accent)"
+    : "rgb(177, 35, 28)";
   return (
     <section
       style={{
@@ -25,8 +32,7 @@ const HeroSection: FC = () => {
             top: "0",
             bottom: "0",
             width: "1px",
-            background:
-              "linear-gradient(180deg, transparent 0%, var(--color-accent) 20%, var(--color-accent) 80%, transparent 100%)",
+            background: `linear-gradient(180deg, transparent 0%, ${accentLineColor} 20%, ${accentLineColor} 80%, transparent 100%)`,
             opacity: 0.3,
           }}
         />

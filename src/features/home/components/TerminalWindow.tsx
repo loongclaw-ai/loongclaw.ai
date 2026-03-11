@@ -8,10 +8,16 @@ const TerminalWindow: FC = () => {
   const isDark = theme === THEMES.DARK;
   const terminalBg = isDark
     ? "rgba(13, 17, 22, 0.95)"
-    : "rgba(232, 244, 246, 0.95)";
+    : "rgba(252, 245, 226, 0.95)";
   const headerBg = isDark
     ? "rgba(139, 148, 158, 0.05)"
-    : "rgba(70, 100, 110, 0.05)";
+    : "rgba(120, 110, 90, 0.05)";
+  const cornerBorderColor = isDark
+    ? "var(--color-text-muted)"
+    : "rgb(177, 35, 28)";
+  const scanLineColor = isDark
+    ? "rgba(0,0,0,0.03)"
+    : "rgba(177, 35, 28, 0.03)";
 
   return (
     <div
@@ -27,8 +33,8 @@ const TerminalWindow: FC = () => {
           position: "absolute",
           width: "24px",
           height: "24px",
-          borderTop: "1px solid var(--color-text-muted)",
-          borderLeft: "1px solid var(--color-text-muted)",
+          borderTop: `1px solid ${cornerBorderColor}`,
+          borderLeft: `1px solid ${cornerBorderColor}`,
           top: "-8px",
           left: "-8px",
           zIndex: 3,
@@ -153,8 +159,7 @@ const TerminalWindow: FC = () => {
               left: 0,
               right: 0,
               bottom: 0,
-              background:
-                "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px)",
+              background: `repeating-linear-gradient(0deg, transparent, transparent 2px, ${scanLineColor} 2px, ${scanLineColor} 4px)`,
               pointerEvents: "none",
               opacity: isDark ? 0.5 : 0.3,
             }}

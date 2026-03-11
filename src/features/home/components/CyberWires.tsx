@@ -9,17 +9,17 @@ const CyberWires: FC = () => {
   const primaryColor =
     theme === THEMES.DARK
       ? "rgba(139, 148, 158, 0.2)"
-      : "rgba(70, 100, 110, 0.2)";
+      : "rgba(177, 35, 28, 0.25)";
 
   const secondaryColor =
     theme === THEMES.DARK
       ? "rgba(139, 148, 158, 0.1)"
-      : "rgba(70, 100, 110, 0.1)";
+      : "rgba(177, 35, 28, 0.12)";
 
   const accentColor =
     theme === THEMES.DARK
       ? "rgba(139, 148, 158, 0.15)"
-      : "rgba(70, 100, 110, 0.15)";
+      : "rgba(177, 35, 28, 0.18)";
 
   return (
     <svg

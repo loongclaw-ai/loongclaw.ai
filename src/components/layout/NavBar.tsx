@@ -1,11 +1,9 @@
-// src/components/layout/NavBar.tsx
-import { Link, useLocation } from 'react-router-dom';
-import type { FC } from 'react';
-import { useTheme, THEMES } from '../../contexts/useTheme';
+import { Link, useLocation } from "react-router-dom";
+import type { FC } from "react";
+import { useTheme, THEMES } from "../../contexts/useTheme";
 
-// Import icon assets
-import darkIcon from '../../assets/loongclaw-icon-dark.ico';
-import lightIcon from '../../assets/loongclaw-icon-light.ico';
+import darkIcon from "../../assets/loongclaw-icon-white.ico";
+import lightIcon from "../../assets/loongclaw-icon-red.ico";
 
 const NavBar: FC = () => {
   const location = useLocation();
@@ -16,42 +14,45 @@ const NavBar: FC = () => {
   };
 
   const getLinkStyle = (path: string): React.CSSProperties => ({
-    color: isActive(path) ? 'var(--color-text-accent)' : 'var(--color-text-secondary)',
+    color: isActive(path)
+      ? "var(--color-text-accent)"
+      : "var(--color-text-secondary)",
     fontWeight: isActive(path) ? 700 : 400,
-    textDecoration: 'none',
-    transition: 'color var(--transition-base), font-weight var(--transition-base)',
-    fontSize: '0.875rem',
-    letterSpacing: '0.05em',
+    textDecoration: "none",
+    transition:
+      "color var(--transition-base), font-weight var(--transition-base)",
+    fontSize: "0.875rem",
+    letterSpacing: "0.05em",
   });
 
   return (
     <nav
       style={{
-        position: 'sticky',
+        position: "sticky",
         top: 0,
-        zIndex: 'var(--z-sticky)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: 'var(--space-md) var(--space-xl)',
-        backgroundColor: 'var(--color-bg-secondary)',
-        backdropFilter: 'blur(12px)',
-        borderBottom: '1px solid var(--color-border)',
+        zIndex: "var(--z-sticky)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: "var(--space-md) var(--space-xl)",
+        backgroundColor: "var(--color-bg-secondary)",
+        backdropFilter: "blur(12px)",
+        borderBottom: "1px solid var(--color-border)",
       }}
     >
       {/* Logo / Home Link */}
       <Link
         to="/"
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 'var(--space-sm)',
-          textDecoration: 'none',
-          color: 'var(--color-text-accent)',
-          fontFamily: 'var(--font-display)',
-          fontSize: '1.25rem',
+          display: "flex",
+          alignItems: "center",
+          gap: "var(--space-sm)",
+          textDecoration: "none",
+          color: "var(--color-text-accent)",
+          fontFamily: "var(--font-display)",
+          fontSize: "1.25rem",
           fontWeight: 700,
-          letterSpacing: '0.1em',
+          letterSpacing: "0.1em",
         }}
       >
         {/* Theme-based Icon */}
@@ -59,9 +60,10 @@ const NavBar: FC = () => {
           src={theme === THEMES.DARK ? darkIcon : lightIcon}
           alt="LoongClaw"
           style={{
-            width: '32px',
-            height: '32px',
-            objectFit: 'contain',
+            width: "32px",
+            height: "32px",
+            objectFit: "contain",
+            transform: "translateY(-3px)",
           }}
         />
         <span>LOONGCLAW</span>
@@ -70,18 +72,18 @@ const NavBar: FC = () => {
       {/* Navigation Items */}
       <div
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 'var(--space-xl)',
+          display: "flex",
+          alignItems: "center",
+          gap: "var(--space-xl)",
         }}
       >
-        <Link to="/docs" style={getLinkStyle('/docs')}>
+        <Link to="/docs" style={getLinkStyle("/docs")}>
           Documentation
         </Link>
-        <Link to="/community" style={getLinkStyle('/community')}>
+        <Link to="/community" style={getLinkStyle("/community")}>
           Community
         </Link>
-        <Link to="/changelog" style={getLinkStyle('/changelog')}>
+        <Link to="/changelog" style={getLinkStyle("/changelog")}>
           Changelog
         </Link>
 
@@ -89,7 +91,11 @@ const NavBar: FC = () => {
         <button
           onClick={toggleTheme}
           className="navbar-btn"
-          title={theme === THEMES.DARK ? 'Switch to light theme' : 'Switch to dark theme'}
+          title={
+            theme === THEMES.DARK
+              ? "Switch to light theme"
+              : "Switch to dark theme"
+          }
         >
           {theme === THEMES.DARK ? (
             // Sun icon for dark mode (switch to light)
