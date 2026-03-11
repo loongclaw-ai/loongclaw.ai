@@ -6,9 +6,9 @@ import FeatureCard from './FeatureCard';
 const features = [
   {
     icon: Shield,
-    title: '安全内核',
+    title: 'Secure Kernel',
     description:
-      'Capability Token 机制，每调用都需授权，人工审批，审计追踪',
+      'Capability Token mechanism, authorization required for every call, human approval, audit trails',
     details: [
       'Capability-based policy engine',
       'Human approval gates',
@@ -18,8 +18,8 @@ const features = [
   },
   {
     icon: Zap,
-    title: '轻量高效',
-    description: '边缘设备运行，256MB RAM，<0.4s 冷启动，42 TOK/s',
+    title: 'Lightweight & Efficient',
+    description: 'Edge device ready, 256MB RAM, <0.4s cold boot, 42 TOK/s',
     details: [
       'Raspberry Pi 4 compatible',
       '256 MB RAM footprint',
@@ -29,8 +29,8 @@ const features = [
   },
   {
     icon: Puzzle,
-    title: '简单扩展',
-    description: 'WASM 插件，多语言支持，7-crate DAG 架构，可替换组件',
+    title: 'Easy to Extend',
+    description: 'WASM plugins, multi-language support, 7-crate DAG architecture, pluggable components',
     details: [
       'WASM runtime execution',
       'Multi-language plugins',
@@ -63,7 +63,7 @@ const FeaturesSection: FC = () => {
             marginBottom: '0.75rem',
           }}
         >
-          核心特性
+          Core Features
         </h2>
         <p
           style={{
@@ -73,7 +73,7 @@ const FeaturesSection: FC = () => {
             margin: '0 auto',
           }}
         >
-          安全、轻量、可扩展的 AI 助手运行时
+          Secure, lightweight, and extensible AI assistant runtime
         </p>
       </div>
 

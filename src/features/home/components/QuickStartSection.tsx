@@ -4,9 +4,9 @@ import StepIndicator from './StepIndicator';
 import CodeBlock from './CodeBlock';
 
 const steps = [
-  { number: 1, title: '安装', description: 'Clone and run install script' },
-  { number: 2, title: '配置', description: 'Set your API key' },
-  { number: 3, title: '聊天', description: 'Start chatting' },
+  { number: 1, title: 'Install', description: 'Clone and run install script' },
+  { number: 2, title: 'Configure', description: 'Set your API key' },
+  { number: 3, title: 'Chat', description: 'Start chatting' },
 ];
 
 const installCode = `# Clone the repository
@@ -54,7 +54,7 @@ const QuickStartSection: FC = () => {
             marginBottom: '0.75rem',
           }}
         >
-          5 分钟上手
+          Get Started in 5 Minutes
         </h2>
         <p
           style={{
@@ -64,7 +64,7 @@ const QuickStartSection: FC = () => {
             margin: '0 auto',
           }}
         >
-          简单三步，开始你的 LoongClaw 之旅
+          Three simple steps to start your LoongClaw journey
         </p>
       </div>
 
@@ -109,7 +109,7 @@ const QuickStartSection: FC = () => {
             >
               1
             </span>
-            安装
+            Install
           </h3>
           <CodeBlock code={installCode} language="bash" />
         </div>
@@ -142,7 +142,7 @@ const QuickStartSection: FC = () => {
             >
               2
             </span>
-            配置
+            Configure
           </h3>
           <CodeBlock code={configCode} language="bash" />
         </div>
@@ -175,7 +175,7 @@ const QuickStartSection: FC = () => {
             >
               3
             </span>
-            运行
+            Run
           </h3>
           <CodeBlock code={chatCode} language="bash" />
         </div>

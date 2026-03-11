@@ -56,7 +56,7 @@ const Footer: FC = () => {
               e.currentTarget.style.color = 'var(--color-text-secondary)';
             }}
           >
-            简体中文
+            Simplified Chinese
           </a>
           <span style={{ color: 'var(--color-border)' }}>|</span>
           <a

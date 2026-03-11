@@ -33,7 +33,7 @@ const CommunitySection: FC = () => {
             marginBottom: '0.75rem',
           }}
         >
-          社区与生态
+          Community & Ecosystem
         </h2>
         <p
           style={{
@@ -43,7 +43,7 @@ const CommunitySection: FC = () => {
             margin: '0 auto',
           }}
         >
-          加入我们的开源社区，共同推动 Agentic OS 的发展
+          Join our open source community and help advance the Agentic OS
         </p>
       </div>
 
@@ -106,7 +106,7 @@ const CommunitySection: FC = () => {
             marginBottom: '1rem',
           }}
         >
-          感谢以下赞助商支持本项目
+          Thanks to our sponsor
         </p>
         <a
           href="https://www.volcengine.com"
@@ -175,7 +175,7 @@ const CommunitySection: FC = () => {
           }}
         >
           <Github size={18} />
-          <span>欢迎贡献代码</span>
+          <span>Contribute on GitHub</span>
         </a>
       </div>
     </section>

@@ -51,10 +51,10 @@ const crates = [
 ];
 
 const highlights = [
-  '零循环依赖 - 严格的 DAG 结构',
-  '稳定内核契约 - contracts crate 零内部依赖',
-  '业务逻辑与核心分离 - extension planes 架构',
-  'Capability-gated by default - 每个操作都需授权',
+  'Zero cyclic dependencies - Strict DAG structure',
+  'Stable kernel contracts - contracts crate with zero internal deps',
+  'Business logic separated from core - extension planes architecture',
+  'Capability-gated by default - every operation requires authorization',
 ];
 
 const ArchitectureSection: FC = () => {
@@ -80,7 +80,7 @@ const ArchitectureSection: FC = () => {
             marginBottom: '0.75rem',
           }}
         >
-          7-Crate 严格 DAG 架构
+          7-Crate Strict DAG Architecture
         </h2>
         <p
           style={{
@@ -90,7 +90,7 @@ const ArchitectureSection: FC = () => {
             margin: '0 auto',
           }}
         >
-          清晰的依赖方向，稳定的内核契约
+          Clear dependency direction, stable kernel contracts
         </p>
       </div>
 
