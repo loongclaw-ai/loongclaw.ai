@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { getDocsIndex } from "../../../utils/content-loader";
 import type { DocSection } from "../../../types";
@@ -6,6 +7,7 @@ import type { DocSection } from "../../../types";
 const DocsSidebar: FC = () => {
   const location = useLocation();
   const { sections } = getDocsIndex();
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const isActive = (path: string) => {
     return (
@@ -16,11 +18,10 @@ const DocsSidebar: FC = () => {
   return (
     <aside
       style={{
-        width: "280px",
-        minWidth: "280px",
+        width: "260px",
+        minWidth: "260px",
         borderRight: "1px solid var(--color-border-light)",
         padding: "2rem 1.5rem",
-        backgroundColor: "var(--color-bg-secondary)",
         overflowY: "auto",
         height: "100%",
       }}
@@ -35,12 +36,13 @@ const DocsSidebar: FC = () => {
                 ? "var(--color-text-primary)"
                 : "var(--color-text-secondary)",
               fontWeight: isActive(section.path) ? 700 : 600,
-              fontSize: "0.85rem",
+              fontSize: "0.75rem",
               textTransform: "uppercase",
-              letterSpacing: "0.05em",
+              letterSpacing: "0.1em",
               marginBottom: "0.5rem",
               fontFamily: "var(--font-display)",
               textDecoration: "none",
+              transition: "color 200ms ease",
             }}
           >
             {section.title}
@@ -51,14 +53,16 @@ const DocsSidebar: FC = () => {
                 <Link
                   key={child.id}
                   to={child.path}
+                  onMouseEnter={() => setHoveredItem(child.path)}
+                  onMouseLeave={() => setHoveredItem(null)}
                   style={{
                     display: "block",
                     color:
                       location.pathname === child.path
                         ? "var(--color-text-primary)"
                         : "var(--color-text-muted)",
-                    fontSize: "0.8rem",
-                    padding: "0.35rem 0",
+                    fontSize: "0.85rem",
+                    padding: "0.4rem 0",
                     fontFamily: "var(--font-mono)",
                     borderLeft:
                       location.pathname === child.path
@@ -67,7 +71,8 @@ const DocsSidebar: FC = () => {
                     paddingLeft: "0.75rem",
                     marginLeft: "-0.75rem",
                     textDecoration: "none",
-                    transition: "color var(--transition-base)",
+                    transition: "all 200ms ease",
+                    transform: hoveredItem === child.path ? "translateX(2px)" : "none",
                   }}
                 >
                   {child.title}
