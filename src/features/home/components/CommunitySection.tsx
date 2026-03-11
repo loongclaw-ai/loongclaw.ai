@@ -1,8 +1,16 @@
 import type { FC } from 'react';
 import { Github, ExternalLink } from 'lucide-react';
 import SocialLinks from './SocialLinks';
+import { useTheme, THEMES } from '../../../contexts/useTheme';
 
 const CommunitySection: FC = () => {
+  const { theme } = useTheme();
+  const isDark = theme === THEMES.DARK;
+
+  // Star History theme URLs
+  const starHistoryUrl = isDark
+    ? 'https://api.star-history.com/svg?repos=loongclaw-ai/loongclaw&type=Date&theme=dark'
+    : 'https://api.star-history.com/svg?repos=loongclaw-ai/loongclaw&type=Date';
   return (
     <section
       style={{
@@ -68,20 +76,14 @@ const CommunitySection: FC = () => {
             display: 'inline-block',
           }}
         >
-          <picture>
-            <source
-              media="(prefers-color-scheme: dark)"
-              srcSet="https://api.star-history.com/svg?repos=loongclaw-ai/loongclaw&type=Date&theme=dark"
-            />
-            <img
-              src="https://api.star-history.com/svg?repos=loongclaw-ai/loongclaw&type=Date"
-              alt="Star History Chart"
-              style={{
-                maxWidth: '100%',
-                height: 'auto',
-              }}
-            />
-          </picture>
+          <img
+            src={starHistoryUrl}
+            alt="Star History Chart"
+            style={{
+              maxWidth: '100%',
+              height: 'auto',
+            }}
+          />
         </a>
       </div>
 
