@@ -165,7 +165,7 @@ const HeroSection: FC = () => {
             flexWrap: "wrap",
           }}
         >
-          {["Rust", "WebAssembly", "ONNX", "Quantized"].map((tech) => (
+          {["Rust", "WebAssembly", "Agent", "Plugin"].map((tech) => (
             <span
               key={tech}
               style={{
