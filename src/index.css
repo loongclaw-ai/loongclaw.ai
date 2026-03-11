@@ -334,6 +334,28 @@ pre {
     }
 }
 
+/* Feature card hover effect */
+.feature-card {
+  transition: all 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Code block button hover */
+.code-block-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* Social link hover */
+.social-link:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
     *,
