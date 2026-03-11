@@ -1,0 +1,183 @@
+import type { FC } from 'react';
+import { Github, ExternalLink } from 'lucide-react';
+import SocialLinks from './SocialLinks';
+
+const CommunitySection: FC = () => {
+  return (
+    <section
+      style={{
+        padding: '4rem 0',
+        borderTop: '1px solid var(--color-border)',
+      }}
+    >
+      {/* Section header */}
+      <div
+        style={{
+          textAlign: 'center',
+          marginBottom: '3rem',
+        }}
+      >
+        <h2
+          style={{
+            fontSize: '1.75rem',
+            fontWeight: 700,
+            color: 'var(--color-text-primary)',
+            marginBottom: '0.75rem',
+          }}
+        >
+          社区与生态
+        </h2>
+        <p
+          style={{
+            fontSize: '1rem',
+            color: 'var(--color-text-secondary)',
+            maxWidth: '600px',
+            margin: '0 auto',
+          }}
+        >
+          加入我们的开源社区，共同推动 Agentic OS 的发展
+        </p>
+      </div>
+
+      {/* Star History */}
+      <div
+        style={{
+          background: 'var(--color-bg-secondary)',
+          border: '1px solid var(--color-border)',
+          borderRadius: '8px',
+          padding: '1.5rem',
+          marginBottom: '2rem',
+          textAlign: 'center',
+        }}
+      >
+        <h3
+          style={{
+            fontSize: '1rem',
+            fontWeight: 600,
+            color: 'var(--color-text-secondary)',
+            marginBottom: '1rem',
+          }}
+        >
+          GitHub Star History
+        </h3>
+        <a
+          href="https://star-history.com/#loongclaw-ai/loongclaw&Date"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-block',
+          }}
+        >
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcSet="https://api.star-history.com/svg?repos=loongclaw-ai/loongclaw&type=Date&theme=dark"
+            />
+            <img
+              src="https://api.star-history.com/svg?repos=loongclaw-ai/loongclaw&type=Date"
+              alt="Star History Chart"
+              style={{
+                maxWidth: '100%',
+                height: 'auto',
+              }}
+            />
+          </picture>
+        </a>
+      </div>
+
+      {/* Social Links */}
+      <div style={{ marginBottom: '2.5rem' }}>
+        <SocialLinks />
+      </div>
+
+      {/* Sponsor */}
+      <div
+        style={{
+          textAlign: 'center',
+          marginBottom: '2rem',
+        }}
+      >
+        <p
+          style={{
+            fontSize: '0.8rem',
+            color: 'var(--color-text-muted)',
+            marginBottom: '1rem',
+          }}
+        >
+          感谢以下赞助商支持本项目
+        </p>
+        <a
+          href="https://www.volcengine.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            padding: '0.75rem 1.5rem',
+            background: 'var(--color-bg-secondary)',
+            border: '1px solid var(--color-border)',
+            borderRadius: '6px',
+            color: 'var(--color-text-secondary)',
+            fontSize: '0.9rem',
+            textDecoration: 'none',
+            transition: 'all 0.2s ease',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = 'var(--color-accent)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = 'var(--color-border)';
+          }}
+        >
+          <span
+            style={{
+              fontWeight: 600,
+              color: 'var(--color-text-primary)',
+            }}
+          >
+            Volcengine
+          </span>
+          <ExternalLink size={14} />
+        </a>
+      </div>
+
+      {/* Contributing CTA */}
+      <div
+        style={{
+          textAlign: 'center',
+        }}
+      >
+        <a
+          href="https://github.com/loongclaw-ai/loongclaw/blob/main/CONTRIBUTING.md"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            padding: '0.75rem 1.5rem',
+            background: 'var(--color-accent)',
+            borderRadius: '6px',
+            color: 'var(--color-bg-primary)',
+            fontSize: '0.9rem',
+            fontWeight: 600,
+            textDecoration: 'none',
+            transition: 'all 0.2s ease',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.opacity = '0.9';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.opacity = '1';
+          }}
+        >
+          <Github size={18} />
+          <span>欢迎贡献代码</span>
+        </a>
+      </div>
+    </section>
+  );
+};
+
+export default CommunitySection;
