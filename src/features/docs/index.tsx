@@ -9,8 +9,10 @@ const DocsPage: FC = () => {
       <main
         style={{
           flex: 1,
-          padding: '3rem 4rem 6rem 4rem',
+          padding: '4rem 5rem 8rem',
           overflowY: 'auto',
+          display: 'flex',
+          justifyContent: 'center',
         }}
       >
         <DocContent />
