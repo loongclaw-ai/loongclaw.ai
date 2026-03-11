@@ -6,6 +6,9 @@ import { useTheme, THEMES } from '../../../contexts/useTheme';
 const CommunitySection: FC = () => {
   const { theme } = useTheme();
   const isDark = theme === THEMES.DARK;
+  const dividerColor = isDark
+    ? 'var(--color-border)'
+    : 'rgb(177, 35, 28)';
 
   // Star History theme URLs
   const starHistoryUrl = isDark
@@ -15,7 +18,7 @@ const CommunitySection: FC = () => {
     <section
       style={{
         padding: '4rem 0',
-        borderTop: '1px solid var(--color-border)',
+        borderTop: `1px solid ${dividerColor}`,
       }}
     >
       {/* Section header */}

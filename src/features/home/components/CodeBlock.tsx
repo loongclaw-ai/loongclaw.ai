@@ -57,7 +57,7 @@ const CodeBlock: FC<CodeBlockProps> = ({ code, language = 'bash' }) => {
             background: 'transparent',
             border: '1px solid var(--color-border)',
             borderRadius: '4px',
-            color: copied ? 'var(--color-success)' : 'var(--color-text-secondary)',
+            color: copied ? '#22c55e' : 'var(--color-text-secondary)',
             fontSize: '0.7rem',
             cursor: 'pointer',
             transition: 'all 0.2s ease',

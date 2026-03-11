@@ -1,5 +1,7 @@
 // src/features/home/components/QuickStartSection.tsx
 import type { FC } from 'react';
+import { useState } from 'react';
+import { useTheme, THEMES } from '../../../contexts/useTheme';
 import StepIndicator from './StepIndicator';
 import CodeBlock from './CodeBlock';
 
@@ -31,12 +33,28 @@ loongclaw chat
 # Or run diagnostics
 loongclaw doctor --fix`;
 
+const codeBlocks = [installCode, configCode, chatCode];
+
 const QuickStartSection: FC = () => {
+  const { theme } = useTheme();
+  const isDark = theme === THEMES.DARK;
+  const dividerColor = isDark
+    ? 'var(--color-border)'
+    : 'rgb(177, 35, 28)';
+  
+  const [activeStep, setActiveStep] = useState(1);
+
+  const handleStepClick = (step: number) => {
+    if (step !== activeStep) {
+      setActiveStep(step);
+    }
+  };
+
   return (
     <section
       style={{
         padding: '4rem 0',
-        borderTop: '1px solid var(--color-border)',
+        borderTop: `1px solid ${dividerColor}`,
       }}
     >
       {/* Section header */}
@@ -68,117 +86,49 @@ const QuickStartSection: FC = () => {
         </p>
       </div>
 
-      {/* Step indicator */}
-      <div style={{ marginBottom: '3rem' }}>
-        <StepIndicator steps={steps} activeStep={1} />
+      {/* Step indicator - clickable */}
+      <div style={{ marginBottom: '2rem' }}>
+        <StepIndicator 
+          steps={steps} 
+          activeStep={activeStep}
+          onStepClick={handleStepClick}
+        />
       </div>
 
-      {/* Code blocks grid */}
+      {/* Code blocks - cross fade with height preservation */}
       <div
         style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '1.5rem',
+          maxWidth: '600px',
+          margin: '0 auto',
+          position: 'relative',
+          minHeight: '280px',
         }}
       >
-        <div>
-          <h3
-            style={{
-              fontSize: '0.9rem',
-              fontWeight: 600,
-              color: 'var(--color-text-secondary)',
-              marginBottom: '0.75rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-            }}
-          >
-            <span
+        {codeBlocks.map((code, index) => {
+          const stepNumber = index + 1;
+          const isActive = stepNumber === activeStep;
+          
+          return (
+            <div
+              key={stepNumber}
               style={{
-                width: '24px',
-                height: '24px',
-                borderRadius: '50%',
-                background: 'var(--color-accent)',
-                color: 'var(--color-bg-primary)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '0.75rem',
-                fontWeight: 700,
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                opacity: isActive ? 1 : 0,
+                zIndex: isActive ? 1 : 0,
+                transform: isActive ? 'translateY(0)' : 'translateY(8px)',
+                transition: isActive 
+                  ? 'opacity 300ms ease 50ms, transform 300ms ease 50ms'
+                  : 'opacity 200ms ease, transform 200ms ease',
+                pointerEvents: isActive ? 'auto' : 'none',
               }}
             >
-              1
-            </span>
-            Install
-          </h3>
-          <CodeBlock code={installCode} language="bash" />
-        </div>
-
-        <div>
-          <h3
-            style={{
-              fontSize: '0.9rem',
-              fontWeight: 600,
-              color: 'var(--color-text-secondary)',
-              marginBottom: '0.75rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-            }}
-          >
-            <span
-              style={{
-                width: '24px',
-                height: '24px',
-                borderRadius: '50%',
-                background: 'var(--color-accent)',
-                color: 'var(--color-bg-primary)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '0.75rem',
-                fontWeight: 700,
-              }}
-            >
-              2
-            </span>
-            Configure
-          </h3>
-          <CodeBlock code={configCode} language="bash" />
-        </div>
-
-        <div>
-          <h3
-            style={{
-              fontSize: '0.9rem',
-              fontWeight: 600,
-              color: 'var(--color-text-secondary)',
-              marginBottom: '0.75rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-            }}
-          >
-            <span
-              style={{
-                width: '24px',
-                height: '24px',
-                borderRadius: '50%',
-                background: 'var(--color-accent)',
-                color: 'var(--color-bg-primary)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '0.75rem',
-                fontWeight: 700,
-              }}
-            >
-              3
-            </span>
-            Run
-          </h3>
-          <CodeBlock code={chatCode} language="bash" />
-        </div>
+              <CodeBlock code={code} language="bash" />
+            </div>
+          );
+        })}
       </div>
     </section>
   );

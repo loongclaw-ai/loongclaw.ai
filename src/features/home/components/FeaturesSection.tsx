@@ -1,6 +1,7 @@
 // src/features/home/components/FeaturesSection.tsx
 import type { FC } from 'react';
 import { Shield, Zap, Puzzle } from 'lucide-react';
+import { useTheme, THEMES } from '../../../contexts/useTheme';
 import FeatureCard from './FeatureCard';
 
 const features = [
@@ -41,11 +42,16 @@ const features = [
 ];
 
 const FeaturesSection: FC = () => {
+  const { theme } = useTheme();
+  const isDark = theme === THEMES.DARK;
+  const dividerColor = isDark
+    ? 'var(--color-border)'
+    : 'rgb(177, 35, 28)';
   return (
     <section
       style={{
         padding: '4rem 0',
-        borderTop: '1px solid var(--color-border)',
+        borderTop: `1px solid ${dividerColor}`,
       }}
     >
       {/* Section header */}
