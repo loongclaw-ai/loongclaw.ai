@@ -9,21 +9,23 @@ import Footer from "../../components/layout/Footer";
 
 const HomePage: FC = () => {
   return (
-    <div
-      style={{
-        padding: "2rem 4rem",
-        maxWidth: "1600px",
-        margin: "0 auto",
-        position: "relative",
-      }}
-    >
-      <HeroSection />
-      <FeaturesSection />
-      <QuickStartSection />
-      <ArchitectureSection />
-      <CommunitySection />
+    <>
+      <div
+        style={{
+          padding: "2rem 4rem 0",
+          maxWidth: "1600px",
+          margin: "0 auto",
+          position: "relative",
+        }}
+      >
+        <HeroSection />
+        <FeaturesSection />
+        <QuickStartSection />
+        <ArchitectureSection />
+        <CommunitySection />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 };
 
