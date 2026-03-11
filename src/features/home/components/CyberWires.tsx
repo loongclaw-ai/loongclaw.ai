@@ -36,8 +36,29 @@ const CyberWires: FC = () => {
       preserveAspectRatio="none"
       viewBox="0 0 1440 900"
     >
+      <defs>
+        <style>
+          {`
+            @keyframes pulse {
+              0%, 100% { opacity: 0.2; }
+              50% { opacity: 0.5; }
+            }
+            .animate-pulse {
+              animation: pulse 4s ease-in-out infinite;
+            }
+            .animate-pulse-slow {
+              animation: pulse 6s ease-in-out infinite;
+            }
+            .animate-pulse-fast {
+              animation: pulse 3s ease-in-out infinite;
+            }
+          `}
+        </style>
+      </defs>
+
       {/* Main dragon body - classic serpentine dragon shape */}
       <path
+        className="animate-pulse"
         d="M -100 200
            C 100 200, 200 100, 350 150
            C 500 200, 450 350, 600 380
@@ -52,6 +73,7 @@ const CyberWires: FC = () => {
 
       {/* Dragon body underside line */}
       <path
+        className="animate-pulse-slow"
         d="M -80 230
            C 120 230, 220 130, 370 180
            C 520 230, 470 380, 620 410
@@ -66,6 +88,8 @@ const CyberWires: FC = () => {
 
       {/* Dragon tail - long flowing downward curve */}
       <path
+        className="animate-pulse"
+        style={{ animationDelay: "1s" }}
         d="M 1350 480
            C 1450 520, 1500 650, 1400 750
            C 1300 850, 1150 800, 1100 900"
@@ -77,6 +101,8 @@ const CyberWires: FC = () => {
 
       {/* Dragon tail inner curve */}
       <path
+        className="animate-pulse-slow"
+        style={{ animationDelay: "2s" }}
         d="M 1370 510
            C 1470 550, 1520 680, 1420 780
            C 1320 880, 1170 830, 1120 930"
@@ -88,6 +114,7 @@ const CyberWires: FC = () => {
 
       {/* Dragon head outline - upper curve */}
       <path
+        className="animate-pulse-fast"
         d="M 350 150
            C 300 120, 250 140, 200 100
            C 150 60, 100 80, 50 50"
@@ -99,6 +126,8 @@ const CyberWires: FC = () => {
 
       {/* Dragon head lower curve */}
       <path
+        className="animate-pulse-slow"
+        style={{ animationDelay: "1.5s" }}
         d="M 370 180
            C 320 150, 270 170, 220 130
            C 170 90, 120 110, 70 80"
@@ -110,6 +139,8 @@ const CyberWires: FC = () => {
 
       {/* Dragon whisker - long flowing line */}
       <path
+        className="animate-pulse"
+        style={{ animationDelay: "0.5s" }}
         d="M 200 100
            C 180 180, 280 280, 220 420
            C 160 560, 20 600, 60 750"
@@ -121,6 +152,8 @@ const CyberWires: FC = () => {
 
       {/* Dragon whisker - second line */}
       <path
+        className="animate-pulse-slow"
+        style={{ animationDelay: "1.5s" }}
         d="M 220 130
            C 200 200, 300 300, 240 440
            C 180 580, 50 620, 90 770"
@@ -132,6 +165,8 @@ const CyberWires: FC = () => {
 
       {/* Dragon horn / spine accent */}
       <path
+        className="animate-pulse-fast"
+        style={{ animationDelay: "0.8s" }}
         d="M 250 135
            C 230 80, 200 60, 180 20"
         fill="none"
@@ -142,6 +177,8 @@ const CyberWires: FC = () => {
 
       {/* Mid-body wave accent */}
       <path
+        className="animate-pulse"
+        style={{ animationDelay: "2s" }}
         d="M 600 250
            C 700 220, 800 280, 900 260
            C 1000 240, 1100 300, 1200 280"
@@ -149,11 +186,12 @@ const CyberWires: FC = () => {
         stroke={accentColor}
         strokeWidth="1"
         strokeLinecap="round"
-        strokeDasharray="6 3"
       />
 
       {/* Lower body flow */}
       <path
+        className="animate-pulse-slow"
+        style={{ animationDelay: "3s" }}
         d="M 400 550
            C 550 500, 700 600, 850 550
            C 1000 500, 1150 600, 1300 550"
