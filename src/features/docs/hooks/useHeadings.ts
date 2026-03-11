@@ -6,7 +6,7 @@ export interface Heading {
   level: number;
 }
 
-export function useHeadings(contentRef: React.RefObject<HTMLElement>) {
+export function useHeadings(contentRef: React.RefObject<HTMLElement | null>) {
   const [headings, setHeadings] = useState<Heading[]>([]);
 
   useEffect(() => {

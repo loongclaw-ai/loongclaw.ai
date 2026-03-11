@@ -5,7 +5,7 @@ import { findDocByPath } from "../../../utils/content-loader";
 import { useDocContent } from "../../../hooks/useContent";
 
 interface DocContentProps {
-  contentRef?: RefObject<HTMLElement>;
+  contentRef?: React.RefObject<HTMLElement | null>;
 }
 
 const DocContent: FC<DocContentProps> = ({ contentRef }) => {
@@ -20,7 +20,7 @@ const DocContent: FC<DocContentProps> = ({ contentRef }) => {
 
   if (loading) {
     return (
-      <article ref={contentRef as RefObject<HTMLArticleElement>} style={{ maxWidth: "720px" }}>
+      <article ref={contentRef as RefObject<HTMLElement>} style={{ maxWidth: "720px" }}>
         <p style={{ color: "var(--color-text-secondary)" }}>Loading...</p>
       </article>
     );
@@ -28,7 +28,7 @@ const DocContent: FC<DocContentProps> = ({ contentRef }) => {
 
   if (error || !data) {
     return (
-      <article ref={contentRef as RefObject<HTMLArticleElement>} style={{ maxWidth: "720px" }}>
+      <article ref={contentRef as RefObject<HTMLElement>} style={{ maxWidth: "720px" }}>
         <h1
           style={{
             fontFamily: "var(--font-display)",
@@ -51,7 +51,7 @@ const DocContent: FC<DocContentProps> = ({ contentRef }) => {
 
   return (
     <article
-      ref={contentRef as RefObject<HTMLArticleElement>}
+      ref={contentRef as RefObject<HTMLElement>}
       style={{
         maxWidth: "720px",
         opacity: isVisible ? 1 : 0,
