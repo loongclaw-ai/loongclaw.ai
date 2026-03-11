@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
+    "lucide-react": "^0.577.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "remark": "^15.0.1",
