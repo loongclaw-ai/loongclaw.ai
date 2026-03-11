@@ -110,7 +110,7 @@ const TerminalWindow: FC = () => {
                 background: "#22c55e",
               }}
             />
-            root@loongclaw:~$
+            loongclaw@claw:~$
           </span>
           <div style={{ display: "flex", gap: "6px" }}>
             <div
@@ -167,7 +167,7 @@ const TerminalWindow: FC = () => {
               fontStyle: "italic",
             }}
           >
-            # Install via package manager
+            # Clone the repository
           </div>
           <div style={{ marginBottom: "0.5rem" }}>
             <span
@@ -179,7 +179,7 @@ const TerminalWindow: FC = () => {
               $
             </span>
             <span style={{ color: "var(--color-text-primary)" }}>
-              curl -sSfL https://loongclaw.ai/install.sh | sh
+              git clone https://github.com/loongclaw-ai/loongclaw.git
             </span>
           </div>
           <br />
@@ -191,7 +191,7 @@ const TerminalWindow: FC = () => {
               fontStyle: "italic",
             }}
           >
-            # Pull optimized model
+            # Run install script (one-time setup)
           </div>
           <div style={{ marginBottom: "0.5rem" }}>
             <span
@@ -203,7 +203,7 @@ const TerminalWindow: FC = () => {
               $
             </span>
             <span style={{ color: "var(--color-text-primary)" }}>
-              claw pull literati-7b-q4
+              ./scripts/install.sh
             </span>
           </div>
           <div
@@ -213,9 +213,11 @@ const TerminalWindow: FC = () => {
               fontSize: "0.75rem",
             }}
           >
-            [====================] 100% | 3.8GB
+            ==&gt; Running initial setup
             <br />
-            ✓ Verification complete. SHA256 matched.
+            Done.
+            <br />
+            Try: loongclaw --help
           </div>
           <br />
 
@@ -226,7 +228,7 @@ const TerminalWindow: FC = () => {
               fontStyle: "italic",
             }}
           >
-            # Execute inference
+            # First time setup
           </div>
           <div style={{ marginBottom: "0.5rem" }}>
             <span
@@ -238,37 +240,59 @@ const TerminalWindow: FC = () => {
               $
             </span>
             <span style={{ color: "var(--color-text-primary)" }}>
-              claw run --prompt &quot;Parse syslogs with regex&quot;
+              loongclaw onboard
             </span>
           </div>
-          <div style={{ color: "var(--color-text-secondary)", fontSize: "0.75rem" }}>
-            &gt; initializing backend... [OK]
+          <div
+            style={{
+              color: "var(--color-text-secondary)",
+              fontSize: "0.75rem",
+            }}
+          >
+            &gt; provider setup... [OK]
             <br />
-            &gt; warming up tensors... [OK]
+            &gt; model setup... [OK]
             <br />
-            &gt; generating...
+            &gt; finish...
             <br />
             <br />
-            <span style={{ color: "var(--color-text-primary)" }}>
-              import re
-              <br />
-              def parse_syslog(path):
-              <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;pattern = re.compile(
-              <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&apos;^(?P&lt;time&gt;\S+\s+\d+\s+\d+:\d+:\d+)&apos;)
-            </span>
-            <span
-              className="terminal-cursor"
-              style={{
-                display: "inline-block",
-                width: "8px",
-                height: "16px",
-                background: "var(--color-text-secondary)",
-                verticalAlign: "middle",
-                marginLeft: "2px",
-              }}
-            />
+            <div style={{ marginBottom: "0.5rem" }}>
+              <span
+                style={{
+                  color: "var(--color-text-secondary)",
+                  marginRight: "0.5rem",
+                }}
+              >
+                $
+              </span>
+              <span style={{ color: "var(--color-text-primary)" }}>
+                loongclaw chat
+              </span>
+              <div
+                style={{
+                  color: "var(--color-text-secondary)",
+                  fontSize: "0.75rem",
+                  marginTop: "0.5rem",
+                }}
+              >
+                &gt; Hi LoongClaw! Can you tell me a joke?
+                <br />
+                &gt; Why did the AI go to therapy? Because it had too many
+                layers of issues!
+              </div>
+              &gt;&nbsp;
+              <span
+                className="terminal-cursor"
+                style={{
+                  display: "inline-block",
+                  width: "8px",
+                  height: "16px",
+                  background: "var(--color-text-secondary)",
+                  verticalAlign: "middle",
+                  marginLeft: "2px",
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>

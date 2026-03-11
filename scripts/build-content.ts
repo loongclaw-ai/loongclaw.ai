@@ -8,6 +8,25 @@ import gfm from "remark-gfm";
 const CONTENT_DIR = path.resolve(process.cwd(), "content");
 const OUTPUT_DIR = path.resolve(process.cwd(), "src/content");
 
+// 类型定义
+interface DocChild {
+  id: string;
+  title: string;
+  path: string;
+  description?: string;
+  contentPath: string;
+  order: number;
+}
+
+interface DocSection {
+  id: string;
+  title: string;
+  path: string;
+  description?: string;
+  contentPath?: string;
+  children?: DocChild[];
+}
+
 // 确保输出目录存在
 if (!fs.existsSync(OUTPUT_DIR)) {
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
@@ -62,14 +81,7 @@ async function buildDocs() {
     console.log("  ✓ Docs root index built");
   }
 
-  const sections: {
-    id: string;
-    title: string;
-    path: string;
-    description?: string;
-    contentPath?: string;
-    children?: any[];
-  }[] = [];
+  const sections: DocSection[] = [];
 
   // 遍历 docs 目录
   const categories = fs
@@ -80,7 +92,7 @@ async function buildDocs() {
     const categoryDir = path.join(docsDir, category);
     const files = fs.readdirSync(categoryDir).filter((f) => f.endsWith(".md"));
 
-    const children: any[] = [];
+    const children: DocChild[] = [];
     let categoryIndex: {
       frontmatter: Record<string, unknown>;
       slug: string;
@@ -107,7 +119,7 @@ async function buildDocs() {
         children.push({
           id: slug,
           title: frontmatter.title as string,
-          path: frontmatter.path || `/docs/${category}/${slug}`,
+          path: (frontmatter.path as string) || `/docs/${category}/${slug}`,
           description: frontmatter.description as string,
           contentPath: `/src/content/docs/${category}/${slug}.json`,
           order: (frontmatter.order as number) || 999,
@@ -215,7 +227,7 @@ async function buildCommunity() {
   }
 
   const { frontmatter } = await processMarkdown(resourcesFile);
-  const resources = (frontmatter.resources as any[]) || [];
+  const resources = (frontmatter.resources as unknown[]) || [];
 
   const index = { resources };
   fs.writeFileSync(outputFile, JSON.stringify(index, null, 2));

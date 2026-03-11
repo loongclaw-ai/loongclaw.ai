@@ -57,7 +57,7 @@ const HeroSection: FC = () => {
               animation: "pulse 2s ease-in-out infinite",
             }}
           />
-          v2.0.4 Available
+          v0.1.2 Available
         </div>
 
         {/* Title with glow effect */}
@@ -131,8 +131,8 @@ const HeroSection: FC = () => {
             fontFamily: "var(--font-mono)",
           }}
         >
-          Deploy sentient infrastructure locally with minimal hardware footprint.
-          Optimized for edge devices and constrained environments.
+          Deploy sentient infrastructure locally with minimal hardware
+          footprint. Optimized for edge devices and constrained environments.
         </p>
 
         {/* Stats */}
