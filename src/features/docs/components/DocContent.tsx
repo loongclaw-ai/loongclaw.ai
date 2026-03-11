@@ -1,10 +1,14 @@
-import type { FC } from "react";
+import type { FC, RefObject } from "react";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { findDocByPath } from "../../../utils/content-loader";
 import { useDocContent } from "../../../hooks/useContent";
 
-const DocContent: FC = () => {
+interface DocContentProps {
+  contentRef?: RefObject<HTMLElement>;
+}
+
+const DocContent: FC<DocContentProps> = ({ contentRef }) => {
   const location = useLocation();
   const doc = findDocByPath(location.pathname);
   const { data, loading, error } = useDocContent(doc?.contentPath || null);
@@ -16,7 +20,7 @@ const DocContent: FC = () => {
 
   if (loading) {
     return (
-      <article style={{ maxWidth: "720px" }}>
+      <article ref={contentRef as RefObject<HTMLArticleElement>} style={{ maxWidth: "720px" }}>
         <p style={{ color: "var(--color-text-secondary)" }}>Loading...</p>
       </article>
     );
@@ -24,7 +28,7 @@ const DocContent: FC = () => {
 
   if (error || !data) {
     return (
-      <article style={{ maxWidth: "720px" }}>
+      <article ref={contentRef as RefObject<HTMLArticleElement>} style={{ maxWidth: "720px" }}>
         <h1
           style={{
             fontFamily: "var(--font-display)",
@@ -47,6 +51,7 @@ const DocContent: FC = () => {
 
   return (
     <article
+      ref={contentRef as RefObject<HTMLArticleElement>}
       style={{
         maxWidth: "720px",
         opacity: isVisible ? 1 : 0,
