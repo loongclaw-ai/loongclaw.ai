@@ -60,13 +60,14 @@ export function getCommunityIndex(): CommunityIndex {
   return communityIndex as CommunityIndex;
 }
 
-// 动态导入内容文件
+const docModules = import.meta.glob<{ html: string; frontmatter: { title: string; description?: string } }>("../content/docs/**/*.ts", { eager: false });
+const changelogModules = import.meta.glob<{ html: string; frontmatter: { version: string; date: string } }>("../content/changelog/**/*.ts", { eager: false });
+
 export async function loadDocContent(
   contentPath: string,
 ): Promise<{ html: string; title: string; description?: string }> {
-  // 从路径中提取相对路径
   const relativePath = contentPath.replace("/src/", "");
-  const module = await import(`../${relativePath}`);
+  const module = await docModules[`../${relativePath}`]();
   return {
     html: module.html,
     title: module.frontmatter.title,
@@ -78,7 +79,7 @@ export async function loadChangelogContent(
   contentPath: string,
 ): Promise<{ html: string; version: string; date: string }> {
   const relativePath = contentPath.replace("/src/", "");
-  const module = await import(`../${relativePath}`);
+  const module = await changelogModules[`../${relativePath}`]();
   return {
     html: module.html,
     version: module.frontmatter.version,

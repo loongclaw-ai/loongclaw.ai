@@ -2,6 +2,8 @@ import type { FC } from "react";
 import { useState, useEffect } from "react";
 import { getChangelogIndex } from "../../utils/content-loader";
 
+const changelogModules = import.meta.glob<{ html: string; frontmatter: { version: string; date: string } }>("../../content/changelog/**/*.ts", { eager: false });
+
 interface ReleaseContent {
   version: string;
   date: string;
@@ -18,7 +20,7 @@ const ChangelogPage: FC = () => {
       const loadedReleases = await Promise.all(
         releaseIndex.map(async (release) => {
           const relativePath = release.contentPath.replace("/src/", "");
-          const module = await import(`../../${relativePath}`);
+          const module = await changelogModules[`../../${relativePath}`]();
           return {
             version: module.frontmatter.version,
             date: module.frontmatter.date,
