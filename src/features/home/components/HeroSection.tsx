@@ -1,5 +1,6 @@
 // src/features/home/components/HeroSection.tsx
-import type { FC } from "react";
+import { useState, type FC } from "react";
+import { Mail } from "lucide-react";
 import StatsMatrix from "./StatsMatrix";
 import TerminalWindow from "./TerminalWindow";
 import { useTheme, THEMES } from "../../../contexts/useTheme";
@@ -7,6 +8,7 @@ import { useTheme, THEMES } from "../../../contexts/useTheme";
 const HeroSection: FC = () => {
   const { theme } = useTheme();
   const isDark = theme === THEMES.DARK;
+  const [showNotification, setShowNotification] = useState(true);
 
   const accentLineColor = isDark
     ? "var(--color-accent)"
@@ -191,8 +193,68 @@ const HeroSection: FC = () => {
         </div>
       </div>
 
-      {/* Right column: Terminal */}
-      <TerminalWindow />
+      {/* Right column: Letter button + Terminal */}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "1rem",
+          paddingTop: "3rem",
+        }}
+      >
+        {/* A Letter from the Developer button */}
+        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          <a
+            href="#developer-letter"
+            onClick={(e) => {
+              e.preventDefault();
+              setShowNotification(false);
+              const el = document.getElementById("developer-letter");
+              if (el) {
+                el.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+            }}
+            className="hero-btn hero-btn-secondary"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.6rem",
+              textDecoration: "none",
+              fontSize: "1rem",
+              position: "relative",
+              padding: "0.8rem 1.4rem",
+            }}
+          >
+            {showNotification && (
+              <span
+                style={{
+                  position: "absolute",
+                  top: "-8px",
+                  left: "-8px",
+                  width: "18px",
+                  height: "18px",
+                  background: "#ef4444",
+                  color: "white",
+                  borderRadius: "50%",
+                  fontSize: "11px",
+                  fontWeight: "bold",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  boxShadow: "0 0 0 2px var(--color-bg-primary)",
+                  zIndex: 5,
+                }}
+              >
+                1
+              </span>
+            )}
+            <Mail size={22} strokeWidth={1.5} />
+            A LETTER FROM THE LOONG TEAM
+          </a>
+        </div>
+
+        <TerminalWindow />
+      </div>
     </section>
   );
 };

@@ -46,14 +46,6 @@
       ]
     },
     {
-      "id": "troubleshooting",
-      "title": "Troubleshooting",
-      "path": "/docs/troubleshooting",
-      "description": "Common problem diagnosis and solutions for LoongClaw",
-      "contentPath": "/src/content/docs/troubleshooting/index.json",
-      "children": []
-    },
-    {
       "id": "getting-started",
       "title": "Getting Started",
       "path": "/docs/getting-started",
@@ -77,6 +69,14 @@
           "order": 3
         }
       ]
+    },
+    {
+      "id": "troubleshooting",
+      "title": "Troubleshooting",
+      "path": "/docs/troubleshooting",
+      "description": "Common problem diagnosis and solutions for LoongClaw",
+      "contentPath": "/src/content/docs/troubleshooting/index.json",
+      "children": []
     }
   ]
 }

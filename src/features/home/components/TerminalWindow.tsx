@@ -24,7 +24,7 @@ const TerminalWindow: FC = () => {
       style={{
         position: "relative",
         zIndex: 2,
-        alignSelf: "center",
+        alignSelf: "stretch",
       }}
     >
       {/* Corner accents - tech style */}

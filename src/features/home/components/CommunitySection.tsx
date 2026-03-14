@@ -85,6 +85,7 @@ const CommunitySection: FC = () => {
 
       {/* A Letter from the Developer */}
       <div
+        id="developer-letter"
         ref={envelopeRef}
         style={{
           maxWidth: '800px',
@@ -201,7 +202,7 @@ const CommunitySection: FC = () => {
                 letterSpacing: '0.02em',
               }}
             >
-              A Letter from the Developer
+              A Letter from the Loong Team
             </h3>
             <p
               style={{
@@ -280,7 +281,7 @@ const CommunitySection: FC = () => {
                     color: 'var(--color-text-primary)',
                   }}
                 >
-                  A Letter from the Developer
+                  A Letter from the Loong Team
                 </span>
               </div>
               <button
