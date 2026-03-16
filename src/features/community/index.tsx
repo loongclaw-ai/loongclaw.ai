@@ -1,7 +1,9 @@
 import type { FC } from "react";
+import { useTranslation } from "react-i18next";
 import { getCommunityIndex } from "../../utils/content-loader";
 
 const CommunityPage: FC = () => {
+  const { t } = useTranslation();
   const { resources } = getCommunityIndex();
 
   return (
@@ -20,7 +22,7 @@ const CommunityPage: FC = () => {
           color: "var(--color-text-primary)",
         }}
       >
-        Community
+        {t("community_page.title")}
       </h1>
       <p
         style={{
@@ -30,8 +32,7 @@ const CommunityPage: FC = () => {
           fontSize: "1.1rem",
         }}
       >
-        Connect with developers, contributors, and users. LoongClaw is built by
-        the community, for the community.
+        {t("community_page.subtitle")}
       </p>
 
       <div
@@ -72,7 +73,7 @@ const CommunityPage: FC = () => {
                 color: "var(--color-text-primary)",
               }}
             >
-              {resource.title}
+              {t(`community_page.resources.${resource.type || resource.title.toLowerCase()}.title`, { defaultValue: resource.title })}
             </h3>
             <p
               style={{
@@ -80,7 +81,7 @@ const CommunityPage: FC = () => {
                 fontSize: "0.9rem",
               }}
             >
-              {resource.description}
+              {t(`community_page.resources.${resource.type || resource.title.toLowerCase()}.description`, { defaultValue: resource.description })}
             </p>
           </a>
         ))}

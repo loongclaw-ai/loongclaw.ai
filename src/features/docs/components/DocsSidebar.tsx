@@ -1,10 +1,12 @@
 import type { FC } from "react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { getDocsIndex } from "../../../utils/content-loader";
 import type { DocSection } from "../../../types";
 
 const DocsSidebar: FC = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const { sections } = getDocsIndex();
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
@@ -45,7 +47,7 @@ const DocsSidebar: FC = () => {
               transition: "color 200ms ease",
             }}
           >
-            {section.title}
+            {t(`docs_menu.${section.id}`, { defaultValue: section.title })}
           </Link>
           {section.children && (
             <div style={{ paddingLeft: "0.75rem" }}>
@@ -75,7 +77,7 @@ const DocsSidebar: FC = () => {
                     transform: hoveredItem === child.path ? "translateX(2px)" : "none",
                   }}
                 >
-                  {child.title}
+                  {t(`docs_menu.${child.id}`, { defaultValue: child.title })}
                 </Link>
               ))}
             </div>

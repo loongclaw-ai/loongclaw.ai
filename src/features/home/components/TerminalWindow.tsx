@@ -1,8 +1,9 @@
-// src/features/home/components/TerminalWindow.tsx
 import type { FC } from "react";
+import { useTranslation } from "react-i18next";
 import { useTheme, THEMES } from "../../../contexts/useTheme";
 
 const TerminalWindow: FC = () => {
+  const { t } = useTranslation();
   const { theme } = useTheme();
 
   const isDark = theme === THEMES.DARK;
@@ -172,7 +173,7 @@ const TerminalWindow: FC = () => {
               fontStyle: "italic",
             }}
           >
-            # Clone the repository
+            {t("terminal.line1", "# Clone the repository")}
           </div>
           <div style={{ marginBottom: "0.5rem" }}>
             <span
@@ -196,7 +197,7 @@ const TerminalWindow: FC = () => {
               fontStyle: "italic",
             }}
           >
-            # Run install script (one-time setup)
+            {t("terminal.line2", "# Run install script (one-time setup)")}
           </div>
           <div style={{ marginBottom: "0.5rem" }}>
             <span
@@ -233,7 +234,7 @@ const TerminalWindow: FC = () => {
               fontStyle: "italic",
             }}
           >
-            # First time setup
+            {t("terminal.line3", "# First time setup")}
           </div>
           <div style={{ marginBottom: "0.5rem" }}>
             <span

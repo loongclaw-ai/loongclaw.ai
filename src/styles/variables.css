@@ -1,5 +1,5 @@
 /* Google Fonts Import */
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;500;700;800&family=Noto+Serif+SC:wght@400;700;900&family=Syncopate:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;900&family=Syncopate:wght@400;700&display=swap");
 
 /* Dark Theme (Default) - Nocturnal Protocol */
 :root {
@@ -29,9 +29,9 @@
     );
 
     /* Typography */
-    --font-mono: "JetBrains Mono", "Fira Code", "SF Mono", Consolas, monospace;
-    --font-display: "Syncopate", "Orbitron", "Audiowide", sans-serif;
-    --font-chinese: "Noto Serif SC", "Noto Sans SC", serif;
+    --font-chinese: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", sans-serif;
+    --font-mono: "JetBrains Mono", "Fira Code", "SF Mono", Consolas, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    --font-display: "Syncopate", "Orbitron", "Audiowide", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
 
     /* Spacing Scale */
     --space-xs: 0.25rem;
@@ -110,6 +110,17 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     line-height: 1.6;
+}
+
+/* In Chinese mode: switch inherited body text to Chinese sans-serif.
+   Elements with explicit inline font-family (code blocks, crate names,
+   LOONGCLAW logo, stats labels) have higher specificity and are unaffected. */
+html[lang="zh-CN"] body {
+    font-family: var(--font-chinese);
+}
+html[lang="zh-CN"] code,
+html[lang="zh-CN"] pre {
+    font-family: var(--font-mono);
 }
 
 /* Selection */

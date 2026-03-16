@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "docs": "Documentation",
+    "community": "Community",
+    "changelog": "Changelog"
+  },
+  "hero": {
+    "badge": "v0.1-alpha available",
+    "title_part1": "Loong Claw",
+    "title_part2": "An open-source AI assistant runtime designed for severe constraints. Classical architecture meets brutalist efficiency.",
+    "description": "Deploy sentient infrastructure locally with minimal hardware footprint. Optimized for edge devices and constrained environments.",
+    "btn_get_started": "Get Started",
+    "btn_view_source": "View Source"
+  },
+  "features": {
+    "title": "Core Features",
+    "subtitle": "Secure, lightweight, and extensible AI assistant runtime",
+    "secure_title": "Secure Kernel",
+    "secure_desc": "Capability Token mechanism, authorization required for every call, human approval, audit trails",
+    "secure_details": [
+      "Capability-based policy engine",
+      "Human approval gates",
+      "JSONL SIEM export",
+      "Denylist precedence"
+    ],
+    "lightweight_title": "Lightweight & Efficient",
+    "lightweight_desc": "Edge device ready, 256MB RAM, <0.4s cold boot, 42 TOK/s",
+    "lightweight_details": [
+      "Raspberry Pi 4 compatible",
+      "256 MB RAM footprint",
+      "< 0.4s cold boot",
+      "42 TOK/s inference"
+    ],
+    "extend_title": "Easy to Extend",
+    "extend_desc": "WASM plugins, multi-language support, 7-crate DAG architecture, pluggable components",
+    "extend_details": [
+      "WASM runtime execution",
+      "Multi-language plugins",
+      "7-crate strict DAG",
+      "Pluggable adapters"
+    ]
+  },
+  "community": {
+    "title": "Community & Ecosystem",
+    "subtitle": "Join our open source community and help advance the Agentic OS",
+    "letter_title": "A Letter from the Loong Team",
+    "click_to_open": "Click to open",
+    "greeting": "Dear Community Members,",
+    "p1": "When we started building LoongClaw, our vision was simple: create an Agentic OS that empowers developers to build intelligent, autonomous applications with ease. Today, we're excited to share this journey with you.",
+    "p2": "This project represents countless hours of development, testing, and refinement. But more importantly, it represents our commitment to open source and the belief that the best software is built together, as a community.",
+    "p3": "Whether you're here to contribute code, report bugs, or simply explore what we've built — welcome. Your feedback, ideas, and enthusiasm are what will make LoongClaw truly great.",
+    "p4": "Let's build the future of Agentic OS, together.",
+    "signoff": "With gratitude,",
+    "team": "The LoongClaw Team"
+  },
+  "terminal": {
+    "line1": "# Clone the repository",
+    "line2": "# Run install script (one-time setup)",
+    "line3": "# First time setup",
+    "line4": "core.register_capability(\"system.fs.read\");",
+    "line5": "// Ready to process streams",
+    "line6": "core.start().await?;"
+  },
+  "architecture": {
+    "title": "7-Crate Strict DAG Architecture",
+    "subtitle": "Clear dependency direction, stable kernel contracts",
+    "hl1": "Zero cyclic dependencies - Strict DAG structure",
+    "hl2": "Stable kernel contracts - contracts crate with zero internal deps",
+    "hl3": "Business logic separated from core - extension planes architecture",
+    "hl4": "Capability-gated by default - every operation requires authorization",
+    "crate_role_0": "Shared types, capability model. Zero deps",
+    "crate_role_1": "Policy engine, audit, capability tokens",
+    "crate_role_2": "Transport contracts, typed routing",
+    "crate_role_3": "Providers, tools, channels, memory",
+    "crate_role_4": "Execution spec runner",
+    "crate_role_5": "Benchmark harness",
+    "crate_role_6": "CLI binary (loongclawd)",
+    "binary": "BINARY"
+  },
+  "quickstart": {
+    "title": "Get Started in 5 Minutes",
+    "subtitle": "Three simple steps to start your LoongClaw journey",
+    "step1_title": "Install",
+    "step1_desc": "Clone and run install script",
+    "step2_title": "Configure",
+    "step2_desc": "Set your API key",
+    "step3_title": "Chat",
+    "step3_desc": "Start chatting"
+  },
+  "stats": {
+    "min_hardware": "Min Hardware",
+    "ram_footprint": "RAM Footprint",
+    "cold_boot": "Cold Boot",
+    "inference": "Inference"
+  },
+  "community_page": {
+    "title": "Community",
+    "subtitle": "Connect with developers, contributors, and users. LoongClaw is built by the community, for the community.",
+    "resources": {
+      "github": {
+        "title": "GitHub",
+        "description": "Star us, report issues, and contribute to the codebase."
+      },
+      "discord": {
+        "title": "Discord",
+        "description": "Join our community for real-time support and discussions."
+      },
+      "telegram": {
+        "title": "Telegram",
+        "description": "Follow us for updates, tips, and community highlights."
+      }
+    }
+  },
+  "changelog_page": {
+    "title": "Changelog",
+    "loading": "Loading..."
+  },
+  "docs_menu": {
+    "index": "Documentation",
+    "features": "Features",
+    "chat": "Chat",
+    "tools": "Tool System",
+    "channels": "Channel Integration",
+    "spec": "Spec Workflow",
+    "getting-started": "Getting Started",
+    "configuration": "Configuration Guide",
+    "commands": "Command Line Tools",
+    "troubleshooting": "Troubleshooting",
+    "loading": "Loading...",
+    "page_not_found": "Page Not Found",
+    "failed_load": "Failed to load content.",
+    "not_found": "Content not found."
+  }
+}

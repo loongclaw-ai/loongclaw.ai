@@ -1,48 +1,35 @@
 // src/features/home/components/FeaturesSection.tsx
 import type { FC } from 'react';
 import { Shield, Zap, Puzzle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { useTheme, THEMES } from '../../../contexts/useTheme';
 import FeatureCard from './FeatureCard';
 
-const features = [
-  {
-    icon: Shield,
-    title: 'Secure Kernel',
-    description:
-      'Capability Token mechanism, authorization required for every call, human approval, audit trails',
-    details: [
-      'Capability-based policy engine',
-      'Human approval gates',
-      'JSONL SIEM export',
-      'Denylist precedence',
-    ],
-  },
-  {
-    icon: Zap,
-    title: 'Lightweight & Efficient',
-    description: 'Edge device ready, 256MB RAM, <0.4s cold boot, 42 TOK/s',
-    details: [
-      'Raspberry Pi 4 compatible',
-      '256 MB RAM footprint',
-      '< 0.4s cold boot',
-      '42 TOK/s inference',
-    ],
-  },
-  {
-    icon: Puzzle,
-    title: 'Easy to Extend',
-    description: 'WASM plugins, multi-language support, 7-crate DAG architecture, pluggable components',
-    details: [
-      'WASM runtime execution',
-      'Multi-language plugins',
-      '7-crate strict DAG',
-      'Pluggable adapters',
-    ],
-  },
-];
-
 const FeaturesSection: FC = () => {
+  const { t } = useTranslation();
   const { theme } = useTheme();
+
+  const features = [
+    {
+      icon: Shield,
+      title: t('features.secure_title'),
+      description: t('features.secure_desc'),
+      details: t('features.secure_details', { returnObjects: true }) as string[],
+    },
+    {
+      icon: Zap,
+      title: t('features.lightweight_title'),
+      description: t('features.lightweight_desc'),
+      details: t('features.lightweight_details', { returnObjects: true }) as string[],
+    },
+    {
+      icon: Puzzle,
+      title: t('features.extend_title'),
+      description: t('features.extend_desc'),
+      details: t('features.extend_details', { returnObjects: true }) as string[],
+    },
+  ];
+
   const isDark = theme === THEMES.DARK;
   const dividerColor = isDark
     ? 'var(--color-border)'
@@ -69,7 +56,7 @@ const FeaturesSection: FC = () => {
             marginBottom: '0.75rem',
           }}
         >
-          Core Features
+          {t('features.title')}
         </h2>
         <p
           style={{
@@ -79,7 +66,7 @@ const FeaturesSection: FC = () => {
             margin: '0 auto',
           }}
         >
-          Secure, lightweight, and extensible AI assistant runtime
+          {t('features.subtitle')}
         </p>
       </div>
 

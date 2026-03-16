@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { getChangelogIndex } from "../../utils/content-loader";
 
 const changelogModules = import.meta.glob<{ html: string; frontmatter: { version: string; date: string } }>("../../content/changelog/**/*.ts", { eager: false });
@@ -11,6 +12,7 @@ interface ReleaseContent {
 }
 
 const ChangelogPage: FC = () => {
+  const { t } = useTranslation();
   const [releases, setReleases] = useState<ReleaseContent[]>([]);
   const [loading, setLoading] = useState(true);
   const { releases: releaseIndex } = getChangelogIndex();
@@ -45,9 +47,9 @@ const ChangelogPage: FC = () => {
             color: "var(--color-text-primary)",
           }}
         >
-          Changelog
+          {t("changelog_page.title")}
         </h1>
-        <p style={{ color: "var(--color-text-secondary)" }}>Loading...</p>
+        <p style={{ color: "var(--color-text-secondary)" }}>{t("changelog_page.loading")}</p>
       </div>
     );
   }
@@ -68,7 +70,7 @@ const ChangelogPage: FC = () => {
           color: "var(--color-text-primary)",
         }}
       >
-        Changelog
+        {t("changelog_page.title")}
       </h1>
 
       {releases.map((release) => (

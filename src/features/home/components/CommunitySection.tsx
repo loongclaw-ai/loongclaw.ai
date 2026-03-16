@@ -1,9 +1,11 @@
 import type { FC } from 'react';
 import { useState, useRef, useEffect } from 'react';
 import { Mail } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import SocialLinks from './SocialLinks';
 
 const CommunitySection: FC = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null);
   const envelopeRef = useRef<HTMLDivElement>(null);
@@ -69,7 +71,7 @@ const CommunitySection: FC = () => {
             marginBottom: '0.75rem',
           }}
         >
-          Community & Ecosystem
+          {t('community.title')}
         </h2>
         <p
           style={{
@@ -79,7 +81,7 @@ const CommunitySection: FC = () => {
             margin: '0 auto',
           }}
         >
-          Join our open source community and help advance the Agentic OS
+          {t('community.subtitle')}
         </p>
       </div>
 
@@ -202,7 +204,7 @@ const CommunitySection: FC = () => {
                 letterSpacing: '0.02em',
               }}
             >
-              A Letter from the Loong Team
+              {t('community.letter_title')}
             </h3>
             <p
               style={{
@@ -214,7 +216,7 @@ const CommunitySection: FC = () => {
                 gap: '0.5rem',
               }}
             >
-              <span>Click to open</span>
+              <span>{t('community.click_to_open')}</span>
               <svg
                 width="16"
                 height="16"
@@ -281,7 +283,7 @@ const CommunitySection: FC = () => {
                     color: 'var(--color-text-primary)',
                   }}
                 >
-                  A Letter from the Loong Team
+                  {t('community.letter_title')}
                 </span>
               </div>
               <button
@@ -345,16 +347,16 @@ const CommunitySection: FC = () => {
                     color: 'var(--color-text-primary)',
                   }}
                 >
-                  Dear Community Members,
+                  {t('community.greeting')}
                 </p>
                 <p style={{ marginBottom: '1.5rem' }}>
-                  When we started building LoongClaw, our vision was simple: create an Agentic OS that empowers developers to build intelligent, autonomous applications with ease. Today, we're excited to share this journey with you.
+                  {t('community.p1')}
                 </p>
                 <p style={{ marginBottom: '1.5rem' }}>
-                  This project represents countless hours of development, testing, and refinement. But more importantly, it represents our commitment to open source and the belief that the best software is built together, as a community.
+                  {t('community.p2')}
                 </p>
                 <p style={{ marginBottom: '1.5rem' }}>
-                  Whether you're here to contribute code, report bugs, or simply explore what we've built — welcome. Your feedback, ideas, and enthusiasm are what will make LoongClaw truly great.
+                  {t('community.p3')}
                 </p>
                 <p
                   style={{
@@ -363,7 +365,7 @@ const CommunitySection: FC = () => {
                     color: 'var(--color-text-primary)',
                   }}
                 >
-                  Let's build the future of Agentic OS, together.
+                  {t('community.p4')}
                 </p>
                 <div
                   style={{
@@ -377,7 +379,7 @@ const CommunitySection: FC = () => {
                       fontStyle: 'italic',
                     }}
                   >
-                    With gratitude,
+                    {t('community.signoff')}
                   </p>
                   <p
                     style={{
@@ -386,7 +388,7 @@ const CommunitySection: FC = () => {
                       fontSize: '1.05rem',
                     }}
                   >
-                    The LoongClaw Team
+                    {t('community.team')}
                   </p>
                 </div>
               </div>

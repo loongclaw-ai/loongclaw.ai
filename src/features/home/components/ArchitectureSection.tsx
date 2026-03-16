@@ -1,65 +1,67 @@
 import type { FC } from 'react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useTheme, THEMES } from '../../../contexts/useTheme';
 
 const crates = [
   {
     name: 'contracts',
-    role: 'Shared types, capability model. Zero deps',
+    roleKey: 'architecture.crate_role_0',
     level: 0,
     color: 'var(--color-accent)',
   },
   {
     name: 'kernel',
-    role: 'Policy engine, audit, capability tokens',
+    roleKey: 'architecture.crate_role_1',
     level: 1,
     deps: ['contracts'],
     color: '#3B82F6',
   },
   {
     name: 'protocol',
-    role: 'Transport contracts, typed routing',
+    roleKey: 'architecture.crate_role_2',
     level: 1,
     color: '#22c55e',
   },
   {
     name: 'app',
-    role: 'Providers, tools, channels, memory',
+    roleKey: 'architecture.crate_role_3',
     level: 2,
     deps: ['contracts', 'kernel'],
     color: '#F97316',
   },
   {
     name: 'spec',
-    role: 'Execution spec runner',
+    roleKey: 'architecture.crate_role_4',
     level: 2,
     deps: ['contracts', 'kernel', 'protocol'],
     color: '#A855F7',
   },
   {
     name: 'bench',
-    role: 'Benchmark harness',
+    roleKey: 'architecture.crate_role_5',
     level: 2,
     deps: ['contracts', 'kernel', 'spec'],
     color: '#EC4899',
   },
   {
     name: 'daemon',
-    role: 'CLI binary (loongclawd)',
+    roleKey: 'architecture.crate_role_6',
     level: 3,
     deps: ['all'],
     color: '#EF4444',
   },
 ];
 
-const highlights = [
-  'Zero cyclic dependencies - Strict DAG structure',
-  'Stable kernel contracts - contracts crate with zero internal deps',
-  'Business logic separated from core - extension planes architecture',
-  'Capability-gated by default - every operation requires authorization',
+const highlightsKeys = [
+  'architecture.hl1',
+  'architecture.hl2',
+  'architecture.hl3',
+  'architecture.hl4',
 ];
 
 const ArchitectureSection: FC = () => {
+  const { t } = useTranslation();
   const { theme } = useTheme();
   const isDark = theme === THEMES.DARK;
   const dividerColor = isDark
@@ -90,7 +92,7 @@ const ArchitectureSection: FC = () => {
             marginBottom: '0.75rem',
           }}
         >
-          7-Crate Strict DAG Architecture
+          {t('architecture.title')}
         </h2>
         <p
           style={{
@@ -100,7 +102,7 @@ const ArchitectureSection: FC = () => {
             margin: '0 auto',
           }}
         >
-          Clear dependency direction, stable kernel contracts
+          {t('architecture.subtitle')}
         </p>
       </div>
 
@@ -178,7 +180,7 @@ const ArchitectureSection: FC = () => {
           margin: '0 auto',
         }}
       >
-        {highlights.map((highlight, index) => (
+        {highlightsKeys.map((hlKey, index) => (
           <div
             key={index}
             style={{
@@ -217,7 +219,7 @@ const ArchitectureSection: FC = () => {
                 lineHeight: 1.5,
               }}
             >
-              {highlight}
+              {t(hlKey)}
             </span>
           </div>
         ))}
@@ -229,7 +231,7 @@ const ArchitectureSection: FC = () => {
 interface CrateNodeProps {
   crate: {
     name: string;
-    role: string;
+    roleKey: string;
     level: number;
     color: string;
     deps?: string[];
@@ -240,6 +242,7 @@ interface CrateNodeProps {
 }
 
 const CrateNode: FC<CrateNodeProps> = ({ crate, isBinary, isHovered, onHover }) => {
+  const { t } = useTranslation();
   return (
     <div
       role="button"
@@ -291,7 +294,7 @@ const CrateNode: FC<CrateNodeProps> = ({ crate, isBinary, isHovered, onHover }) 
           lineHeight: 1.5,
         }}
       >
-        {crate.role}
+        {t(crate.roleKey)}
       </div>
       {isBinary && (
         <div
@@ -308,7 +311,7 @@ const CrateNode: FC<CrateNodeProps> = ({ crate, isBinary, isHovered, onHover }) 
             letterSpacing: '0.05em',
           }}
         >
-          BINARY
+          {t('architecture.binary')}
         </div>
       )}
     </div>

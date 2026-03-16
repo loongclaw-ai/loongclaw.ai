@@ -1,11 +1,13 @@
 // src/features/home/components/HeroSection.tsx
 import { useState, type FC } from "react";
 import { Mail } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import StatsMatrix from "./StatsMatrix";
 import TerminalWindow from "./TerminalWindow";
 import { useTheme, THEMES } from "../../../contexts/useTheme";
 
 const HeroSection: FC = () => {
+  const { t } = useTranslation();
   const { theme } = useTheme();
   const isDark = theme === THEMES.DARK;
   const [showNotification, setShowNotification] = useState(true);
@@ -65,7 +67,7 @@ const HeroSection: FC = () => {
               animation: "pulse 2s ease-in-out infinite",
             }}
           />
-          v0.1.2 Available
+          {t("hero.badge")}
         </div>
 
         {/* Title with glow effect */}
@@ -93,7 +95,7 @@ const HeroSection: FC = () => {
                 backgroundClip: "text",
               }}
             >
-              Loong
+              {t("hero.title_part1").split(" ")[0]}
             </span>
             <span
               style={{
@@ -105,7 +107,7 @@ const HeroSection: FC = () => {
                 backgroundClip: "text",
               }}
             >
-              Claw
+              {t("hero.title_part1").split(" ")[1] || ""}
             </span>
           </h1>
         </div>
@@ -121,8 +123,7 @@ const HeroSection: FC = () => {
             fontFamily: "var(--font-mono)",
           }}
         >
-          An open-source AI assistant runtime designed for severe constraints.
-          Classical architecture meets brutalist efficiency.
+          {t("hero.title_part2")}
         </p>
 
         {/* Description with border */}
@@ -139,8 +140,7 @@ const HeroSection: FC = () => {
             fontFamily: "var(--font-mono)",
           }}
         >
-          Deploy sentient infrastructure locally with minimal hardware
-          footprint. Optimized for edge devices and constrained environments.
+          {t("hero.description")}
         </p>
 
         {/* Stats */}
@@ -152,7 +152,7 @@ const HeroSection: FC = () => {
             className="hero-btn hero-btn-primary"
             onClick={() => alert("System initializing...")}
           >
-            Initialize System
+            {t("hero.btn_get_started")}
           </button>
           <a
             href="https://github.com/loongclaw-ai/loongclaw"
@@ -160,7 +160,7 @@ const HeroSection: FC = () => {
             rel="noopener noreferrer"
             className="hero-btn hero-btn-secondary"
           >
-            View Source
+            {t("hero.btn_view_source")}
           </a>
         </div>
 
@@ -249,7 +249,7 @@ const HeroSection: FC = () => {
               </span>
             )}
             <Mail size={22} strokeWidth={1.5} />
-            A LETTER FROM THE LOONG TEAM
+            {t("community.letter_title").toUpperCase()}
           </a>
         </div>
 

@@ -1,14 +1,14 @@
-// src/features/home/components/QuickStartSection.tsx
 import type { FC } from 'react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useTheme, THEMES } from '../../../contexts/useTheme';
 import StepIndicator from './StepIndicator';
 import CodeBlock from './CodeBlock';
 
-const steps = [
-  { number: 1, title: 'Install', description: 'Clone and run install script' },
-  { number: 2, title: 'Configure', description: 'Set your API key' },
-  { number: 3, title: 'Chat', description: 'Start chatting' },
+const stepsKeys = [
+  { number: 1, titleKey: 'quickstart.step1_title', descKey: 'quickstart.step1_desc' },
+  { number: 2, titleKey: 'quickstart.step2_title', descKey: 'quickstart.step2_desc' },
+  { number: 3, titleKey: 'quickstart.step3_title', descKey: 'quickstart.step3_desc' },
 ];
 
 const installCode = `# Clone the repository
@@ -36,6 +36,7 @@ loongclaw doctor --fix`;
 const codeBlocks = [installCode, configCode, chatCode];
 
 const QuickStartSection: FC = () => {
+  const { t } = useTranslation();
   const { theme } = useTheme();
   const isDark = theme === THEMES.DARK;
   const dividerColor = isDark
@@ -49,6 +50,12 @@ const QuickStartSection: FC = () => {
       setActiveStep(step);
     }
   };
+
+  const translatedSteps = stepsKeys.map(step => ({
+    number: step.number,
+    title: t(step.titleKey),
+    description: t(step.descKey),
+  }));
 
   return (
     <section
@@ -72,7 +79,7 @@ const QuickStartSection: FC = () => {
             marginBottom: '0.75rem',
           }}
         >
-          Get Started in 5 Minutes
+          {t('quickstart.title')}
         </h2>
         <p
           style={{
@@ -82,14 +89,14 @@ const QuickStartSection: FC = () => {
             margin: '0 auto',
           }}
         >
-          Three simple steps to start your LoongClaw journey
+          {t('quickstart.subtitle')}
         </p>
       </div>
 
       {/* Step indicator - clickable */}
       <div style={{ marginBottom: '2rem' }}>
         <StepIndicator 
-          steps={steps} 
+          steps={translatedSteps} 
           activeStep={activeStep}
           onStepClick={handleStepClick}
         />

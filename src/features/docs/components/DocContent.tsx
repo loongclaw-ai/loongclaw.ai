@@ -1,6 +1,7 @@
 import type { FC, RefObject } from "react";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { findDocByPath } from "../../../utils/content-loader";
 import { useDocContent } from "../../../hooks/useContent";
 
@@ -9,6 +10,7 @@ interface DocContentProps {
 }
 
 const DocContent: FC<DocContentProps> = ({ contentRef }) => {
+  const { t } = useTranslation();
   const location = useLocation();
   const doc = findDocByPath(location.pathname);
   const { data, loading, error } = useDocContent(doc?.contentPath || null);
@@ -21,7 +23,7 @@ const DocContent: FC<DocContentProps> = ({ contentRef }) => {
   if (loading) {
     return (
       <article ref={contentRef as RefObject<HTMLElement>} style={{ maxWidth: "720px" }}>
-        <p style={{ color: "var(--color-text-secondary)" }}>Loading...</p>
+        <p style={{ color: "var(--color-text-secondary)" }}>{t("docs_menu.loading", { defaultValue: "Loading..." })}</p>
       </article>
     );
   }
@@ -40,10 +42,10 @@ const DocContent: FC<DocContentProps> = ({ contentRef }) => {
             color: "var(--color-text-primary)",
           }}
         >
-          {doc?.title || "Page Not Found"}
+          {doc ? t(`docs_menu.${doc.id}`, { defaultValue: doc.title }) : t("docs_menu.page_not_found", { defaultValue: "Page Not Found" })}
         </h1>
         <p style={{ color: "var(--color-text-secondary)" }}>
-          {error ? "Failed to load content." : "Content not found."}
+          {error ? t("docs_menu.failed_load", { defaultValue: "Failed to load content." }) : t("docs_menu.not_found", { defaultValue: "Content not found." })}
         </p>
       </article>
     );
@@ -70,7 +72,7 @@ const DocContent: FC<DocContentProps> = ({ contentRef }) => {
           color: "var(--color-text-primary)",
         }}
       >
-        {data.title}
+        {doc ? t(`docs_menu.${doc.id}`, { defaultValue: data.title }) : data.title}
       </h1>
       {data.description && (
         <p

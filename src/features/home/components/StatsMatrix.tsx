@@ -1,19 +1,21 @@
 // src/features/home/components/StatsMatrix.tsx
 import type { FC } from "react";
+import { useTranslation } from "react-i18next";
 
 interface Stat {
-  label: string;
+  labelKey: string;
   value: string;
 }
 
 const stats: Stat[] = [
-  { label: "Min Hardware", value: "Raspberry Pi 4" },
-  { label: "RAM Footprint", value: "256 MB" },
-  { label: "Cold Boot", value: "< 0.4s" },
-  { label: "Inference", value: "42 TOK/s" },
+  { labelKey: "stats.min_hardware", value: "Raspberry Pi 4" },
+  { labelKey: "stats.ram_footprint", value: "256 MB" },
+  { labelKey: "stats.cold_boot", value: "< 0.4s" },
+  { labelKey: "stats.inference", value: "42 TOK/s" },
 ];
 
 const StatsMatrix: FC = () => {
+  const { t } = useTranslation();
   return (
     <div
       style={{
@@ -30,7 +32,7 @@ const StatsMatrix: FC = () => {
     >
       {stats.map((stat) => (
         <div
-          key={stat.label}
+          key={stat.labelKey}
           className="stat-item"
           style={{
             background: "var(--color-bg-primary)",
@@ -51,7 +53,7 @@ const StatsMatrix: FC = () => {
               fontFamily: "var(--font-mono)",
             }}
           >
-            {stat.label}
+            {t(stat.labelKey)}
           </span>
           <span
             style={{

@@ -14,12 +14,13 @@ export const RootLayout: FC<RootLayoutProps> = ({ children }) => {
         background: 'var(--bg-gradient)',
         backgroundAttachment: 'fixed',
         color: 'var(--color-text-primary)',
-        fontFamily: "'JetBrains Mono', monospace",
+        fontFamily: 'var(--font-mono)',
         height: '100vh',
         overflow: 'hidden',
         display: 'flex',
         position: 'relative',
       }}
+
     >
       {/* Cyber background wires */}
       <CyberWires />
