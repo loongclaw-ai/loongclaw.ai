@@ -89,7 +89,9 @@
   },
   "stats": {
     "min_hardware": "运行平台",
-    "platform": "平台支持"
+    "platform": "平台支持",
+    "hardware": "硬件成本",
+    "binary": "二进制体积"
   },
   "community_page": {
     "title": "社区",

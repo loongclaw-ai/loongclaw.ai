@@ -89,7 +89,9 @@
   },
   "stats": {
     "min_hardware": "Runtime Platform",
-    "platform": "Platform"
+    "platform": "Platform",
+    "hardware": "Run on Hardware",
+    "binary": "Binary Size"
   },
   "community_page": {
     "title": "Community",

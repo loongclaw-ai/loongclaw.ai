@@ -10,6 +10,8 @@ interface Stat {
 const stats: Stat[] = [
   { labelKey: "stats.min_hardware", value: "POSIX / Docker" },
   { labelKey: "stats.platform", value: "CLI · Feishu · Telegram" },
+  { labelKey: "stats.hardware", value: "< $5" },
+  { labelKey: "stats.binary", value: "~10 MB" },
 ];
 
 const StatsMatrix: FC = () => {
@@ -18,7 +20,7 @@ const StatsMatrix: FC = () => {
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "auto auto",
+        gridTemplateColumns: "auto auto auto auto",
         gap: "1px",
         background: "var(--color-border)",
         border: "1px solid var(--color-border)",
