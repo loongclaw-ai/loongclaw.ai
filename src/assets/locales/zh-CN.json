@@ -89,9 +89,7 @@
   },
   "stats": {
     "min_hardware": "运行平台",
-    "ram_footprint": "内存占用",
-    "cold_boot": "冷启动时间",
-    "binary_size": "二进制体积"
+    "platform": "平台支持"
   },
   "community_page": {
     "title": "社区",

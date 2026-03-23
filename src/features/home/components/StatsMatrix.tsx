@@ -9,9 +9,7 @@ interface Stat {
 
 const stats: Stat[] = [
   { labelKey: "stats.min_hardware", value: "POSIX / Docker" },
-  { labelKey: "stats.ram_footprint", value: "< 5 MB" },
-  { labelKey: "stats.cold_boot", value: "< 10 ms" },
-  { labelKey: "stats.binary_size", value: "< 10 MB" },
+  { labelKey: "stats.platform", value: "CLI · Feishu · Telegram" },
 ];
 
 const StatsMatrix: FC = () => {
@@ -20,7 +18,7 @@ const StatsMatrix: FC = () => {
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "repeat(2, 1fr)",
+        gridTemplateColumns: "auto auto",
         gap: "1px",
         background: "var(--color-border)",
         border: "1px solid var(--color-border)",
@@ -36,7 +34,7 @@ const StatsMatrix: FC = () => {
           className="stat-item"
           style={{
             background: "var(--color-bg-primary)",
-            padding: "1rem 1.5rem",
+            padding: "0.6rem 1rem",
             display: "flex",
             flexDirection: "column",
             gap: "0.25rem",
@@ -57,7 +55,7 @@ const StatsMatrix: FC = () => {
           </span>
           <span
             style={{
-              fontSize: "1.1rem",
+              fontSize: "0.85rem",
               fontWeight: 600,
               color: "var(--color-text-primary)",
               fontFamily: "var(--font-mono)",
