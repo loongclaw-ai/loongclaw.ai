@@ -209,7 +209,20 @@ const TerminalWindow: FC = () => {
               $
             </span>
             <span style={{ color: "var(--color-text-primary)" }}>
-              ./scripts/install.sh
+              cd loongclaw
+            </span>
+          </div>
+          <div style={{ marginBottom: "0.5rem" }}>
+            <span
+              style={{
+                color: "var(--color-text-secondary)",
+                marginRight: "0.5rem",
+              }}
+            >
+              $
+            </span>
+            <span style={{ color: "var(--color-text-primary)" }}>
+              ./scripts/install.sh --source
             </span>
           </div>
           <br />

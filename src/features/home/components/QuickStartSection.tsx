@@ -15,7 +15,8 @@ const installCode = `# Clone the repository
 git clone https://github.com/loongclaw-ai/loongclaw.git
 
 # Run install script
-./scripts/install.sh
+cd loongclaw
+./scripts/install.sh --source
 
 # Initialize and onboard
 loongclaw onboard`;
