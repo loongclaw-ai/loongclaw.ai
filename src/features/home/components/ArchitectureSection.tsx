@@ -71,19 +71,9 @@ const ArchitectureSection: FC = () => {
   const [hoveredCrate, setHoveredCrate] = useState<string | null>(null);
 
   return (
-    <section
-      style={{
-        padding: '4rem 0',
-        borderTop: `1px solid ${dividerColor}`,
-      }}
-    >
+    <section className="section-padding" style={{ borderTop: `1px solid ${dividerColor}` }}>
       {/* Section header */}
-      <div
-        style={{
-          textAlign: 'center',
-          marginBottom: '3rem',
-        }}
-      >
+      <div className="section-header" style={{ textAlign: 'center' }}>
         <h2
           style={{
             fontSize: '1.75rem',
@@ -118,7 +108,7 @@ const ArchitectureSection: FC = () => {
         }}
       >
         {/* Level 0: Leaf */}
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div className="crate-level" style={{ justifyContent: 'center' }}>
           <CrateNode 
             crate={crates[0]} 
             isHovered={hoveredCrate === crates[0].name}
@@ -127,7 +117,7 @@ const ArchitectureSection: FC = () => {
         </div>
 
         {/* Level 1 */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem' }}>
+        <div className="crate-level" style={{ justifyContent: 'center' }}>
           <CrateNode 
             crate={crates[1]} 
             isHovered={hoveredCrate === crates[1].name}
@@ -141,7 +131,7 @@ const ArchitectureSection: FC = () => {
         </div>
 
         {/* Level 2 */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
+        <div className="crate-level" style={{ justifyContent: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
           <CrateNode 
             crate={crates[3]} 
             isHovered={hoveredCrate === crates[3].name}
@@ -160,7 +150,7 @@ const ArchitectureSection: FC = () => {
         </div>
 
         {/* Level 3: Binary */}
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div className="crate-level" style={{ justifyContent: 'center' }}>
           <CrateNode 
             crate={crates[6]} 
             isBinary 

@@ -9,19 +9,12 @@ const CommunitySection: FC = () => {
   const dividerColor = 'var(--color-border)';
 
   return (
-    <section
-      style={{
-        padding: '2rem 0',
-        borderTop: `1px solid ${dividerColor}`,
-      }}
-    >
+    <section className="section-padding" style={{ borderTop: `1px solid ${dividerColor}` }}>
       {/* Section header */}
       <div
         ref={headerRef}
-        style={{
-          textAlign: 'center',
-          marginBottom: '3rem',
-        }}
+        className="section-header"
+        style={{ textAlign: 'center' }}
       >
         <h2
           style={{
@@ -47,9 +40,9 @@ const CommunitySection: FC = () => {
 
       {/* Community Resources Grid */}
       <div
+        className="community-grid"
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
           gap: '1rem',
           maxWidth: '1200px',
           margin: '0 auto 3rem',
@@ -70,6 +63,7 @@ const CommunitySection: FC = () => {
             href={resource.href}
             target="_blank"
             rel="noopener noreferrer"
+            className="community-link-card"
             style={{
               display: 'flex',
               flexDirection: 'column',

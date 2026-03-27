@@ -11,10 +11,10 @@ const Footer: FC = () => {
       }}
     >
       <div
+        className="footer-container"
         style={{
           maxWidth: '1600px',
           margin: '0 auto',
-          padding: '0 4rem',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',

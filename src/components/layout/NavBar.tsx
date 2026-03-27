@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import type { FC } from "react";
 import { useState, useEffect } from "react";
-import { Star, Languages } from "lucide-react";
+import { Star, Languages, Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useTheme, THEMES } from "../../contexts/useTheme";
 
@@ -13,6 +13,7 @@ const NavBar: FC = () => {
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
   const [starCount, setStarCount] = useState<number | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleLanguage = () => {
     const newLang = i18n.language === "en" ? "zh-CN" : "en";
@@ -52,76 +53,71 @@ const NavBar: FC = () => {
   });
 
   return (
-    <nav
-      style={{
-        position: "sticky",
-        top: 0,
-        zIndex: "var(--z-sticky)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "var(--space-md) var(--space-xl)",
-        backgroundColor: "var(--color-bg-secondary)",
-        backdropFilter: "blur(12px)",
-        borderBottom: "1px solid var(--color-border)",
-      }}
-    >
-      {/* Logo / Home Link */}
-      <Link
-        to="/"
+    <>
+      <nav
+        className="navbar-container"
         style={{
+          position: "sticky",
+          top: 0,
+          zIndex: "var(--z-sticky)",
           display: "flex",
           alignItems: "center",
-          gap: "var(--space-sm)",
-          textDecoration: "none",
-          color: "var(--color-text-accent)",
-          fontFamily: "var(--font-display)",
-          fontSize: "1.25rem",
-          fontWeight: 700,
-          letterSpacing: "0.1em",
+          justifyContent: "space-between",
+          backgroundColor: "var(--color-bg-secondary)",
+          backdropFilter: "blur(12px)",
+          borderBottom: "1px solid var(--color-border)",
         }}
       >
-        {/* Theme-based Icon */}
-        <img
-          src={theme === THEMES.DARK ? darkIcon : lightIcon}
-          alt="LoongClaw"
-          style={{
-            width: "32px",
-            height: "32px",
-            objectFit: "contain",
-            transform: "translateY(-3px)",
-          }}
-        />
-        <span>LOONGCLAW</span>
-      </Link>
-
-      {/* Navigation Items */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "var(--space-xl)",
-        }}
-      >
-        <Link to="/docs" style={getLinkStyle("/docs")}>
-          {t("nav.docs")}
-        </Link>
-        <Link to="/community" style={getLinkStyle("/community")}>
-          {t("nav.community")}
-        </Link>
-        <Link to="/changelog" style={getLinkStyle("/changelog")}>
-          {t("nav.changelog")}
-        </Link>
-
-        {/* Action Group: Theme, Language, GitHub */}
-        <div
+        {/* Logo / Home Link */}
+        <Link
+          to="/"
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "var(--space-md)",
-            marginLeft: "var(--space-sm)", // Add some extra breath after the links
+            gap: "var(--space-sm)",
+            textDecoration: "none",
+            color: "var(--color-text-accent)",
+            fontFamily: "var(--font-display)",
+            fontSize: "1.25rem",
+            fontWeight: 700,
+            letterSpacing: "0.1em",
           }}
         >
+          {/* Theme-based Icon */}
+          <img
+            src={theme === THEMES.DARK ? darkIcon : lightIcon}
+            alt="LoongClaw"
+            style={{
+              width: "32px",
+              height: "32px",
+              objectFit: "contain",
+              transform: "translateY(-3px)",
+            }}
+          />
+          <span>LOONGCLAW</span>
+        </Link>
+
+        {/* Desktop Navigation Items */}
+        <div className="navbar-links">
+          <Link to="/docs" style={getLinkStyle("/docs")}>
+            {t("nav.docs")}
+          </Link>
+          <Link to="/community" style={getLinkStyle("/community")}>
+            {t("nav.community")}
+          </Link>
+          <Link to="/changelog" style={getLinkStyle("/changelog")}>
+            {t("nav.changelog")}
+          </Link>
+
+          {/* Action Group: Theme, Language, GitHub */}
+          <div
+            className="navbar-mobile-menu"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "var(--space-md)",
+            }}
+          >
           {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
@@ -222,7 +218,50 @@ const NavBar: FC = () => {
           </a>
         </div>
       </div>
+
+      {/* Mobile Menu Button - shown on small screens */}
+      <button
+        className="navbar-btn navbar-mobile-toggle"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        title="Toggle menu"
+        style={{
+          display: "none",
+        }}
+      >
+        {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+      </button>
     </nav>
+
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div
+          style={{
+            position: "fixed",
+            top: "60px",
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "var(--color-bg-primary)",
+            zIndex: "calc(var(--z-overlay) - 1)",
+            padding: "1.5rem",
+            display: "flex",
+            flexDirection: "column",
+            gap: "0.5rem",
+          }}
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          <Link to="/docs" style={{ ...getLinkStyle("/docs"), padding: "0.75rem 0" }} onClick={() => setMobileMenuOpen(false)}>
+            {t("nav.docs")}
+          </Link>
+          <Link to="/community" style={{ ...getLinkStyle("/community"), padding: "0.75rem 0" }} onClick={() => setMobileMenuOpen(false)}>
+            {t("nav.community")}
+          </Link>
+          <Link to="/changelog" style={{ ...getLinkStyle("/changelog"), padding: "0.75rem 0" }} onClick={() => setMobileMenuOpen(false)}>
+            {t("nav.changelog")}
+          </Link>
+        </div>
+      )}
+    </>
   );
 };
 

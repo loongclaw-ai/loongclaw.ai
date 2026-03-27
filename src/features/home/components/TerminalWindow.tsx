@@ -22,6 +22,7 @@ const TerminalWindow: FC = () => {
 
   return (
     <div
+      className="terminal-window"
       style={{
         position: "relative",
         zIndex: 2,
@@ -66,7 +67,6 @@ const TerminalWindow: FC = () => {
           border: "1px solid var(--color-border)",
           borderRadius: "6px",
           width: "100%",
-          minWidth: "420px",
           display: "flex",
           flexDirection: "column",
           position: "relative",

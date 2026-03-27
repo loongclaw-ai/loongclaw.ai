@@ -35,19 +35,9 @@ const FeaturesSection: FC = () => {
     ? 'var(--color-border)'
     : 'rgb(177, 35, 28)';
   return (
-    <section
-      style={{
-        padding: '4rem 0',
-        borderTop: `1px solid ${dividerColor}`,
-      }}
-    >
+    <section className="section-padding" style={{ borderTop: `1px solid ${dividerColor}` }}>
       {/* Section header */}
-      <div
-        style={{
-          textAlign: 'center',
-          marginBottom: '3rem',
-        }}
-      >
+      <div className="section-header" style={{ textAlign: 'center' }}>
         <h2
           style={{
             fontSize: '1.75rem',
@@ -72,9 +62,9 @@ const FeaturesSection: FC = () => {
 
       {/* Feature cards grid */}
       <div
+        className="features-grid"
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
           gap: '1.5rem',
         }}
       >

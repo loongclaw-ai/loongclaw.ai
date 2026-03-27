@@ -14,20 +14,12 @@ const HeroSection: FC = () => {
     ? "var(--color-accent)"
     : "rgb(177, 35, 28)";
   return (
-    <section
-      style={{
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gap: "4rem",
-        alignItems: "center",
-        minHeight: "calc(100vh - 200px)",
-        paddingTop: "2rem",
-      }}
-    >
+    <section className="hero-section">
       {/* Left column */}
-      <div style={{ position: "relative" }}>
-        {/* Accent line */}
+      <div className="hero-left">
+        {/* Accent line - desktop only */}
         <div
+          className="hero-accent-line"
           style={{
             position: "absolute",
             left: "-2rem",
@@ -145,7 +137,7 @@ const HeroSection: FC = () => {
         <StatsMatrix />
 
         {/* CTA Buttons */}
-        <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
+        <div className="hero-cta">
           <button
             className="hero-btn hero-btn-primary"
             onClick={() => {
@@ -197,14 +189,7 @@ const HeroSection: FC = () => {
       </div>
 
       {/* Right column: Terminal */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "1rem",
-          paddingTop: "3rem",
-        }}
-      >
+      <div className="hero-right">
         {/* A Letter from the Developer button - HIDDEN
         <div style={{ display: "flex", justifyContent: "flex-end" }}>
           <a

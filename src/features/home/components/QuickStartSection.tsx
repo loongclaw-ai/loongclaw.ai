@@ -60,18 +60,11 @@ const QuickStartSection: FC = () => {
   return (
     <section
       id="quick-start"
-      style={{
-        padding: '4rem 0',
-        borderTop: `1px solid ${dividerColor}`,
-      }}
+      className="section-padding"
+      style={{ borderTop: `1px solid ${dividerColor}` }}
     >
       {/* Section header */}
-      <div
-        style={{
-          textAlign: 'center',
-          marginBottom: '3rem',
-        }}
-      >
+      <div className="section-header" style={{ textAlign: 'center' }}>
         <h2
           style={{
             fontSize: '1.75rem',
@@ -105,8 +98,8 @@ const QuickStartSection: FC = () => {
 
       {/* Code blocks - cross fade with height preservation */}
       <div
+        className="quickstart-code-container"
         style={{
-          maxWidth: '600px',
           margin: '0 auto',
           position: 'relative',
           minHeight: '280px',
