@@ -19,19 +19,19 @@ cd loongclaw
 ./scripts/install.sh --source
 
 # Initialize and onboard
-loongclaw onboard`;
+loong onboard`;
 
 const configCode = `# Configure your preferred provider
-loongclaw config provider set openai --key sk-...
+loong config provider set openai --key sk-...
 
 # Or use interactive wizard
-loongclaw config wizard`;
+loong config wizard`;
 
 const chatCode = `# Verify your installation
-loongclaw doctor
+loong doctor
 
 # Start interactive session
-loongclaw chat`;
+loong chat`;
 
 const codeBlocks = [installCode, configCode, chatCode];
 

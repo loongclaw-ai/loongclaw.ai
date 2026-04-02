@@ -117,7 +117,7 @@ const TerminalWindow: FC = () => {
                 background: "#22c55e",
               }}
             />
-            loongclaw@claw:~$
+            loong@claw:~$
           </span>
           <div style={{ display: "flex", gap: "6px" }}>
             <div
@@ -246,7 +246,7 @@ const TerminalWindow: FC = () => {
               $
             </span>
             <span style={{ color: "var(--color-text-primary)" }}>
-              loongclaw onboard
+              loong onboard
             </span>
           </div>
           <div
@@ -272,7 +272,7 @@ const TerminalWindow: FC = () => {
                 $
               </span>
               <span style={{ color: "var(--color-text-primary)" }}>
-                loongclaw chat
+                loong chat
               </span>
               <div
                 style={{
