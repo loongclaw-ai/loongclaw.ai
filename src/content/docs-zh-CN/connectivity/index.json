@@ -1,9 +1,0 @@
-{
-  "frontmatter": {
-    "title": "连接性",
-    "description": "将 LoongClaw 连接到 LLM 提供商和通信渠道",
-    "path": "/docs/connectivity"
-  },
-  "html": "<h1>连接性</h1>\n<p>连接性支柱关注 LoongClaw 如何与外部世界通信——无论是与 AI 模型还是与用户。</p>\n<h2>在本节中：</h2>\n<ul>\n<li><strong><a href=\"/docs/connectivity/providers\">LLM 提供商</a></strong>：配置与 OpenAI、Anthropic、DeepSeek、Kimi、Gemini 等的连接。</li>\n<li><strong><a href=\"/docs/connectivity/channels\">通信渠道</a></strong>：设置 Telegram、飞书 (Lark) 和 CLI 等通信渠道。</li>\n</ul>\n",
-  "slug": "index"
-}

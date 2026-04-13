@@ -135,27 +135,5 @@
   "changelog_page": {
     "title": "Changelog",
     "loading": "Loading..."
-  },
-  "docs_menu": {
-    "index": "Documentation",
-    "foundations": "Foundations",
-    "connectivity": "Connectivity",
-    "runtime": "Runtime Engine",
-    "orchestration": "Advanced Orchestration",
-    "operations": "Operations",
-    "getting-started": "Getting Started",
-    "quick-start": "Quick Start",
-    "configuration": "Configuration",
-    "commands": "CLI Commands",
-    "providers": "Providers",
-    "channels": "Channels",
-    "tools": "Tools",
-    "memory": "Memory & Sessions",
-    "skills": "Skills & ACP",
-    "troubleshooting": "Troubleshooting",
-    "loading": "Loading...",
-    "page_not_found": "Page Not Found",
-    "failed_load": "Failed to load content.",
-    "not_found": "Content not found."
   }
 }

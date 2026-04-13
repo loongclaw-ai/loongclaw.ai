@@ -1,9 +1,0 @@
-{
-  "frontmatter": {
-    "title": "Foundations",
-    "description": "Core concepts, installation, and initial setup for LoongClaw",
-    "path": "/docs/foundations"
-  },
-  "html": "<h1>Foundations</h1>\n<p>Welcome to the Foundations section of the LoongClaw documentation. This section covers the essential knowledge you need to get LoongClaw up and running on your system.</p>\n<h2>In this section:</h2>\n<ul>\n<li><strong><a href=\"/docs/foundations/getting-started\">Getting Started</a></strong>: Install, configure, and run LoongClaw.</li>\n<li><strong><a href=\"/docs/foundations/getting-started/quick-start\">Quick Start</a></strong>: Your first 5 minutes with LoongClaw.</li>\n<li><strong><a href=\"/docs/foundations/commands\">CLI Reference</a></strong>: Master the LoongClaw command-line interface.</li>\n<li><strong><a href=\"/docs/foundations/configuration\">Configuration</a></strong>: Understand how to customize LoongClaw settings.</li>\n</ul>\n",
-  "slug": "index"
-}

@@ -1,9 +1,0 @@
-{
-  "frontmatter": {
-    "title": "Connectivity",
-    "description": "Connect LoongClaw to LLM providers and communication channels",
-    "path": "/docs/connectivity"
-  },
-  "html": "<h1>Connectivity</h1>\n<p>The Connectivity pillar focuses on how LoongClaw communicates with the outside world—both with AI models and with users.</p>\n<h2>In this section:</h2>\n<ul>\n<li><strong><a href=\"/docs/connectivity/providers\">LLM Providers</a></strong>: Configure connections to OpenAI, Anthropic, DeepSeek, Kimi, Gemini, and more.</li>\n<li><strong><a href=\"/docs/connectivity/channels\">Channels</a></strong>: Set up communication channels like Telegram, Feishu (Lark), and the CLI.</li>\n</ul>\n",
-  "slug": "index"
-}

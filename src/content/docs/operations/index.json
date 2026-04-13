@@ -1,9 +1,0 @@
-{
-  "frontmatter": {
-    "title": "Operations",
-    "description": "Troubleshooting, governance, and security",
-    "path": "/docs/operations"
-  },
-  "html": "<h1>Operations</h1>\n<p>The Operations pillar focuses on maintaining, securing, and governing your LoongClaw deployment.</p>\n<h2>In this section:</h2>\n<ul>\n<li><strong><a href=\"/docs/operations/troubleshooting\">Troubleshooting</a></strong>: Identify and solve common issues.</li>\n<li><strong><a href=\"/docs/operations/governance\">Governance</a></strong>: Implement policies and usage controls.</li>\n<li><strong><a href=\"/docs/operations/security\">Security</a></strong>: Learn about the security architecture and best practices.</li>\n</ul>\n",
-  "slug": "index"
-}

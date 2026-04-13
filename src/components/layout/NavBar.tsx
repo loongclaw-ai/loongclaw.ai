@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Star, Languages, Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useTheme, THEMES } from "../../contexts/useTheme";
+import { docsBaseUrl } from "../../utils/docs-url";
 
 import darkIcon from "../../assets/loongclaw-icon-white.ico";
 import lightIcon from "../../assets/loongclaw-icon-red.ico";
@@ -99,9 +100,9 @@ const NavBar: FC = () => {
 
         {/* Desktop Navigation Items */}
         <div className="navbar-links">
-          <Link to="/docs" style={getLinkStyle("/docs")}>
+          <a href={docsBaseUrl} style={getLinkStyle("/docs")}>
             {t("nav.docs")}
-          </Link>
+          </a>
           <Link to="/community" style={getLinkStyle("/community")}>
             {t("nav.community")}
           </Link>
@@ -250,9 +251,9 @@ const NavBar: FC = () => {
           }}
           onClick={() => setMobileMenuOpen(false)}
         >
-          <Link to="/docs" style={{ ...getLinkStyle("/docs"), padding: "0.75rem 0" }} onClick={() => setMobileMenuOpen(false)}>
+          <a href={docsBaseUrl} style={{ ...getLinkStyle("/docs"), padding: "0.75rem 0" }} onClick={() => setMobileMenuOpen(false)}>
             {t("nav.docs")}
-          </Link>
+          </a>
           <Link to="/community" style={{ ...getLinkStyle("/community"), padding: "0.75rem 0" }} onClick={() => setMobileMenuOpen(false)}>
             {t("nav.community")}
           </Link>

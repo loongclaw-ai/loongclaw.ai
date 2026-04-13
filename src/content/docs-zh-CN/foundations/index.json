@@ -1,9 +1,0 @@
-{
-  "frontmatter": {
-    "title": "基础",
-    "description": "LoongClaw 的核心概念、安装和初始设置",
-    "path": "/docs/foundations"
-  },
-  "html": "<h1>基础</h1>\n<p>欢迎来到 LoongClaw 文档的基础部分。本节涵盖了在系统上运行 LoongClaw 所需的基本知识。</p>\n<h2>在本节中：</h2>\n<ul>\n<li><strong><a href=\"/docs/foundations/getting-started\">快速入门</a></strong>：安装、配置并开始使用 LoongClaw。</li>\n<li><strong><a href=\"/docs/foundations/getting-started/quick-start\">快速开始</a></strong>：在 5 分钟内运行您的第一个 AI 模型。</li>\n<li><strong><a href=\"/docs/foundations/commands\">CLI 命令参考</a></strong>：掌握 LoongClaw 命令行界面。</li>\n<li><strong><a href=\"/docs/foundations/configuration\">配置</a></strong>：了解如何自定义 LoongClaw 设置。</li>\n</ul>\n",
-  "slug": "index"
-}

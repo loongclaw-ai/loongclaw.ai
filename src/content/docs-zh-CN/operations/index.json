@@ -1,9 +1,0 @@
-{
-  "frontmatter": {
-    "title": "运维",
-    "description": "故障排除、治理和安全",
-    "path": "/docs/operations"
-  },
-  "html": "<h1>运维</h1>\n<p>运维支柱专注于维护、安全和治理您的 LoongClaw 部署。</p>\n<h2>在本节中：</h2>\n<ul>\n<li><strong><a href=\"/docs/operations/troubleshooting\">故障排除</a></strong>：识别并解决常见问题。</li>\n<li><strong><a href=\"/docs/operations/governance\">治理</a></strong>：实施策略和使用控制。</li>\n<li><strong><a href=\"/docs/operations/security\">安全</a></strong>：了解安全架构和最佳实践。</li>\n</ul>\n",
-  "slug": "index"
-}

@@ -1,9 +1,0 @@
-{
-  "frontmatter": {
-    "title": "Runtime Engine",
-    "description": "Internal engine: Memory, Sessions, and Tools",
-    "path": "/docs/runtime"
-  },
-  "html": "<h1>Runtime Engine</h1>\n<p>The Runtime Engine is the heart of LoongClaw, managing how it processes information, remembers past interactions, and uses tools.</p>\n<h2>In this section:</h2>\n<ul>\n<li><strong><a href=\"/docs/runtime/memory\">Memory</a></strong>: Understand how LoongClaw persists state and recalls information.</li>\n<li><strong><a href=\"/docs/runtime/sessions\">Sessions</a></strong>: Learn how multiple chat contexts are managed independently.</li>\n<li><strong><a href=\"/docs/runtime/tools\">Tools</a></strong>: Extend LoongClaw's capabilities with built-in shell, file, and web tools.</li>\n</ul>\n",
-  "slug": "index"
-}

@@ -5,21 +5,6 @@ export interface NavItem {
   external?: boolean;
 }
 
-// Documentation
-export interface DocSection {
-  id: string;
-  title: string;
-  path: string;
-  description?: string;
-  children?: DocSection[];
-}
-
-export interface DocNode extends DocSection {
-  content?: string;
-  prev?: string;
-  next?: string;
-}
-
 // Changelog
 export type ChangeType = "feat" | "fix" | "perf" | "breaking" | "docs";
 
