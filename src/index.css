@@ -1753,6 +1753,132 @@ button {
     animation: terminal-drift 9s ease-in-out infinite;
 }
 
+.terminal-visual-stack {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+@media (min-width: 1024px) {
+    .terminal-visual-stack {
+        padding: 1.35rem 0.15rem 0.75rem;
+    }
+}
+
+.terminal-overlay {
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--color-bg-secondary) 72%, transparent);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.14);
+    opacity: 0.76;
+}
+
+.terminal-overlay-label {
+    display: inline-flex;
+    color: var(--color-text-muted);
+    font-size: 0.56rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: var(--font-mono);
+}
+
+.terminal-overlay-path,
+.terminal-overlay-runtime,
+.terminal-overlay-files,
+.terminal-overlay-status {
+    position: absolute;
+    z-index: 1;
+    animation: terminal-card-float 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.terminal-overlay-path {
+    top: 18px;
+    left: -72px;
+    width: 128px;
+    padding: 0.62rem 0.66rem;
+    animation-delay: -0.6s;
+}
+
+.terminal-overlay-runtime {
+    right: -54px;
+    top: 10px;
+    width: 172px;
+    padding: 0.6rem 0.66rem;
+    animation-delay: -1.7s;
+}
+
+.terminal-overlay-files {
+    left: -58px;
+    bottom: 18px;
+    width: 138px;
+    padding: 0.62rem 0.66rem;
+    animation-delay: -1.15s;
+}
+
+.terminal-overlay-status {
+    right: -46px;
+    bottom: 62px;
+    width: 126px;
+    padding: 0.62rem 0.66rem;
+    animation-delay: -2.2s;
+}
+
+.terminal-overlay-list {
+    display: grid;
+    gap: 0.42rem;
+    margin-top: 0.68rem;
+}
+
+.terminal-overlay-row {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 0.38rem;
+    color: var(--color-text-secondary);
+    font-size: 0.64rem;
+    font-family: var(--font-mono);
+}
+
+.terminal-overlay-index {
+    color: var(--color-text-muted);
+    font-size: 0.64rem;
+    letter-spacing: 0.08em;
+}
+
+.terminal-overlay-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.38rem;
+    margin-top: 0.7rem;
+}
+
+.terminal-overlay-pill {
+    padding: 0.2rem 0.36rem;
+    border-radius: 999px;
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-secondary);
+    font-size: 0.6rem;
+    font-family: var(--font-mono);
+}
+
+.terminal-overlay-metric {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.4rem;
+    margin-top: 0.66rem;
+    color: var(--color-text-secondary);
+    font-size: 0.62rem;
+    font-family: var(--font-mono);
+}
+
+.terminal-overlay-metric strong {
+    color: var(--color-text-primary);
+    font-size: 0.82rem;
+}
+
 .terminal-frame {
     box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
 }
@@ -1811,6 +1937,35 @@ button {
 
 .terminal-status-dot-faint {
     animation: terminal-status-fade 2.6s ease-in-out infinite;
+}
+
+.terminal-mobile-summary {
+    display: none;
+}
+
+@media (max-width: 1023px) {
+    .terminal-overlay-path,
+    .terminal-overlay-runtime,
+    .terminal-overlay-files,
+    .terminal-overlay-status {
+        display: none;
+    }
+
+    .terminal-mobile-summary {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+    }
+
+    .terminal-mobile-chip {
+        padding: 0.28rem 0.5rem;
+        border-radius: 999px;
+        border: 1px solid var(--color-border);
+        background: var(--color-bg-secondary);
+        color: var(--color-text-secondary);
+        font-size: 0.68rem;
+        font-family: var(--font-mono);
+    }
 }
 
 .code-shell {
@@ -1922,6 +2077,12 @@ button {
     0%,
     100% { opacity: 0.22; }
     50% { opacity: 0.54; }
+}
+
+@keyframes terminal-card-float {
+    0%,
+    100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
 }
 
 @keyframes code-glint {
