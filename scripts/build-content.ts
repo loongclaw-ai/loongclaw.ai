@@ -37,6 +37,7 @@ async function buildChangelog() {
     return;
   }
 
+  fs.rmSync(outputDir, { recursive: true, force: true });
   fs.mkdirSync(outputDir, { recursive: true });
 
   const files = fs.readdirSync(changelogDir).filter((f) => f.endsWith(".md"));

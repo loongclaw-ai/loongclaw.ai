@@ -1,5 +1,5 @@
 import type { RouteObject } from "react-router-dom";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation, useNavigationType } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
 import HomePage from "../features/home";
 import DocsPage from "../features/docs";
@@ -9,11 +9,22 @@ import FileRedirectPage from "../features/system/FileRedirectPage";
 import NotFoundPage from "../features/system/NotFoundPage";
 import RouteErrorPage from "../features/system/RouteErrorPage";
 
-export const PageLayout = () => (
-  <RootLayout>
-    <Outlet />
-  </RootLayout>
-);
+export const PageLayout = () => {
+  const location = useLocation();
+  const navigationType = useNavigationType();
+  const isDocsRoute = location.pathname.startsWith("/docs");
+  const transitionClass = isDocsRoute
+    ? "page-transition-shell page-transition-shell-static"
+    : `page-transition-shell ${navigationType === "POP" ? "page-transition-shell-pop" : "page-transition-shell-push"}`;
+
+  return (
+    <RootLayout>
+      <div key={isDocsRoute ? "docs-shell" : location.pathname} className={transitionClass}>
+        <Outlet />
+      </div>
+    </RootLayout>
+  );
+};
 
 export const appRoutes: RouteObject[] = [
   {

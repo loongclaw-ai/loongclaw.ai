@@ -13,8 +13,17 @@
     "btn_view_playbooks": "View Playbooks"
   },
   "features": {
+    "kicker": "Product stance",
     "title": "Why Loong",
     "subtitle": "First value fast, governed runtime later, on the same public surface.",
+    "lead_copy_1": "Loong starts from assistant behavior, but it is not trying to end as a thin prompt wrapper or a terminal-only toy. The public surface is intentionally short first, then explicit about the runtime that actually powers it.",
+    "lead_copy_2": "That is the product bet: one useful result should be easy to reach, while providers, channels, gateway ownership, policy, tools, memory, and audit remain inspectable instead of dissolving into marketing blur.",
+    "principles": [
+      "first value fast",
+      "truthful contracts",
+      "governed capabilities",
+      "extensible seams"
+    ],
     "first_value_title": "First value fast",
     "first_value_desc": "Reach one useful result before you are forced to learn the whole architecture.",
     "first_value_details": [
@@ -83,8 +92,10 @@
     "binary": "BINARY"
   },
   "quickstart": {
+    "kicker": "Shortest successful path",
     "title": "Get Started in 5 Minutes",
     "subtitle": "Install, reach a first useful answer, and keep the local runtime healthy.",
+    "note": "Loong docs lead with one healthy local operator path first. Providers, channels, gateway ownership, and richer runtime surfaces come after that path works.",
     "step1_title": "Installation",
     "step1_desc": "Use the release-first installer or source install with --onboard",
     "step2_title": "First Run",
@@ -103,7 +114,7 @@
     "kicker": "Choose your path",
     "title": "Choose Your Path",
     "subtitle": "Use the same docs structure as the product: start from the decision you actually need to make.",
-    "local_label": "Get Started",
+    "local_label": "Get started",
     "local_title": "Shortest path to first value",
     "local_desc": "Start with installation, first run, and doctor when you want one healthy local result fast.",
     "provider_label": "Providers",
@@ -176,7 +187,8 @@
   },
   "common": {
     "open_docs": "Open Docs",
-    "open_playbook": "Open Playbook"
+    "open_playbook": "Open Playbook",
+    "open_full_guide": "Open Full Guide"
   },
   "community_page": {
     "title": "Community",

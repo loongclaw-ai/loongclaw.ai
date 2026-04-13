@@ -13,8 +13,17 @@
     "btn_view_playbooks": "查看 Playbooks"
   },
   "features": {
+    "kicker": "产品立场",
     "title": "为什么是 Loong",
     "subtitle": "先快速拿到价值，再在同一套公开运行时上扩展治理、交付和长期能力。",
+    "lead_copy_1": "Loong 从 assistant behavior 起步，但它并不想停在一个薄薄的 prompt wrapper，或者一个只会在终端里演示的玩具。公开表面先短、先能跑，然后再把真正支撑它的 runtime 明确展开。",
+    "lead_copy_2": "这就是 Loong 的产品赌注：一个有用结果应该很快拿到，而 provider、channel、gateway ownership、policy、tools、memory、audit 这些真正影响团队使用的部分，也必须保持可检查、可理解、可演化。",
+    "principles": [
+      "先拿到价值",
+      "契约保持真实",
+      "治理能力在路径内",
+      "按边界扩展"
+    ],
     "first_value_title": "先拿到第一个有用结果",
     "first_value_desc": "在你理解完整架构之前，先通过最短路径拿到一个健康的可用结果。",
     "first_value_details": [
@@ -83,8 +92,10 @@
     "binary": "BINARY"
   },
   "quickstart": {
+    "kicker": "最短成功路径",
     "title": "5 分钟快速开始",
     "subtitle": "先安装，再拿到第一个可用回答，并保持本地运行时健康。",
+    "note": "Loong 的公开文档先保证一个健康的本地 operator path。provider、channel、gateway ownership 和更复杂的 runtime surface 都排在它后面。",
     "step1_title": "安装",
     "step1_desc": "使用 release-first 安装器，或在源码路径下配合 --onboard 安装",
     "step2_title": "首次运行",
@@ -176,7 +187,8 @@
   },
   "common": {
     "open_docs": "查看文档",
-    "open_playbook": "查看部署路径"
+    "open_playbook": "查看部署路径",
+    "open_full_guide": "查看完整指南"
   },
   "community_page": {
     "title": "社区",

@@ -52,61 +52,50 @@ const PathwaysSection: FC = () => {
 
   return (
     <section className="section-padding reveal-stage" data-reveal style={{ borderTop: `1px solid ${dividerColor}` }}>
-      <div className="section-header" style={{ textAlign: "center" }}>
-        <p className="story-kicker">{t("pathways.kicker")}</p>
-        <h2
-          style={{
-            fontSize: "1.75rem",
-            fontWeight: 700,
-            color: "var(--color-text-primary)",
-            marginBottom: "0.75rem",
-          }}
-        >
-          {t("pathways.title")}
-        </h2>
-        <p
-          style={{
-            fontSize: "1rem",
-            color: "var(--color-text-secondary)",
-            maxWidth: "680px",
-            margin: "0 auto",
-          }}
-        >
-          {t("pathways.subtitle")}
-        </p>
-      </div>
+      <div className="pathway-shell">
+        <div className="pathway-intro">
+          <p className="story-kicker">{t("pathways.kicker")}</p>
+          <h2 className="pathway-heading">{t("pathways.title")}</h2>
+          <p className="pathway-subtitle">{t("pathways.subtitle")}</p>
+          <div className="pathway-intro-stack">
+            <div className="pathway-intro-block">
+              <span className="pathway-intro-label">{pathways[0].label}</span>
+              <p className="pathway-intro-copy">{pathways[0].description}</p>
+            </div>
+            <div className="pathway-intro-block">
+              <span className="pathway-intro-label">{pathways[3].label}</span>
+              <p className="pathway-intro-copy">{pathways[3].description}</p>
+            </div>
+          </div>
+        </div>
 
-      <div className="pathway-flow">
-        {pathways.map((pathway, index) => (
-          <a
-            key={pathway.title}
-            href={pathway.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="pathway-node"
-          >
-            <div className="pathway-node-top">
-              <span className="pathway-index">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <div className="pathway-icon">
-                <pathway.icon size={22} />
+        <div className="pathway-list">
+          {pathways.map((pathway, index) => (
+            <a
+              key={pathway.title}
+              href={pathway.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pathway-row"
+            >
+              <div className="pathway-row-index">{String(index + 1).padStart(2, "0")}</div>
+              <div className="pathway-row-icon">
+                <pathway.icon size={18} />
               </div>
-            </div>
-
-            <div className="pathway-rail">
-              <span className="pathway-label">{pathway.label}</span>
-            </div>
-
-            <h3 className="pathway-title">{pathway.title}</h3>
-            <p className="pathway-copy">{pathway.description}</p>
-
-            <span className="pathway-link">
-              {t("common.open_docs")}
-              <ArrowRight size={14} />
-            </span>
-          </a>
-        ))}
+              <div className="pathway-row-copy">
+                <div className="pathway-row-topline">
+                  <span className="pathway-row-label">{pathway.label}</span>
+                  <h3 className="pathway-row-title">{pathway.title}</h3>
+                </div>
+                <p className="pathway-row-desc">{pathway.description}</p>
+              </div>
+              <span className="pathway-row-link">
+                {t("common.open_docs")}
+                <ArrowRight size={14} />
+              </span>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );

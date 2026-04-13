@@ -1,9 +1,7 @@
-// src/features/home/components/FeaturesSection.tsx
 import type { FC } from 'react';
 import { Puzzle, Rocket, ShieldCheck, Waypoints } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useTheme, THEMES } from '../../../contexts/useTheme';
-import FeatureCard from './FeatureCard';
 
 const FeaturesSection: FC = () => {
   const { t } = useTranslation();
@@ -42,41 +40,44 @@ const FeaturesSection: FC = () => {
     : 'rgb(177, 35, 28)';
   return (
     <section className="section-padding reveal-stage" data-reveal style={{ borderTop: `1px solid ${dividerColor}` }}>
-      {/* Section header */}
-      <div className="section-header" style={{ textAlign: 'center' }}>
-        <h2
-          style={{
-            fontSize: '1.75rem',
-            fontWeight: 700,
-            color: 'var(--color-text-primary)',
-            marginBottom: '0.75rem',
-          }}
-        >
-          {t('features.title')}
-        </h2>
-        <p
-          style={{
-            fontSize: '1rem',
-            color: 'var(--color-text-secondary)',
-            maxWidth: '600px',
-            margin: '0 auto',
-          }}
-        >
-          {t('features.subtitle')}
-        </p>
-      </div>
+      <div className="why-shell">
+        <div className="why-aside">
+          <p className="story-kicker">{t('features.kicker')}</p>
+          <h2 className="why-title">{t('features.title')}</h2>
+          <p className="why-lead">{t('features.subtitle')}</p>
+          <p className="why-body">{t('features.lead_copy_1')}</p>
+          <p className="why-body">{t('features.lead_copy_2')}</p>
+          <div className="why-principles">
+            {(t('features.principles', { returnObjects: true }) as string[]).map((item) => (
+              <span key={item} className="why-principle-pill">
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
 
-      {/* Feature cards grid */}
-      <div
-        className="features-grid"
-        style={{
-          display: 'grid',
-          gap: '1rem',
-        }}
-      >
-        {features.map((feature) => (
-          <FeatureCard key={feature.title} {...feature} />
-        ))}
+        <div className="why-track">
+          {features.map((feature, index) => (
+            <article key={feature.title} className="why-card">
+              <div className="why-card-meta">
+                <span className="why-card-index">{String(index + 1).padStart(2, '0')}</span>
+                <div className="why-card-icon">
+                  <feature.icon size={20} />
+                </div>
+              </div>
+              <h3 className="why-card-title">{feature.title}</h3>
+              <p className="why-card-copy">{feature.description}</p>
+              <ul className="why-card-list">
+                {feature.details.map((detail) => (
+                  <li key={detail} className="why-card-list-item">
+                    <span className="why-card-bullet" />
+                    <span>{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

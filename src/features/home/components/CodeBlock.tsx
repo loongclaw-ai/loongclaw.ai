@@ -18,6 +18,7 @@ const CodeBlock: FC<CodeBlockProps> = ({ code, language = 'bash' }) => {
 
   return (
     <div
+      className="code-shell"
       style={{
         background: 'var(--color-bg-tertiary)',
         border: '1px solid var(--color-border)',
@@ -28,6 +29,7 @@ const CodeBlock: FC<CodeBlockProps> = ({ code, language = 'bash' }) => {
     >
       {/* Header */}
       <div
+        className="code-shell-header"
         style={{
           display: 'flex',
           justifyContent: 'space-between',
@@ -48,6 +50,7 @@ const CodeBlock: FC<CodeBlockProps> = ({ code, language = 'bash' }) => {
           {language}
         </span>
         <button
+          className="code-shell-copy"
           onClick={handleCopy}
           style={{
             display: 'flex',
@@ -80,6 +83,7 @@ const CodeBlock: FC<CodeBlockProps> = ({ code, language = 'bash' }) => {
 
       {/* Code content */}
       <pre
+        className="code-shell-pre"
         style={{
           padding: '1rem',
           margin: 0,

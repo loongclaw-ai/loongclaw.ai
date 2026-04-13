@@ -81,94 +81,56 @@ const QuickStartSection: FC = () => {
       data-reveal
       style={{ borderTop: `1px solid ${dividerColor}` }}
     >
-      {/* Section header */}
-      <div className="section-header" style={{ textAlign: 'center' }}>
-        <h2
+      <div className="quickstart-shell">
+        <div className="quickstart-aside">
+          <p className="story-kicker">{t('quickstart.kicker')}</p>
+          <h2 className="quickstart-title">{t('quickstart.title')}</h2>
+          <p className="quickstart-subtitle">{t('quickstart.subtitle')}</p>
+          <p className="quickstart-note">{t('quickstart.note')}</p>
+
+          <StepIndicator 
+            steps={translatedSteps} 
+            activeStep={activeStep}
+            onStepClick={handleStepClick}
+          />
+        </div>
+
+        <div
+          className="quickstart-panel"
           style={{
-            fontSize: '1.75rem',
-            fontWeight: 700,
-            color: 'var(--color-text-primary)',
-            marginBottom: '0.75rem',
+            minHeight: '340px',
           }}
         >
-          {t('quickstart.title')}
-        </h2>
-        <p
-          style={{
-            fontSize: '1rem',
-            color: 'var(--color-text-secondary)',
-            maxWidth: '600px',
-            margin: '0 auto',
-          }}
-        >
-          {t('quickstart.subtitle')}
-        </p>
-      </div>
-
-      {/* Step indicator - clickable */}
-      <div style={{ marginBottom: '2rem' }}>
-        <StepIndicator 
-          steps={translatedSteps} 
-          activeStep={activeStep}
-          onStepClick={handleStepClick}
-        />
-      </div>
-
-      {/* Code blocks - cross fade with height preservation */}
-      <div
-        className="quickstart-code-container"
-        style={{
-          margin: '0 auto',
-          position: 'relative',
-          minHeight: '360px',
-        }}
-      >
-        {codeBlocks.map((code, index) => {
-          const stepNumber = index + 1;
-          const isActive = stepNumber === activeStep;
-          const step = translatedSteps[index];
-          
-          return (
-            <div
-              key={stepNumber}
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                opacity: isActive ? 1 : 0,
-                zIndex: isActive ? 1 : 0,
-                transform: isActive ? 'translateY(0)' : 'translateY(8px)',
-                transition: isActive 
-                  ? 'opacity 300ms ease 50ms, transform 300ms ease 50ms'
-                  : 'opacity 200ms ease, transform 200ms ease',
-                pointerEvents: isActive ? 'auto' : 'none',
-              }}
-            >
-              <CodeBlock code={code} language="bash" />
+          {codeBlocks.map((code, index) => {
+            const stepNumber = index + 1;
+            const isActive = stepNumber === activeStep;
+            const step = translatedSteps[index];
+            
+            return (
               <div
-                style={{
-                  marginTop: '1rem',
-                  display: 'flex',
-                  justifyContent: 'flex-end',
-                }}
+                key={stepNumber}
+                className={`quickstart-stage ${isActive ? 'quickstart-stage-active' : ''}`}
               >
-                <a
-                  href={step.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hero-btn hero-btn-secondary"
-                  style={{
-                    fontSize: '0.7rem',
-                    padding: '0.6rem 1rem',
-                  }}
-                >
-                  {t('quickstart.full_guide')}
-                </a>
+                <CodeBlock code={code} language="bash" />
+                <div className="quickstart-stage-footer">
+                  <span className="quickstart-stage-caption">{step.title}</span>
+                  <a
+                    href={step.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hero-btn hero-btn-secondary"
+                    style={{
+                      fontSize: '0.7rem',
+                      padding: '0.6rem 1rem',
+                    }}
+                  >
+                    {t('common.open_full_guide')}
+                  </a>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );

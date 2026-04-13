@@ -22,7 +22,7 @@ const TerminalWindow: FC = () => {
 
   return (
     <div
-      className="terminal-window"
+      className="terminal-window terminal-shell"
       style={{
         position: "relative",
         zIndex: 2,
@@ -31,6 +31,7 @@ const TerminalWindow: FC = () => {
     >
       {/* Corner accents - tech style */}
       <div
+        className="terminal-corner terminal-corner-tl"
         style={{
           position: "absolute",
           width: "24px",
@@ -45,6 +46,7 @@ const TerminalWindow: FC = () => {
         }}
       />
       <div
+        className="terminal-corner terminal-corner-br"
         style={{
           position: "absolute",
           width: "24px",
@@ -61,6 +63,7 @@ const TerminalWindow: FC = () => {
 
       {/* Terminal container with glow */}
       <div
+        className="terminal-frame"
         style={{
           background: terminalBg,
           backdropFilter: "blur(12px)",
@@ -75,6 +78,7 @@ const TerminalWindow: FC = () => {
       >
         {/* Subtle glow effect */}
         <div
+          className="terminal-top-glow"
           style={{
             position: "absolute",
             top: 0,
@@ -89,6 +93,7 @@ const TerminalWindow: FC = () => {
 
         {/* Terminal header */}
         <div
+          className="terminal-shell-header"
           style={{
             borderBottom: "1px solid var(--color-border)",
             padding: "0.6rem 1rem",
@@ -97,10 +102,11 @@ const TerminalWindow: FC = () => {
             alignItems: "center",
             background: headerBg,
           }}
-        >
-          <span
-            style={{
-              fontSize: "0.6rem",
+          >
+            <span
+              className="terminal-shell-prompt"
+              style={{
+                fontSize: "0.6rem",
               color: "var(--color-text-secondary)",
               letterSpacing: "0.1em",
               fontFamily: "var(--font-mono)",
@@ -108,10 +114,11 @@ const TerminalWindow: FC = () => {
               alignItems: "center",
               gap: "0.5rem",
             }}
-          >
-            <span
-              style={{
-                width: "6px",
+            >
+              <span
+                className="terminal-status-dot terminal-status-dot-live"
+                style={{
+                  width: "6px",
                 height: "6px",
                 borderRadius: "50%",
                 background: "#22c55e",
@@ -119,8 +126,9 @@ const TerminalWindow: FC = () => {
             />
             loong@claw:~$
           </span>
-          <div style={{ display: "flex", gap: "6px" }}>
+          <div className="terminal-shell-controls" style={{ display: "flex", gap: "6px" }}>
             <div
+              className="terminal-status-dot"
               style={{
                 width: "8px",
                 height: "8px",
@@ -130,6 +138,7 @@ const TerminalWindow: FC = () => {
               }}
             />
             <div
+              className="terminal-status-dot terminal-status-dot-faint"
               style={{
                 width: "8px",
                 height: "8px",
@@ -143,6 +152,7 @@ const TerminalWindow: FC = () => {
 
         {/* Terminal content */}
         <div
+          className="terminal-shell-body"
           style={{
             padding: "1.25rem",
             fontSize: "0.8rem",
@@ -154,6 +164,7 @@ const TerminalWindow: FC = () => {
         >
           {/* Scan line effect */}
           <div
+            className="terminal-scan"
             style={{
               position: "absolute",
               top: 0,
@@ -167,6 +178,10 @@ const TerminalWindow: FC = () => {
           />
 
           <div
+            className="terminal-segment"
+            style={{ animationDelay: "60ms" }}
+          >
+          <div
             style={{
               marginBottom: "0.75rem",
               color: "var(--color-text-muted)",
@@ -175,7 +190,7 @@ const TerminalWindow: FC = () => {
           >
             {t("terminal.line1", "# Recommended install")}
           </div>
-          <div style={{ marginBottom: "0.5rem" }}>
+          <div className="terminal-command" style={{ marginBottom: "0.5rem" }}>
             <span
               style={{
                 color: "var(--color-text-secondary)",
@@ -188,8 +203,13 @@ const TerminalWindow: FC = () => {
               curl -fsSL https://raw.githubusercontent.com/eastreams/loong/dev/scripts/install.sh | bash -s -- --onboard
             </span>
           </div>
+          </div>
           <br />
 
+          <div
+            className="terminal-segment"
+            style={{ animationDelay: "180ms" }}
+          >
           <div
             style={{
               marginBottom: "0.75rem",
@@ -199,7 +219,7 @@ const TerminalWindow: FC = () => {
           >
             {t("terminal.line2", "# Supported first-run loop")}
           </div>
-          <div style={{ marginBottom: "0.5rem" }}>
+          <div className="terminal-command" style={{ marginBottom: "0.5rem" }}>
             <span
               style={{
                 color: "var(--color-text-secondary)",
@@ -213,6 +233,7 @@ const TerminalWindow: FC = () => {
             </span>
           </div>
           <div
+            className="terminal-output"
             style={{
               color: "var(--color-text-secondary)",
               fontSize: "0.75rem",
@@ -222,7 +243,7 @@ const TerminalWindow: FC = () => {
             <br />
             &gt; first-run path... [OK]
           </div>
-          <div style={{ marginBottom: "0.5rem", marginTop: "0.75rem" }}>
+          <div className="terminal-command" style={{ marginBottom: "0.5rem", marginTop: "0.75rem" }}>
             <span
               style={{
                 color: "var(--color-text-secondary)",
@@ -236,6 +257,7 @@ const TerminalWindow: FC = () => {
             </span>
           </div>
           <div
+            className="terminal-output"
             style={{
               color: "var(--color-text-secondary)",
               fontSize: "0.75rem",
@@ -247,8 +269,13 @@ const TerminalWindow: FC = () => {
             &gt; next step: run loong chat to continue from an interactive
             session
           </div>
+          </div>
           <br />
 
+          <div
+            className="terminal-segment"
+            style={{ animationDelay: "320ms" }}
+          >
           <div
             style={{
               marginBottom: "0.75rem",
@@ -259,12 +286,13 @@ const TerminalWindow: FC = () => {
             {t("terminal.line3", "# Check doctor and continue")}
           </div>
           <div
+            className="terminal-output"
             style={{
               color: "var(--color-text-secondary)",
               fontSize: "0.75rem",
             }}
           >
-            <div style={{ marginBottom: "0.5rem" }}>
+            <div className="terminal-command" style={{ marginBottom: "0.5rem" }}>
               <span
                 style={{
                   color: "var(--color-text-secondary)",
@@ -280,7 +308,7 @@ const TerminalWindow: FC = () => {
             &gt; runtime health: healthy
             <br />
             <br />
-            <div style={{ marginBottom: "0.5rem" }}>
+            <div className="terminal-command" style={{ marginBottom: "0.5rem" }}>
               <span
                 style={{
                   color: "var(--color-text-secondary)",
@@ -293,6 +321,7 @@ const TerminalWindow: FC = () => {
                 loong chat
               </span>
               <div
+                className="terminal-output"
                 style={{
                   color: "var(--color-text-secondary)",
                   fontSize: "0.75rem",
@@ -316,6 +345,7 @@ const TerminalWindow: FC = () => {
                 }}
               />
             </div>
+          </div>
           </div>
         </div>
       </div>
