@@ -7,37 +7,42 @@
   "hero": {
     "badge": "v0.1.0-alpha.3 已发布",
     "title_part1": "Loong",
-    "title_part2": "Loong 是一个基于 Rust 构建的安全、可扩展且可演化的智能基座。",
-    "description": "从助手能力出发，但目标远不止于通用的助手。Loong 旨在成长为面向团队的垂直智能体基础，让人类与 AI 在持续协作中共同进化。",
+    "title_part2": "面向垂直 AI 智能体的 Rust 基座，先给结果，再展开运行时。",
+    "description": "先从 onboard、ask、chat、doctor 拿到一个健康的本地路径，再扩展到 providers、channels、tools、memory、policy、gateway supervision 和 rollout playbooks。",
     "btn_get_started": "快速开始",
-    "btn_view_source": "查看源码"
+    "btn_view_playbooks": "查看 Playbooks"
   },
   "features": {
-    "title": "核心特性",
-    "subtitle": "基于 Rust 构建的安全、可扩展、可演进的智能基座",
-    "secure_title": "安全内核",
-    "secure_desc": "Capability Token 机制，每次调用需授权，人类审批，审计跟踪",
-    "secure_details": [
-      "基于能力的策略引擎",
-      "人类审批网关",
-      "JSONL SIEM 导出",
-      "拒绝名单优先"
+    "title": "为什么是 Loong",
+    "subtitle": "先快速拿到价值，再在同一套公开运行时上扩展治理、交付和长期能力。",
+    "first_value_title": "先拿到第一个有用结果",
+    "first_value_desc": "在你理解完整架构之前，先通过最短路径拿到一个健康的可用结果。",
+    "first_value_details": [
+      "onboard 提供引导式上手",
+      "ask 负责第一个有用回答",
+      "doctor 保留明确的修复路径"
     ],
-    "lightweight_title": "轻量且高效",
-    "lightweight_desc": "极致精简，< 5MB 内存占用，< 10MB 二进制体积",
-    "lightweight_details": [
-      "跨平台支持 (POSIX / Docker)",
-      "仅 5 MB 内存占用",
-      "< 10 ms 冷启动",
-      "< 10 MB 二进制体积"
+    "truthful_title": "公开契约保持真实",
+    "truthful_desc": "provider、channel、gateway ownership、outbound-only delivery 不会被压成一句模糊的支持声明。",
+    "truthful_details": [
+      "runtime-backed 与 outbound-only 明确区分",
+      "gateway ownership 显式可见",
+      "selector 与 account 边界不会被隐藏"
     ],
-    "extend_title": "易于扩展",
-    "extend_desc": "WASM 插件，多语言支持，7-crate DAG 架构，可插拔组件",
+    "governed_title": "治理能力不做外挂",
+    "governed_desc": "tools、memory、approvals、policy、audit 都留在真实的运行时路径里。",
+    "governed_details": [
+      "audit 与 runtime 命令默认可见",
+      "approval 与 policy 在真实路径中生效",
+      "强调可检查，而不是魔法体验"
+    ],
+    "extend_title": "按明确边界扩展",
+    "extend_desc": "Loong 把 provider、channel、tool、memory、policy 都作为显式扩展边界来看待。",
     "extend_details": [
-      "WASM 运行时执行",
-      "多语言插件",
-      "7-crate 严格的 DAG 依赖",
-      "可插拔适配器"
+      "42+ 内建 providers",
+      "25+ channels 与 delivery surfaces",
+      "core 与 extensions 明确分离",
+      "从本地 CLI 平滑走向受治理 rollout"
     ]
   },
   "community": {
@@ -89,10 +94,89 @@
     "full_guide": "查看完整指南"
   },
   "stats": {
-    "min_hardware": "运行平台",
-    "platform": "平台支持",
-    "hardware": "硬件成本",
-    "binary": "二进制体积"
+    "providers": "内建 Providers",
+    "channels": "内建 Channels",
+    "operator": "运维表面",
+    "rollouts": "Rollout 路径"
+  },
+  "pathways": {
+    "kicker": "进入路径",
+    "title": "按你的下一步进入",
+    "subtitle": "官网应该和文档结构一致，从你当前真正要做的决策开始，而不是先读完整棵树。",
+    "local_label": "快速开始",
+    "local_title": "最快拿到第一个结果",
+    "local_desc": "当你只想先把本地 CLI 路径跑通时，从 installation、first run、doctor 开始。",
+    "provider_label": "模型与提供商",
+    "provider_title": "先选 provider 和 model",
+    "provider_desc": "在深入配置前先看清 provider lane 和 model selection 契约。",
+    "channel_label": "交付表面",
+    "channel_title": "先确定 delivery surface",
+    "channel_desc": "在接入 channel 和 recipe 前，先弄清 runtime-backed 与 outbound lane 的边界。",
+    "gateway_label": "所有权",
+    "gateway_title": "转向 gateway supervision",
+    "gateway_desc": "当一个 service channel 已经跑通，下一步问题就会变成 ownership 和 supervision。",
+    "skills_label": "能力边界",
+    "skills_title": "处理 managed skills 与 browser 边界",
+    "skills_desc": "当阻塞点变成安装策略、browser preview 或 domain 边界时，从这里切入。"
+  },
+  "playbooks": {
+    "kicker": "部署形态",
+    "title": "常见部署路径",
+    "subtitle": "这不是演示用模板，而是把 provider、channel 和 ownership 组合起来的代表性 rollout 形态。",
+    "featured_label": "主路径",
+    "playbook_label": "部署路径",
+    "lark_title": "Volcengine + Feishu / Lark",
+    "lark_desc": "把主要 hosted provider 和团队聊天主通道放在一条 rollout 路径里。",
+    "wecom_title": "WeCom rollout",
+    "wecom_desc": "对应已经对外公开的企业级长期连接 lane。",
+    "telegram_title": "BytePlus Coding + Telegram",
+    "telegram_desc": "把 coding lane 和轻量 bot surface 保持为显式组合，而不是混在一起。",
+    "local_title": "Local model + outbound delivery",
+    "local_desc": "本地推理保留真实性，delivery 也明确为 outbound-only。",
+    "gateway_title": "Gateway rollout",
+    "gateway_desc": "从单个健康 surface 走向多通道 gateway ownership。"
+  },
+  "runtime": {
+    "kicker": "运行时表面",
+    "title": "面向 Operator 的可见运行时",
+    "subtitle": "Loong 不会把真实运行时藏在一个 happy-path prompt 后面。",
+    "entrypoints_title": "Assistant entrypoints",
+    "entrypoints_desc": "最短支持路径是公开、可运行、可重复的，而不是只存在于文案里。",
+    "entrypoints_items": ["onboard", "ask", "chat", "doctor"],
+    "operator_title": "Operator commands",
+    "operator_desc": "团队真正会用到的 inspect 与 control 命令，本来就是公开产品表面的一部分。",
+    "operator_items": ["audit", "tasks", "skills", "plugins", "channels", "runtime-snapshot"],
+    "delivery_title": "Delivery 与 ownership",
+    "delivery_desc": "更长生命周期的 service control 用显式命令管理，而不是埋在助手叙事里。",
+    "delivery_items": ["gateway run", "gateway status", "gateway stop", "multi-channel-serve"],
+    "governance_title": "治理与连续性",
+    "governance_desc": "真正会影响线上使用的能力，都留在同一套 runtime model 里。",
+    "governance_items": ["tools", "memory", "approvals", "policy", "audit"]
+  },
+  "docs_nav": {
+    "kicker": "文档导航",
+    "title": "按决策看文档",
+    "subtitle": "不要从树形结构最顶层开始读，直接打开和你下一步决策最相关的页面。",
+    "get_started_title": "快速开始",
+    "get_started_desc": "从安装到第一个有用回答的最短路径。",
+    "setups_title": "常见部署路径",
+    "setups_desc": "面向真实 provider、channel、gateway 组合的代表性 rollout playbooks。",
+    "providers_title": "Providers 与 Models",
+    "providers_desc": "在配置开始漂移之前，先理解 provider lane 和 model selection。",
+    "channels_title": "Channels",
+    "channels_desc": "先弄清 delivery surface、runtime-backed lane 和 channel setup 的真实边界。",
+    "tools_title": "Tools 与 Memory",
+    "tools_desc": "查看 tools、memory 与 continuity 的治理模型。",
+    "gateway_title": "Gateway 与 Supervision",
+    "gateway_desc": "为长生命周期 service channels 选择 owner contract 与 selector 方案。",
+    "build_title": "构建 Loong",
+    "build_desc": "当你准备扩展 seam 时，再进入 builder-facing architecture 和 extension contract。",
+    "reference_title": "Reference 与 Why",
+    "reference_desc": "产品立场、roadmap、reliability、releases 和更深入的 why。"
+  },
+  "common": {
+    "open_docs": "查看文档",
+    "open_playbook": "查看部署路径"
   },
   "community_page": {
     "title": "社区",
@@ -138,8 +222,8 @@
     "loading": "加载中..."
   },
   "seo": {
-    "default_title": "Loong | 基于 Rust 的安全可扩展智能体基座",
-    "default_description": "Loong 是一个基于 Rust 构建的安全、可扩展且可演化的智能体基础设施，面向团队协作与垂直场景。",
+    "default_title": "Loong | 面向垂直 AI 智能体的 Rust 基座",
+    "default_description": "Loong 是一个面向垂直 AI 智能体的 Rust 基座，强调快速首个价值、受治理运行时、显式交付契约与 rollout playbooks。",
     "community_title": "社区 | Loong",
     "community_description": "了解 Loong 开源社区、贡献方式与协作渠道。",
     "changelog_title": "更新日志 | Loong",

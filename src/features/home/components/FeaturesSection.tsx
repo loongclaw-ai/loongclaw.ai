@@ -1,6 +1,6 @@
 // src/features/home/components/FeaturesSection.tsx
 import type { FC } from 'react';
-import { Shield, Zap, Puzzle } from 'lucide-react';
+import { Puzzle, Rocket, ShieldCheck, Waypoints } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useTheme, THEMES } from '../../../contexts/useTheme';
 import FeatureCard from './FeatureCard';
@@ -11,16 +11,22 @@ const FeaturesSection: FC = () => {
 
   const features = [
     {
-      icon: Shield,
-      title: t('features.secure_title'),
-      description: t('features.secure_desc'),
-      details: t('features.secure_details', { returnObjects: true }) as string[],
+      icon: Rocket,
+      title: t('features.first_value_title'),
+      description: t('features.first_value_desc'),
+      details: t('features.first_value_details', { returnObjects: true }) as string[],
     },
     {
-      icon: Zap,
-      title: t('features.lightweight_title'),
-      description: t('features.lightweight_desc'),
-      details: t('features.lightweight_details', { returnObjects: true }) as string[],
+      icon: Waypoints,
+      title: t('features.truthful_title'),
+      description: t('features.truthful_desc'),
+      details: t('features.truthful_details', { returnObjects: true }) as string[],
+    },
+    {
+      icon: ShieldCheck,
+      title: t('features.governed_title'),
+      description: t('features.governed_desc'),
+      details: t('features.governed_details', { returnObjects: true }) as string[],
     },
     {
       icon: Puzzle,

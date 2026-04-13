@@ -8,10 +8,10 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { labelKey: "stats.min_hardware", value: "POSIX / Docker" },
-  { labelKey: "stats.platform", value: "CLI · Feishu · Telegram" },
-  { labelKey: "stats.hardware", value: "< $5" },
-  { labelKey: "stats.binary", value: "~10 MB" },
+  { labelKey: "stats.providers", value: "42+" },
+  { labelKey: "stats.channels", value: "25+" },
+  { labelKey: "stats.operator", value: "audit · tasks · skills" },
+  { labelKey: "stats.rollouts", value: "5 playbooks" },
 ];
 
 const StatsMatrix: FC = () => {

@@ -7,37 +7,42 @@
   "hero": {
     "badge": "v0.1.0-alpha.3 available",
     "title_part1": "Loong",
-    "title_part2": "A secure, extensible, and evolvable claw baseline built in Rust.",
-    "description": "Starting from assistant capabilities, but not meant to stop at being a general assistant. Designed to grow into a foundation for team-facing vertical agents, where people and AI can keep collaborating and evolving together.",
+    "title_part2": "Rust base for vertical AI agents with a fast operator path.",
+    "description": "Start with onboard, ask, chat, and doctor. Then grow into providers, channels, tools, memory, policy, gateway supervision, and rollout playbooks without changing the runtime model.",
     "btn_get_started": "Get Started",
-    "btn_view_source": "View Source"
+    "btn_view_playbooks": "View Playbooks"
   },
   "features": {
-    "title": "Core Features",
-    "subtitle": "Secure, extensible, and evolvable Rust-based smart baseline",
-    "secure_title": "Secure Kernel",
-    "secure_desc": "Capability Token mechanism, authorization required for every call, human approval, audit trails",
-    "secure_details": [
-      "Capability-based policy engine",
-      "Human approval gates",
-      "JSONL SIEM export",
-      "Denylist precedence"
+    "title": "Why Loong",
+    "subtitle": "First value fast, governed runtime later, on the same public surface.",
+    "first_value_title": "First value fast",
+    "first_value_desc": "Reach one useful result before you are forced to learn the whole architecture.",
+    "first_value_details": [
+      "Guided onboarding with onboard",
+      "One useful answer through ask",
+      "Repair path stays explicit with doctor"
     ],
-    "lightweight_title": "Ultra-low Footprint",
-    "lightweight_desc": "Ultra-low footprint, < 5MB RAM, < 10MB binary size",
-    "lightweight_details": [
-      "POSIX / Docker compatible",
-      "5 MB RAM footprint",
-      "< 10 ms cold boot",
-      "< 10 MB binary size"
+    "truthful_title": "Truthful public contracts",
+    "truthful_desc": "Providers, channels, gateway ownership, and outbound-only delivery are not flattened into one vague support claim.",
+    "truthful_details": [
+      "Runtime-backed and outbound-only lanes stay distinct",
+      "Gateway ownership is explicit",
+      "Selectors and account boundaries stay visible"
     ],
-    "extend_title": "Easy to Extend",
-    "extend_desc": "WASM plugins, multi-language support, 7-crate DAG architecture, pluggable components",
+    "governed_title": "Governed capability exposure",
+    "governed_desc": "Tools, memory, approvals, policy, and audit stay inside the real runtime path.",
+    "governed_details": [
+      "Audit and runtime commands are public",
+      "Approvals and policy stay in-path",
+      "Operator-visible inspection beats magic"
+    ],
+    "extend_title": "Extensible through seams",
+    "extend_desc": "Loong keeps providers, channels, tools, memory, and policy visible as extension boundaries.",
     "extend_details": [
-      "WASM runtime execution",
-      "Multi-language plugins",
-      "7-crate strict DAG",
-      "Pluggable adapters"
+      "42+ built-in providers",
+      "25+ channels and delivery surfaces",
+      "Core and extensions stay separate",
+      "Grows from local CLI to governed rollouts"
     ]
   },
   "community": {
@@ -89,10 +94,89 @@
     "full_guide": "Open Full Guide"
   },
   "stats": {
-    "min_hardware": "Runtime Platform",
-    "platform": "Platform",
-    "hardware": "Run on Hardware",
-    "binary": "Binary Size"
+    "providers": "Built-in Providers",
+    "channels": "Built-in Channels",
+    "operator": "Ops Surface",
+    "rollouts": "Rollout Paths"
+  },
+  "pathways": {
+    "kicker": "Choose your path",
+    "title": "Choose Your Path",
+    "subtitle": "Use the same docs structure as the product: start from the decision you actually need to make.",
+    "local_label": "Get Started",
+    "local_title": "Shortest path to first value",
+    "local_desc": "Start with installation, first run, and doctor when you want one healthy local result fast.",
+    "provider_label": "Providers",
+    "provider_title": "Choose provider and model deliberately",
+    "provider_desc": "Read the provider and model contract before going deep into configuration.",
+    "channel_label": "Channels",
+    "channel_title": "Pick a delivery surface first",
+    "channel_desc": "Choose the runtime-backed or outbound lane before you wire channels and recipes.",
+    "gateway_label": "Ownership",
+    "gateway_title": "Move to gateway supervision",
+    "gateway_desc": "Use gateway pages once one service channel already works and ownership becomes the question.",
+    "skills_label": "Capabilities",
+    "skills_title": "Unblock managed skills and browser boundaries",
+    "skills_desc": "Go here when install policy, browser preview, or domain boundaries are the next blocker."
+  },
+  "playbooks": {
+    "kicker": "Representative rollouts",
+    "title": "Common Setups",
+    "subtitle": "Representative end-to-end rollout shapes that combine providers, channels, and ownership.",
+    "featured_label": "Primary lane",
+    "playbook_label": "Playbook",
+    "lark_title": "Volcengine + Feishu or Lark",
+    "lark_desc": "The primary hosted provider and team-chat lane stay together in one rollout path.",
+    "wecom_title": "WeCom rollout",
+    "wecom_desc": "Use the enterprise runtime lane that matches the shipped long-connection contract.",
+    "telegram_title": "BytePlus Coding + Telegram",
+    "telegram_desc": "Keep the coding lane and the lightweight bot surface explicit in the same playbook.",
+    "local_title": "Local model + outbound delivery",
+    "local_desc": "Use local inference while keeping delivery truthful and explicitly outbound-only.",
+    "gateway_title": "Gateway rollout",
+    "gateway_desc": "Scale from one healthy service surface to explicit multi-channel gateway ownership."
+  },
+  "runtime": {
+    "kicker": "Runtime surface",
+    "title": "Operator-Visible Runtime",
+    "subtitle": "Loong does not hide the runtime behind one happy-path prompt.",
+    "entrypoints_title": "Assistant entrypoints",
+    "entrypoints_desc": "The shortest supported path is visible and runnable before deeper docs.",
+    "entrypoints_items": ["onboard", "ask", "chat", "doctor"],
+    "operator_title": "Operator commands",
+    "operator_desc": "The runtime exposes the commands teams actually need for inspection and control.",
+    "operator_items": ["audit", "tasks", "skills", "plugins", "channels", "runtime-snapshot"],
+    "delivery_title": "Delivery and ownership",
+    "delivery_desc": "Longer-lived service control stays explicit instead of hidden behind one assistant story.",
+    "delivery_items": ["gateway run", "gateway status", "gateway stop", "multi-channel-serve"],
+    "governance_title": "Governance and continuity",
+    "governance_desc": "Capabilities that matter in real operations stay on the same runtime model.",
+    "governance_items": ["tools", "memory", "approvals", "policy", "audit"]
+  },
+  "docs_nav": {
+    "kicker": "Docs navigator",
+    "title": "Docs by Decision",
+    "subtitle": "Open the page that matches your next decision instead of reading the whole tree.",
+    "get_started_title": "Get Started",
+    "get_started_desc": "The shortest path from install to first useful answer.",
+    "setups_title": "Common Setups",
+    "setups_desc": "Representative rollout playbooks for real provider, channel, and gateway shapes.",
+    "providers_title": "Providers and Models",
+    "providers_desc": "Choose the right provider lane and understand model selection before config drift starts.",
+    "channels_title": "Channels",
+    "channels_desc": "Understand delivery surfaces, runtime-backed lanes, and channel setup truthfully.",
+    "tools_title": "Tools and Memory",
+    "tools_desc": "See the governed capability model for tools, memory, and continuity.",
+    "gateway_title": "Gateway and Supervision",
+    "gateway_desc": "Choose the owner contract for longer-lived service channels and selectors.",
+    "build_title": "Build on Loong",
+    "build_desc": "Use the builder-facing architecture and extension contract when you are ready to extend seams.",
+    "reference_title": "Reference and Why",
+    "reference_desc": "Read the product stance, roadmap, reliability, releases, and the deeper why."
+  },
+  "common": {
+    "open_docs": "Open Docs",
+    "open_playbook": "Open Playbook"
   },
   "community_page": {
     "title": "Community",
@@ -138,8 +222,8 @@
     "loading": "Loading..."
   },
   "seo": {
-    "default_title": "Loong | Secure, extensible Rust agent foundation",
-    "default_description": "Loong is a secure, extensible, and evolvable agent foundation built in Rust for team-facing vertical agents.",
+    "default_title": "Loong | Rust base for vertical AI agents",
+    "default_description": "Loong is a Rust base for vertical AI agents with fast first value, governed runtime capabilities, explicit delivery contracts, and rollout playbooks.",
     "community_title": "Community | Loong",
     "community_description": "Connect with the Loong open source community, contributors, and collaboration channels.",
     "changelog_title": "Changelog | Loong",

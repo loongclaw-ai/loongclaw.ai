@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import StatsMatrix from "./StatsMatrix";
 import TerminalWindow from "./TerminalWindow";
 import { useTheme, THEMES } from "../../../contexts/useTheme";
-import { repositoryUrl } from "../../../utils/site";
+import { docsSiteUrl } from "../../../utils/site";
 
 const HeroSection: FC = () => {
   const { t } = useTranslation();
@@ -145,12 +145,12 @@ const HeroSection: FC = () => {
             {t("hero.btn_get_started")}
           </button>
           <a
-            href={repositoryUrl}
+            href={`${docsSiteUrl}/use-loong/common-setups`}
             target="_blank"
             rel="noopener noreferrer"
             className="hero-btn hero-btn-secondary"
           >
-            {t("hero.btn_view_source")}
+            {t("hero.btn_view_playbooks")}
           </a>
         </div>
 
@@ -163,7 +163,7 @@ const HeroSection: FC = () => {
             flexWrap: "wrap",
           }}
         >
-          {["Rust", "WebAssembly", "Docker", "Agent", "Plugin"].map((tech) => (
+          {["Rust", "Providers", "Channels", "Gateway", "Policy"].map((tech) => (
             <span
               key={tech}
               style={{
