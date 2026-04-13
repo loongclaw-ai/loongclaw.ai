@@ -39,15 +39,15 @@ const HeroSection: FC = () => {
             display: "inline-flex",
             alignItems: "center",
             gap: "0.5rem",
-            padding: "0.4rem 0.8rem",
+            padding: "0.32rem 0.68rem",
             borderRadius: "4px",
             border: "1px solid var(--color-border)",
             background: "var(--color-bg-tertiary)",
-            marginBottom: "1.5rem",
-            fontSize: "0.7rem",
+            marginBottom: "1.15rem",
+            fontSize: "0.64rem",
             color: "var(--color-text-secondary)",
             fontFamily: "var(--font-mono)",
-            letterSpacing: "0.05em",
+            letterSpacing: "0.06em",
           }}
         >
           <span
@@ -67,12 +67,12 @@ const HeroSection: FC = () => {
           <h1
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: "clamp(2.5rem, 5vw, 4rem)",
+              fontSize: "clamp(2.15rem, 4.3vw, 3.35rem)",
               fontWeight: 800,
-              lineHeight: 1,
-              letterSpacing: "-0.02em",
+              lineHeight: 0.96,
+              letterSpacing: "-0.03em",
               textTransform: "uppercase",
-              marginBottom: "1.5rem",
+              marginBottom: "1.05rem",
               color: "var(--color-text-primary)",
               position: "relative",
             }}
@@ -100,10 +100,10 @@ const HeroSection: FC = () => {
         {/* Subtitle */}
         <p
           style={{
-            fontSize: "1rem",
-            lineHeight: 1.6,
+            fontSize: "0.92rem",
+            lineHeight: 1.55,
             maxWidth: "90%",
-            marginBottom: "2rem",
+            marginBottom: "1.4rem",
             color: "var(--color-text-secondary)",
             fontFamily: "var(--font-mono)",
           }}
@@ -114,13 +114,13 @@ const HeroSection: FC = () => {
         {/* Description with border */}
         <p
           style={{
-            fontSize: "0.85rem",
+            fontSize: "0.78rem",
             lineHeight: 1.7,
             opacity: 0.8,
             maxWidth: "85%",
-            marginBottom: "2.5rem",
+            marginBottom: "1.8rem",
             borderLeft: "2px solid var(--color-border-medium)",
-            paddingLeft: "1rem",
+            paddingLeft: "0.85rem",
             color: "var(--color-text-muted)",
             fontFamily: "var(--font-mono)",
           }}
@@ -158,8 +158,8 @@ const HeroSection: FC = () => {
         <div
           style={{
             display: "flex",
-            gap: "0.5rem",
-            marginTop: "2rem",
+            gap: "0.42rem",
+            marginTop: "1.4rem",
             flexWrap: "wrap",
           }}
         >
@@ -167,11 +167,11 @@ const HeroSection: FC = () => {
             <span
               key={tech}
               style={{
-                padding: "0.25rem 0.6rem",
+                padding: "0.2rem 0.5rem",
                 borderRadius: "4px",
                 border: "1px solid var(--color-border)",
                 background: "var(--color-bg-secondary)",
-                fontSize: "0.65rem",
+                fontSize: "0.6rem",
                 color: "var(--color-text-muted)",
                 fontFamily: "var(--font-mono)",
                 letterSpacing: "0.02em",

@@ -25,7 +25,7 @@ const StatsMatrix: FC = () => {
         background: "var(--color-border)",
         border: "1px solid var(--color-border)",
         borderRadius: "4px",
-        marginBottom: "2.5rem",
+        marginBottom: "1.6rem",
         width: "fit-content",
         overflow: "hidden",
       }}
@@ -36,19 +36,19 @@ const StatsMatrix: FC = () => {
           className="stat-item"
           style={{
             background: "var(--color-bg-primary)",
-            padding: "0.6rem 1rem",
+            padding: "0.5rem 0.78rem",
             display: "flex",
             flexDirection: "column",
-            gap: "0.25rem",
+            gap: "0.2rem",
             cursor: "default",
             transition: "all 0.2s ease",
           }}
         >
           <span
             style={{
-              fontSize: "0.6rem",
+              fontSize: "0.54rem",
               textTransform: "uppercase",
-              letterSpacing: "0.12em",
+              letterSpacing: "0.1em",
               color: "var(--color-text-muted)",
               fontFamily: "var(--font-mono)",
             }}
@@ -57,7 +57,7 @@ const StatsMatrix: FC = () => {
           </span>
           <span
             style={{
-              fontSize: "0.85rem",
+              fontSize: "0.78rem",
               fontWeight: 600,
               color: "var(--color-text-primary)",
               fontFamily: "var(--font-mono)",
