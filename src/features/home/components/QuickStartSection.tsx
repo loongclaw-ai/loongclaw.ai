@@ -4,36 +4,52 @@ import { useTranslation } from 'react-i18next';
 import { useTheme, THEMES } from '../../../contexts/useTheme';
 import StepIndicator from './StepIndicator';
 import CodeBlock from './CodeBlock';
+import { docsSiteUrl } from '../../../utils/site';
 
 const stepsKeys = [
-  { number: 1, titleKey: 'quickstart.step1_title', descKey: 'quickstart.step1_desc' },
-  { number: 2, titleKey: 'quickstart.step2_title', descKey: 'quickstart.step2_desc' },
-  { number: 3, titleKey: 'quickstart.step3_title', descKey: 'quickstart.step3_desc' },
+  {
+    number: 1,
+    titleKey: 'quickstart.step1_title',
+    descKey: 'quickstart.step1_desc',
+    href: `${docsSiteUrl}/get-started/installation`,
+  },
+  {
+    number: 2,
+    titleKey: 'quickstart.step2_title',
+    descKey: 'quickstart.step2_desc',
+    href: `${docsSiteUrl}/get-started/first-run`,
+  },
+  {
+    number: 3,
+    titleKey: 'quickstart.step3_title',
+    descKey: 'quickstart.step3_desc',
+    href: `${docsSiteUrl}/get-started/doctor-and-health`,
+  },
 ];
 
-const installCode = `# Clone the repository
-git clone https://github.com/loongclaw-ai/loongclaw.git
+const installCode = `# Recommended install
+curl -fsSL https://raw.githubusercontent.com/eastreams/loong/dev/scripts/install.sh | bash -s -- --onboard
 
-# Run install script
-cd loongclaw
-./scripts/install.sh --source
+# Working from a local checkout instead
+bash scripts/install.sh --source --onboard`;
 
-# Initialize and onboard
-loong onboard`;
+const firstRunCode = `# Supported first-run loop
+loong onboard
+loong ask --message "Summarize this repository and suggest the best next step."
 
-const configCode = `# Configure your preferred provider
-loong config provider set openai --key sk-...
-
-# Or use interactive wizard
-loong config wizard`;
-
-const chatCode = `# Verify your installation
-loong doctor
-
-# Start interactive session
+# Continue the session
 loong chat`;
 
-const codeBlocks = [installCode, configCode, chatCode];
+const doctorCode = `# Check runtime health
+loong doctor
+
+# Apply the safe repair path
+loong doctor --fix
+
+# Inspect health in machine-readable form
+loong doctor --json`;
+
+const codeBlocks = [installCode, firstRunCode, doctorCode];
 
 const QuickStartSection: FC = () => {
   const { t } = useTranslation();
@@ -55,6 +71,7 @@ const QuickStartSection: FC = () => {
     number: step.number,
     title: t(step.titleKey),
     description: t(step.descKey),
+    href: step.href,
   }));
 
   return (
@@ -102,12 +119,13 @@ const QuickStartSection: FC = () => {
         style={{
           margin: '0 auto',
           position: 'relative',
-          minHeight: '280px',
+          minHeight: '360px',
         }}
       >
         {codeBlocks.map((code, index) => {
           const stepNumber = index + 1;
           const isActive = stepNumber === activeStep;
+          const step = translatedSteps[index];
           
           return (
             <div
@@ -127,6 +145,26 @@ const QuickStartSection: FC = () => {
               }}
             >
               <CodeBlock code={code} language="bash" />
+              <div
+                style={{
+                  marginTop: '1rem',
+                  display: 'flex',
+                  justifyContent: 'flex-end',
+                }}
+              >
+                <a
+                  href={step.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero-btn hero-btn-secondary"
+                  style={{
+                    fontSize: '0.7rem',
+                    padding: '0.6rem 1rem',
+                  }}
+                >
+                  {t('quickstart.full_guide')}
+                </a>
+              </div>
             </div>
           );
         })}

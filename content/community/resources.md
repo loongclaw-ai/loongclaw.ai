@@ -2,7 +2,7 @@
 resources:
   - title: "GitHub"
     description: "Star us, report issues, and contribute to the codebase."
-    url: "https://github.com/loongclaw-ai/loongclaw"
+    url: "https://github.com/eastreams/loong"
     type: "github"
   - title: "X"
     description: "Follow us on X for the latest news and updates."
@@ -17,7 +17,7 @@ resources:
     url: "https://t.me/loongclaw"
     type: "telegram"
   - title: "Reddit"
-    description: "Join r/LoongClaw for deep discussions and community sharing."
+    description: "Join our Reddit community for deep discussions and community sharing."
     url: "https://www.reddit.com/r/LoongClaw"
     type: "reddit"
   - title: "Xiaohongshu"

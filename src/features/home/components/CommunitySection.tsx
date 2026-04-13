@@ -2,11 +2,27 @@ import type { FC } from 'react';
 import { useRef } from 'react';
 import { Github, MessageCircle, Send, Ghost, Camera, MessagesSquare, Bird, Twitter } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { getCommunityIndex } from '../../../utils/content-loader';
+
+const getIcon = (type: string) => {
+  switch (type) {
+    case 'github': return Github;
+    case 'x': return Twitter;
+    case 'discord': return MessageCircle;
+    case 'telegram': return Send;
+    case 'reddit': return Ghost;
+    case 'xiaohongshu': return Camera;
+    case 'wechat': return MessagesSquare;
+    case 'feishu': return Bird;
+    default: return Github;
+  }
+};
 
 const CommunitySection: FC = () => {
   const { t } = useTranslation();
   const headerRef = useRef<HTMLDivElement>(null);
   const dividerColor = 'var(--color-border)';
+  const { resources } = getCommunityIndex();
 
   return (
     <section className="section-padding" style={{ borderTop: `1px solid ${dividerColor}` }}>
@@ -48,19 +64,14 @@ const CommunitySection: FC = () => {
           margin: '0 auto 3rem',
         }}
       >
-        {[
-          { key: 'github', icon: Github, href: 'https://github.com/loongclaw-ai/loongclaw' },
-          { key: 'x', icon: Twitter, href: 'https://x.com/loongclawai' },
-          { key: 'discord', icon: MessageCircle, href: 'https://discord.gg/7kSTX9mca' },
-          { key: 'telegram', icon: Send, href: 'https://t.me/loongclaw' },
-          { key: 'reddit', icon: Ghost, href: 'https://www.reddit.com/r/LoongClaw' },
-          { key: 'xiaohongshu', icon: Camera, href: 'https://xhslink.com/m/1dqFqF1IKDk' },
-          { key: 'wechat', icon: MessagesSquare, href: 'https://loongclaw.ai/wechat.jpg' },
-          { key: 'feishu', icon: Bird, href: 'https://loongclaw.ai/feishu.jpg' },
-        ].map((resource) => (
+        {resources.map((resource) => {
+          const key = resource.type || resource.title.toLowerCase();
+          const Icon = getIcon(key);
+
+          return (
           <a
-            key={resource.key}
-            href={resource.href}
+            key={resource.title}
+            href={resource.url}
             target="_blank"
             rel="noopener noreferrer"
             className="community-link-card"
@@ -85,16 +96,17 @@ const CommunitySection: FC = () => {
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
-              <resource.icon size={24} style={{ color: 'var(--color-text-primary)' }} />
+              <Icon size={24} style={{ color: 'var(--color-text-primary)' }} />
               <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
-                {t(`community_page.resources.${resource.key}.title`)}
+                {t(`community_page.resources.${key}.title`, { defaultValue: resource.title })}
               </h3>
             </div>
             <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
-              {t(`community_page.resources.${resource.key}.description`)}
+              {t(`community_page.resources.${key}.description`, { defaultValue: resource.description })}
             </p>
           </a>
-        ))}
+          );
+        })}
       </div>
 
       {/* A Letter from the Developer - HIDDEN

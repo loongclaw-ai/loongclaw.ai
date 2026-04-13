@@ -5,8 +5,8 @@
     "changelog": "Changelog"
   },
   "hero": {
-    "badge": "v0.1.0-alpha available",
-    "title_part1": "Loong Claw",
+    "badge": "v0.1.0-alpha.3 available",
+    "title_part1": "Loong",
     "title_part2": "A secure, extensible, and evolvable claw baseline built in Rust.",
     "description": "Starting from assistant capabilities, but not meant to stop at being a general assistant. Designed to grow into a foundation for team-facing vertical agents, where people and AI can keep collaborating and evolving together.",
     "btn_get_started": "Get Started",
@@ -46,17 +46,17 @@
     "letter_title": "A Letter from the Loong Team",
     "click_to_open": "Click to open",
     "greeting": "Dear Community Members,",
-    "p1": "When we started building LoongClaw, our vision was simple: create an Agentic OS that empowers developers to build intelligent, autonomous applications with ease. Today, we're excited to share this journey with you.",
+    "p1": "When we started building Loong, our vision was simple: create an Agentic OS that empowers developers to build intelligent, autonomous applications with ease. Today, we're excited to share this journey with you.",
     "p2": "This project represents countless hours of development, testing, and refinement. But more importantly, it represents our commitment to open source and the belief that the best software is built together, as a community.",
-    "p3": "Whether you're here to contribute code, report bugs, or simply explore what we've built — welcome. Your feedback, ideas, and enthusiasm are what will make LoongClaw truly great.",
+    "p3": "Whether you're here to contribute code, report bugs, or simply explore what we've built — welcome. Your feedback, ideas, and enthusiasm are what will make Loong truly great.",
     "p4": "Let's build the future of Agentic OS, together.",
     "signoff": "With gratitude,",
-    "team": "The LoongClaw Team"
+    "team": "The Loong Team"
   },
   "terminal": {
-    "line1": "# Clone the repository",
-    "line2": "# Run install script",
-    "line3": "# Initialize and onboard",
+    "line1": "# Recommended install",
+    "line2": "# Supported first-run loop",
+    "line3": "# Check doctor and continue",
     "line4": "core.register_capability(\"system.fs.read\");",
     "line5": "// Ready to process streams",
     "line6": "core.start().await?;"
@@ -74,18 +74,19 @@
     "crate_role_3": "Providers, tools, channels, memory",
     "crate_role_4": "Execution spec runner",
     "crate_role_5": "Benchmark harness",
-    "crate_role_6": "CLI binary (loongclaw)",
+    "crate_role_6": "CLI binary (loong)",
     "binary": "BINARY"
   },
   "quickstart": {
     "title": "Get Started in 5 Minutes",
-    "subtitle": "Three simple steps to start your LoongClaw journey",
-    "step1_title": "Install",
-    "step1_desc": "Clone the repository and install",
-    "step2_title": "Configure",
-    "step2_desc": "Set your API key",
-    "step3_title": "Chat",
-    "step3_desc": "Start chatting"
+    "subtitle": "Install, reach a first useful answer, and keep the local runtime healthy.",
+    "step1_title": "Installation",
+    "step1_desc": "Use the release-first installer or source install with --onboard",
+    "step2_title": "First Run",
+    "step2_desc": "Use onboard and ask to reach one useful answer quickly",
+    "step3_title": "Doctor",
+    "step3_desc": "Check health, apply safe fixes, and continue with confidence",
+    "full_guide": "Open Full Guide"
   },
   "stats": {
     "min_hardware": "Runtime Platform",
@@ -95,7 +96,7 @@
   },
   "community_page": {
     "title": "Community",
-    "subtitle": "Connect with developers, contributors, and evolving agents. LoongClaw is a secure, extensible, and evolvable smart baseline built for teams.",
+    "subtitle": "Connect with developers, contributors, and evolving agents. Loong is a secure, extensible, and evolvable smart baseline built for teams.",
     "resources": {
       "github": {
         "title": "GitHub",
@@ -116,7 +117,7 @@
       },
       "reddit": {
         "title": "Reddit",
-        "description": "Join r/LoongClaw for deep discussions and community sharing."
+        "description": "Join our Reddit community for deep discussions and community sharing."
       },
       "xiaohongshu": {
         "title": "Xiaohongshu",
@@ -135,5 +136,13 @@
   "changelog_page": {
     "title": "Changelog",
     "loading": "Loading..."
+  },
+  "seo": {
+    "default_title": "Loong | Secure, extensible Rust agent foundation",
+    "default_description": "Loong is a secure, extensible, and evolvable agent foundation built in Rust for team-facing vertical agents.",
+    "community_title": "Community | Loong",
+    "community_description": "Connect with the Loong open source community, contributors, and collaboration channels.",
+    "changelog_title": "Changelog | Loong",
+    "changelog_description": "Track Loong releases, version notes, and ongoing product updates."
   }
 }

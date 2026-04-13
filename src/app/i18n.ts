@@ -5,6 +5,10 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import enTranslation from '../assets/locales/en.json';
 import zhCNTranslation from '../assets/locales/zh-CN.json';
 
+const isBrowser =
+  typeof window !== 'undefined' &&
+  typeof document !== 'undefined';
+
 const resources = {
   en: {
     translation: enTranslation,
@@ -24,18 +28,16 @@ i18n
       escapeValue: false, // React already safeguards from XSS
     },
     detection: {
-      order: ['localStorage', 'navigator'],
-      caches: ['localStorage'],
+      order: isBrowser ? ['localStorage', 'navigator'] : [],
+      caches: isBrowser ? ['localStorage'] : [],
     },
   });
 
-// Synchronize the HTML lang attribute with the active language
-i18n.on('languageChanged', (lng) => {
-  document.documentElement.lang = lng;
-});
+if (isBrowser) {
+  i18n.on('languageChanged', (lng) => {
+    document.documentElement.lang = lng;
+  });
 
-// Set initial value immediately
-if (document.documentElement) {
   document.documentElement.lang = i18n.language || 'en';
 }
 

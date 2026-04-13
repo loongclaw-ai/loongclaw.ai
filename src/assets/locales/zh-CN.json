@@ -5,10 +5,10 @@
     "changelog": "更新日志"
   },
   "hero": {
-    "badge": "v0.1.0-alpha 已发布",
-    "title_part1": "Loong Claw",
-    "title_part2": "LoongClaw 是一个基于 Rust 构建的安全、可扩展且可演化的智能基座。",
-    "description": "从助手能力出发，但目标远不止于通用的助手。LoongClaw 旨在成长为面向团队的垂直智能体基础，让人类与 AI 在持续协作中共同进化。",
+    "badge": "v0.1.0-alpha.3 已发布",
+    "title_part1": "Loong",
+    "title_part2": "Loong 是一个基于 Rust 构建的安全、可扩展且可演化的智能基座。",
+    "description": "从助手能力出发，但目标远不止于通用的助手。Loong 旨在成长为面向团队的垂直智能体基础，让人类与 AI 在持续协作中共同进化。",
     "btn_get_started": "快速开始",
     "btn_view_source": "查看源码"
   },
@@ -46,17 +46,17 @@
     "letter_title": "来自 Loong Team 的一封信",
     "click_to_open": "点击打开",
     "greeting": "亲爱的社区成员：",
-    "p1": "当我们开始构建 LoongClaw 时，我们的愿景很简单：创建一个让你能够轻松构建智能、自主应用的 Agentic OS。今天，我们很激动能与你分享这段旅程。",
+    "p1": "当我们开始构建 Loong 时，我们的愿景很简单：创建一个让你能够轻松构建智能、自主应用的 Agentic OS。今天，我们很激动能与你分享这段旅程。",
     "p2": "这个项目代表了无数个小时的开发、测试和打磨。但更重要地是，它代表了我们对开源的承诺，以及坚信最好的软件是作为社区共同构建出来的信念。",
-    "p3": "无论您是来贡献代码、报告错误，还是仅仅为了探索我们所构建的内容 —— 欢迎。您的反馈、想法和热情将使 LoongClaw 变得真正了不起。",
+    "p3": "无论您是来贡献代码、报告错误，还是仅仅为了探索我们所构建的内容 —— 欢迎。您的反馈、想法和热情将使 Loong 变得真正了不起。",
     "p4": "让我们一起构建 Agentic OS 的未来。",
     "signoff": "满怀感激：",
-    "team": "LoongClaw 团队"
+    "team": "Loong 团队"
   },
   "terminal": {
-    "line1": "# 克隆仓库",
-    "line2": "# 运行安装脚本",
-    "line3": "# 初始化并 onboard",
+    "line1": "# 推荐安装",
+    "line2": "# 标准首次运行流程",
+    "line3": "# 运行 doctor 并继续",
     "line4": "core.register_capability(\"system.fs.read\");",
     "line5": "// Ready to process streams",
     "line6": "core.start().await?;"
@@ -74,18 +74,19 @@
     "crate_role_3": "Providers, tools, channels, memory",
     "crate_role_4": "Execution spec runner",
     "crate_role_5": "Benchmark harness",
-    "crate_role_6": "CLI binary (loongclaw)",
+    "crate_role_6": "CLI binary (loong)",
     "binary": "BINARY"
   },
   "quickstart": {
     "title": "5 分钟快速开始",
-    "subtitle": "三个简单步骤，开启您的 LoongClaw 之旅",
+    "subtitle": "先安装，再拿到第一个可用回答，并保持本地运行时健康。",
     "step1_title": "安装",
-    "step1_desc": "克隆仓库并运行安装脚本",
-    "step2_title": "配置",
-    "step2_desc": "设置您的 API 密钥",
-    "step3_title": "聊天",
-    "step3_desc": "开始交互"
+    "step1_desc": "使用 release-first 安装器，或在源码路径下配合 --onboard 安装",
+    "step2_title": "首次运行",
+    "step2_desc": "通过 onboard 和 ask 尽快拿到一个有用的回答",
+    "step3_title": "健康检查",
+    "step3_desc": "检查健康状态，执行安全修复，然后继续使用",
+    "full_guide": "查看完整指南"
   },
   "stats": {
     "min_hardware": "运行平台",
@@ -95,7 +96,7 @@
   },
   "community_page": {
     "title": "社区",
-    "subtitle": "与开发者、贡献者及不断进化的智能体建立联系。LoongClaw 是为团队打造的安全、可扩展且可演化的智能基座。",
+    "subtitle": "与开发者、贡献者及不断进化的智能体建立联系。Loong 是为团队打造的安全、可扩展且可演化的智能基座。",
     "resources": {
       "github": {
         "title": "GitHub",
@@ -116,7 +117,7 @@
       },
       "reddit": {
         "title": "Reddit",
-        "description": "加入 r/LoongClaw 参与深度讨论和社区分享。"
+        "description": "加入我们的 Reddit 社区，参与深度讨论和社区分享。"
       },
       "xiaohongshu": {
         "title": "小红书",
@@ -135,5 +136,13 @@
   "changelog_page": {
     "title": "更新日志",
     "loading": "加载中..."
+  },
+  "seo": {
+    "default_title": "Loong | 基于 Rust 的安全可扩展智能体基座",
+    "default_description": "Loong 是一个基于 Rust 构建的安全、可扩展且可演化的智能体基础设施，面向团队协作与垂直场景。",
+    "community_title": "社区 | Loong",
+    "community_description": "了解 Loong 开源社区、贡献方式与协作渠道。",
+    "changelog_title": "更新日志 | Loong",
+    "changelog_description": "跟踪 Loong 的版本发布、变更说明与产品更新。"
   }
 }

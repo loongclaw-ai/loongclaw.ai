@@ -7,7 +7,8 @@
     "prebuild": "bun run build:content",
     "build:content": "bun run scripts/build-content.ts",
     "dev": "bun run build:content && vite",
-    "build": "tsc -b && vite build",
+    "prerender": "bun run scripts/prerender.ts",
+    "build": "tsc -b && vite build && bun run prerender",
     "lint": "eslint .",
     "preview": "vite preview"
   },

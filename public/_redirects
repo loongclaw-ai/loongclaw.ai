@@ -1,0 +1,4 @@
+/sitemap /sitemap.xml 308
+/robots /robots.txt 308
+/docs https://docs.loongclaw.ai 308
+/docs/* https://docs.loongclaw.ai/:splat 308

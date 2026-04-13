@@ -4,11 +4,13 @@ import { useTranslation } from "react-i18next";
 import StatsMatrix from "./StatsMatrix";
 import TerminalWindow from "./TerminalWindow";
 import { useTheme, THEMES } from "../../../contexts/useTheme";
+import { repositoryUrl } from "../../../utils/site";
 
 const HeroSection: FC = () => {
   const { t } = useTranslation();
   const { theme } = useTheme();
   const isDark = theme === THEMES.DARK;
+  const titleParts = t("hero.title_part1").split(" ").filter(Boolean);
 
   const accentLineColor = isDark
     ? "var(--color-accent)"
@@ -75,30 +77,23 @@ const HeroSection: FC = () => {
               position: "relative",
             }}
           >
-            <span
-              style={{
-                display: "block",
-                background:
-                  "linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-text-secondary) 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              {t("hero.title_part1").split(" ")[0]}
-            </span>
-            <span
-              style={{
-                display: "block",
-                background:
-                  "linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-text-accent) 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              {t("hero.title_part1").split(" ")[1] || ""}
-            </span>
+            {titleParts.map((part, index) => (
+              <span
+                key={part}
+                style={{
+                  display: "block",
+                  background:
+                    index === titleParts.length - 1
+                      ? "linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-text-accent) 100%)"
+                      : "linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-text-secondary) 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                {part}
+              </span>
+            ))}
           </h1>
         </div>
 
@@ -150,7 +145,7 @@ const HeroSection: FC = () => {
             {t("hero.btn_get_started")}
           </button>
           <a
-            href="https://github.com/loongclaw-ai/loongclaw"
+            href={repositoryUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="hero-btn hero-btn-secondary"

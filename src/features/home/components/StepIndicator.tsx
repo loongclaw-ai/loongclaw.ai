@@ -2,7 +2,7 @@
 import type { FC } from 'react';
 
 interface StepIndicatorProps {
-  steps: { number: number; title: string; description: string }[];
+  steps: { number: number; title: string; description: string; href?: string }[];
   activeStep?: number;
   onStepClick?: (step: number) => void;
 }

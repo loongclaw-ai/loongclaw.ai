@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    {
+      "source": "/sitemap",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/robots",
+      "destination": "/robots.txt",
+      "permanent": true
+    },
+    {
+      "source": "/docs",
+      "destination": "https://docs.loongclaw.ai",
+      "permanent": true
+    },
+    {
+      "source": "/docs/:path*",
+      "destination": "https://docs.loongclaw.ai/:path*",
+      "permanent": true
+    }
+  ]
+}

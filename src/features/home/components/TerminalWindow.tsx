@@ -173,7 +173,7 @@ const TerminalWindow: FC = () => {
               fontStyle: "italic",
             }}
           >
-            {t("terminal.line1", "# Clone the repository")}
+            {t("terminal.line1", "# Recommended install")}
           </div>
           <div style={{ marginBottom: "0.5rem" }}>
             <span
@@ -185,7 +185,7 @@ const TerminalWindow: FC = () => {
               $
             </span>
             <span style={{ color: "var(--color-text-primary)" }}>
-              git clone https://github.com/loongclaw-ai/loongclaw.git
+              curl -fsSL https://raw.githubusercontent.com/eastreams/loong/dev/scripts/install.sh | bash -s -- --onboard
             </span>
           </div>
           <br />
@@ -197,44 +197,7 @@ const TerminalWindow: FC = () => {
               fontStyle: "italic",
             }}
           >
-            {t("terminal.line2", "# Run install script")}
-          </div>
-          <div style={{ marginBottom: "0.5rem" }}>
-            <span
-              style={{
-                color: "var(--color-text-secondary)",
-                marginRight: "0.5rem",
-              }}
-            >
-              $
-            </span>
-            <span style={{ color: "var(--color-text-primary)" }}>
-              cd loongclaw
-            </span>
-          </div>
-          <div style={{ marginBottom: "0.5rem" }}>
-            <span
-              style={{
-                color: "var(--color-text-secondary)",
-                marginRight: "0.5rem",
-              }}
-            >
-              $
-            </span>
-            <span style={{ color: "var(--color-text-primary)" }}>
-              ./scripts/install.sh --source
-            </span>
-          </div>
-          <br />
-
-          <div
-            style={{
-              marginBottom: "0.75rem",
-              color: "var(--color-text-muted)",
-              fontStyle: "italic",
-            }}
-          >
-            {t("terminal.line3", "# Initialize and onboard")}
+            {t("terminal.line2", "# Supported first-run loop")}
           </div>
           <div style={{ marginBottom: "0.5rem" }}>
             <span
@@ -257,9 +220,64 @@ const TerminalWindow: FC = () => {
           >
             &gt; provider setup... [OK]
             <br />
-            &gt; model setup... [OK]
+            &gt; first-run path... [OK]
+          </div>
+          <div style={{ marginBottom: "0.5rem", marginTop: "0.75rem" }}>
+            <span
+              style={{
+                color: "var(--color-text-secondary)",
+                marginRight: "0.5rem",
+              }}
+            >
+              $
+            </span>
+            <span style={{ color: "var(--color-text-primary)" }}>
+              loong ask --message "Summarize this repository and suggest the best next step."
+            </span>
+          </div>
+          <div
+            style={{
+              color: "var(--color-text-secondary)",
+              fontSize: "0.75rem",
+            }}
+          >
+            &gt; repo summary: rust agent runtime with secure channels, tools,
+            and memory
             <br />
-            &gt; finish...
+            &gt; next step: run loong chat to continue from an interactive
+            session
+          </div>
+          <br />
+
+          <div
+            style={{
+              marginBottom: "0.75rem",
+              color: "var(--color-text-muted)",
+              fontStyle: "italic",
+            }}
+          >
+            {t("terminal.line3", "# Check doctor and continue")}
+          </div>
+          <div
+            style={{
+              color: "var(--color-text-secondary)",
+              fontSize: "0.75rem",
+            }}
+          >
+            <div style={{ marginBottom: "0.5rem" }}>
+              <span
+                style={{
+                  color: "var(--color-text-secondary)",
+                  marginRight: "0.5rem",
+                }}
+              >
+                $
+              </span>
+              <span style={{ color: "var(--color-text-primary)" }}>
+                loong doctor
+              </span>
+            </div>
+            &gt; runtime health: healthy
             <br />
             <br />
             <div style={{ marginBottom: "0.5rem" }}>
@@ -281,10 +299,9 @@ const TerminalWindow: FC = () => {
                   marginTop: "0.5rem",
                 }}
               >
-                &gt; Hi LoongClaw! Can you tell me a joke?
+                &gt; continue from the recommended next step
                 <br />
-                &gt; Why did the AI go to therapy? Because it had too many
-                layers of issues!
+                &gt; ready for follow-up work
               </div>
               &gt;&nbsp;
               <span

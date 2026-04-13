@@ -1,6 +1,7 @@
 // src/features/home/components/SocialLinks.tsx
 import type { FC } from 'react';
 import { Github, MessageCircle, Send, Twitter, Ghost, Camera, MessagesSquare, Bird } from 'lucide-react';
+import { repositoryUrl } from '../../../utils/site';
 
 interface SocialLink {
   name: string;
@@ -11,7 +12,7 @@ interface SocialLink {
 const socialLinks: SocialLink[] = [
   {
     name: 'GitHub',
-    href: 'https://github.com/loongclaw-ai/loongclaw',
+    href: repositoryUrl,
     icon: Github,
   },
   {

@@ -5,6 +5,7 @@ import { Star, Languages, Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useTheme, THEMES } from "../../contexts/useTheme";
 import { docsBaseUrl } from "../../utils/docs-url";
+import { repositoryUrl } from "../../utils/site";
 
 import darkIcon from "../../assets/loongclaw-icon-white.ico";
 import lightIcon from "../../assets/loongclaw-icon-red.ico";
@@ -22,7 +23,7 @@ const NavBar: FC = () => {
   };
 
   useEffect(() => {
-    fetch("https://api.github.com/repos/loongclaw-ai/loongclaw")
+    fetch("https://api.github.com/repos/eastreams/loong")
       .then((res) => res.json())
       .then((data) => {
         if (data.stargazers_count) {
@@ -87,7 +88,7 @@ const NavBar: FC = () => {
           {/* Theme-based Icon */}
           <img
             src={theme === THEMES.DARK ? darkIcon : lightIcon}
-            alt="LoongClaw"
+            alt="Loong"
             style={{
               width: "32px",
               height: "32px",
@@ -95,7 +96,7 @@ const NavBar: FC = () => {
               transform: "translateY(-3px)",
             }}
           />
-          <span>LOONGCLAW</span>
+          <span>LOONG</span>
         </Link>
 
         {/* Desktop Navigation Items */}
@@ -179,7 +180,7 @@ const NavBar: FC = () => {
 
           {/* GitHub Button */}
           <a
-            href="https://github.com/loongclaw-ai/loongclaw"
+            href={repositoryUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="navbar-btn navbar-btn-github"

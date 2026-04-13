@@ -1,17 +1,18 @@
 import type { FC } from "react";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import SeoHead from "../../components/seo/SeoHead";
-import { buildDocsUrl } from "../../utils/docs-url";
 
-const DocsPage: FC = () => {
-  const location = useLocation();
-  const target = buildDocsUrl(
-    location.pathname,
-    location.search,
-    location.hash,
-  );
+interface FileRedirectPageProps {
+  title: string;
+  description: string;
+  target: string;
+}
 
+const FileRedirectPage: FC<FileRedirectPageProps> = ({
+  title,
+  description,
+  target,
+}) => {
   useEffect(() => {
     window.location.replace(target);
   }, [target]);
@@ -25,8 +26,8 @@ const DocsPage: FC = () => {
       }}
     >
       <SeoHead
-        title="Docs | Loong"
-        description="Loong documentation has moved to docs.loongclaw.ai."
+        title={title}
+        description={description}
         canonical={target}
         robots="noindex,follow"
       />
@@ -38,15 +39,16 @@ const DocsPage: FC = () => {
           marginBottom: "1rem",
         }}
       >
-        Redirecting to the new docs site
+        Redirecting
       </h1>
       <p
         style={{
           color: "var(--color-text-secondary)",
           marginBottom: "1rem",
+          lineHeight: 1.7,
         }}
       >
-        If the redirect does not happen automatically, open the docs here.
+        {description}
       </p>
       <a
         href={target}
@@ -55,10 +57,10 @@ const DocsPage: FC = () => {
           wordBreak: "break-all",
         }}
       >
-        Open documentation
+        {target}
       </a>
     </div>
   );
 };
 
-export default DocsPage;
+export default FileRedirectPage;

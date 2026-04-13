@@ -26,7 +26,7 @@ const Footer: FC = () => {
             color: 'var(--color-text-muted)',
           }}
         >
-          © {currentYear} LoongClaw AI · MIT License
+          © {currentYear} Loong · MIT License
         </div>
       </div>
     </footer>
