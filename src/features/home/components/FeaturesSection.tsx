@@ -41,7 +41,7 @@ const FeaturesSection: FC = () => {
     ? 'var(--color-border)'
     : 'rgb(177, 35, 28)';
   return (
-    <section className="section-padding" style={{ borderTop: `1px solid ${dividerColor}` }}>
+    <section className="section-padding reveal-stage" data-reveal style={{ borderTop: `1px solid ${dividerColor}` }}>
       {/* Section header */}
       <div className="section-header" style={{ textAlign: 'center' }}>
         <h2
@@ -71,7 +71,7 @@ const FeaturesSection: FC = () => {
         className="features-grid"
         style={{
           display: 'grid',
-          gap: '1.5rem',
+          gap: '1rem',
         }}
       >
         {features.map((feature) => (

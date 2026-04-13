@@ -39,7 +39,7 @@ const RuntimeSurfaceSection: FC = () => {
   ];
 
   return (
-    <section className="section-padding" style={{ borderTop: `1px solid ${dividerColor}` }}>
+    <section className="section-padding reveal-stage" data-reveal style={{ borderTop: `1px solid ${dividerColor}` }}>
       <div className="section-header" style={{ textAlign: "center" }}>
         <p className="story-kicker">{t("runtime.kicker")}</p>
         <h2

@@ -77,7 +77,8 @@ const QuickStartSection: FC = () => {
   return (
     <section
       id="quick-start"
-      className="section-padding"
+      className="section-padding reveal-stage"
+      data-reveal
       style={{ borderTop: `1px solid ${dividerColor}` }}
     >
       {/* Section header */}

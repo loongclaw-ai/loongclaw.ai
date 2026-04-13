@@ -13,10 +13,12 @@ import ArchitectureSection from "./components/ArchitectureSection";
 import CommunitySection from "./components/CommunitySection";
 import Footer from "../../components/layout/Footer";
 import { getHomeSeo } from "../../seo/metadata";
+import { useScrollReveal } from "./hooks/useScrollReveal";
 
 const HomePage: FC = () => {
   const { t, i18n } = useTranslation();
   const seo = getHomeSeo(t, i18n.language);
+  useScrollReveal();
 
   return (
     <>

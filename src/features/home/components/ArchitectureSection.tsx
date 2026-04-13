@@ -71,7 +71,7 @@ const ArchitectureSection: FC = () => {
   const [hoveredCrate, setHoveredCrate] = useState<string | null>(null);
 
   return (
-    <section className="section-padding" style={{ borderTop: `1px solid ${dividerColor}` }}>
+    <section className="section-padding reveal-stage" data-reveal style={{ borderTop: `1px solid ${dividerColor}` }}>
       {/* Section header */}
       <div className="section-header" style={{ textAlign: 'center' }}>
         <h2
