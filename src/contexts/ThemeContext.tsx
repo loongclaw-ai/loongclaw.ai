@@ -2,12 +2,16 @@
 import { useState, useEffect, useCallback, type ReactNode } from "react";
 import { ThemeContext, THEMES, type Theme } from "./ThemeContextValue";
 
-const STORAGE_KEY = "loongclaw-theme";
+const STORAGE_KEY = "loong-theme";
+const LEGACY_STORAGE_KEY = "loongclaw-theme";
 
 // Get initial theme from localStorage or system preference
 const getInitialTheme = (): Theme => {
   try {
-    const savedTheme = localStorage.getItem(STORAGE_KEY) as Theme | null;
+    const savedTheme = (
+      localStorage.getItem(STORAGE_KEY) ??
+      localStorage.getItem(LEGACY_STORAGE_KEY)
+    ) as Theme | null;
     if (
       savedTheme &&
       (savedTheme === THEMES.DARK || savedTheme === THEMES.LIGHT)
@@ -37,6 +41,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     document.documentElement.setAttribute("data-theme", theme);
     try {
       localStorage.setItem(STORAGE_KEY, theme);
+      localStorage.removeItem(LEGACY_STORAGE_KEY);
     } catch {
       // localStorage not available
     }

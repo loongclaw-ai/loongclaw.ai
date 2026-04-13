@@ -121,7 +121,7 @@ body {
 
 /* In Chinese mode: switch inherited body text to Chinese sans-serif.
    Elements with explicit inline font-family (code blocks, crate names,
-   LOONGCLAW logo, stats labels) have higher specificity and are unaffected. */
+   LOONG logo, stats labels) have higher specificity and are unaffected. */
 html[lang="zh-CN"] body {
     font-family: var(--font-chinese);
 }
